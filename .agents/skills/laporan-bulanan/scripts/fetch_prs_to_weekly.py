@@ -3,6 +3,7 @@ import subprocess
 import datetime
 import argparse
 import sys
+import os
 from pathlib import Path
 
 def main():
@@ -11,33 +12,50 @@ def main():
     args = parser.parse_args()
 
     root = Path(__file__).resolve().parent.parent.parent.parent.parent / "script-laporan-bulanan"
-    config_path = root / "input" / args.period / "config.json"
+    sys.path.insert(0, str(root))
     
-    if not config_path.exists():
-        print(f"Error: Config {config_path} tidak ditemukan.")
-        sys.exit(1)
+    from generator.lib.config import load_config
+    from generator.lib.github import get_env_with_token
 
-    with open(config_path, encoding='utf-8') as f:
-        config = json.load(f)
+    config = load_config(args.period)
+    gh_config = config.get("github", {})
+    env = get_env_with_token(gh_config)
+    
+    repo = gh_config.get("repo")
+    author_val = gh_config.get("author")
+    authors = [a.strip() for a in author_val.split(',')] if isinstance(author_val, str) else [author_val]
 
-    repo = config.get("github", {}).get("repo")
-    author = config.get("github", {}).get("author")
-    tahun = str(config.get("tahun"))
-    bulan_str = args.period[-2:]
+    tahun = int(config.get("tahun"))
+    bulan_int = int(args.period[-2:])
     
-    # ex: 2026-08-01..2026-08-31
-    date_query = f"merged:{tahun}-{bulan_str}-01..{tahun}-{bulan_str}-31"
+    import calendar
+    last_day = calendar.monthrange(tahun, bulan_int)[1]
     
-    print(f"Fetching PRs from {repo} for author {author} in {date_query}...")
-    cmd = ['gh', 'pr', 'list', '-R', repo, '-S', f'author:{author} {date_query}', '--state', 'merged', '--json', 'number,title,mergedAt,url,body', '-L', '150']
+    bulan_str = f"{bulan_int:02d}"
+    date_query = f"merged:{tahun}-{bulan_str}-01..{tahun}-{bulan_str}-{last_day}"
     
-    try:
-        result = subprocess.run(cmd, capture_output=True, text=True, check=True)
-        prs = json.loads(result.stdout)
-    except Exception as e:
-        print(f"Error executing gh: {e}")
-        sys.exit(1)
+    prs = []
+    for a in authors:
+        print(f"Fetching PRs from {repo} for author {a} in {date_query}...")
+        cmd = ['gh', 'pr', 'list', '-R', repo, '-S', f'author:{a} {date_query}', '--state', 'merged', '--json', 'number,title,mergedAt,url,body', '-L', '150']
         
+        try:
+            result = subprocess.run(cmd, capture_output=True, text=True, check=True, env=env, encoding="utf-8")
+            if result.stdout:
+                prs.extend(json.loads(result.stdout))
+        except subprocess.CalledProcessError as e:
+            print(f"Error executing gh: {e.stderr}")
+            sys.exit(1)
+            
+    # Remove duplicates
+    seen = set()
+    unique_prs = []
+    for pr in prs:
+        if pr['number'] not in seen:
+            seen.add(pr['number'])
+            unique_prs.append(pr)
+            
+    prs = unique_prs
     prs.sort(key=lambda x: x['mergedAt'])
 
     rows = []

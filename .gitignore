@@ -30,3 +30,8 @@ script-spmb-bot/python/spmb_output/
 script-spmb-bot/python/.venv/
 
 weekly_report/
+
+# Keamanan (Credentials & Keys)
+*.pem
+*.key
+config_global.json

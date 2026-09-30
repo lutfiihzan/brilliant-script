@@ -19,22 +19,45 @@ def main():
     with open(config_path, encoding='utf-8') as f:
         config = json.load(f)
 
+    # Load global config for GitHub App credentials
+    global_config_path = root / "config_global.json"
+    if global_config_path.exists():
+        with open(global_config_path, encoding='utf-8') as f:
+            g_config = json.load(f)
+            config.update(g_config)
+
     repo = config.get("github", {}).get("repo")
     author = config.get("github", {}).get("author")
-    tahun = str(config.get("tahun"))
-    bulan_str = args.period[-2:]
+    tahun = int(config.get("tahun"))
+    bulan_int = int(args.period[-2:])
     
-    date_query = f"merged:{tahun}-{bulan_str}-01..{tahun}-{bulan_str}-31"
+    import calendar
+    last_day = calendar.monthrange(tahun, bulan_int)[1]
+    bulan_str = f"{bulan_int:02d}"
     
-    print(f"Fetching PRs from {repo} for author {author} in {date_query}...")
-    cmd = ['gh', 'pr', 'list', '-R', repo, '-S', f'author:{author} {date_query}', '--state', 'merged', '--json', 'number,title,url,body', '-L', '150']
+    date_query = f"merged:{tahun}-{bulan_str}-01..{tahun}-{bulan_str}-{last_day}"
     
+    authors = [a.strip() for a in author.split(',')]
+    
+    sys.path.append(str(root / "generator"))
     try:
-        result = subprocess.run(cmd, capture_output=True, text=True, check=True)
-        prs = json.loads(result.stdout)
+        from lib import github as gh_lib
+        env = gh_lib.get_env_with_token(config.get("github", {}))
     except Exception as e:
-        print(f"Error executing gh: {e}")
-        sys.exit(1)
+        print(f"Warning: gagal load GitHub App token, menggunakan env default. Error: {e}")
+        env = None
+
+    prs = []
+    for auth in authors:
+        print(f"Fetching PRs from {repo} for author {auth} in {date_query}...")
+        cmd = ['gh', 'pr', 'list', '-R', repo, '-S', f'author:{auth} {date_query}', '--state', 'merged', '--json', 'number,title,url,body', '-L', '150']
+        
+        try:
+            result = subprocess.run(cmd, capture_output=True, text=True, check=True, encoding='utf-8', env=env)
+            prs.extend(json.loads(result.stdout))
+        except Exception as e:
+            print(f"Error executing gh for {auth}: {e}")
+            sys.exit(1)
         
     # Parse weekly_report.md to get polished titles
     weekly_path = root / "input" / args.period / "weekly_report.md"

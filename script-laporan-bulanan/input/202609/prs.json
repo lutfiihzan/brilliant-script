@@ -1,0 +1,682 @@
+[
+  {
+    "number": 110,
+    "state": "MERGED",
+    "title": "fix: tambahkan fallback message batas upload server untuk Surat Tugas"
+  },
+  {
+    "number": 111,
+    "state": "MERGED",
+    "title": "Fix: Pembulatan Angka Kepatuhan Teknis (Dua Desimal)"
+  },
+  {
+    "number": 112,
+    "state": "MERGED",
+    "title": "feat: tambah opsi perbaikan teks desimal di ResetObjekPengawasanSeeder"
+  },
+  {
+    "number": 113,
+    "state": "MERGED",
+    "title": "fix: mengubah pembulatan menjadi format dua desimal (bcdiv) pada kepatuhan teknis"
+  },
+  {
+    "number": 114,
+    "state": "MERGED",
+    "title": "refactor: membuat StringHelper::truncateDecimal untuk mengganti bcdiv yang menyebabkan error undefined function"
+  },
+  {
+    "number": 115,
+    "state": "MERGED",
+    "title": "fix: perbaikan re generate skor kepatuhan teknis"
+  },
+  {
+    "number": 116,
+    "state": "MERGED",
+    "title": "feat: tambahkan fitur proses massal fix teks analisis kepatuhan teknis (dengan atau tanpa regenerate dokumen)"
+  },
+  {
+    "number": 117,
+    "state": "MERGED",
+    "title": "fix(kewenangan): add PGP-3456 to kategori enum in dokumen_kepegawaian"
+  },
+  {
+    "number": 121,
+    "state": "MERGED",
+    "title": "docs(kewenangan): complete api docs for dokumen putusan kewenangan and format response resource"
+  },
+  {
+    "number": 122,
+    "state": "MERGED",
+    "title": "fix(kewenangan): only validate file as file if it is an uploaded file on update"
+  },
+  {
+    "number": 125,
+    "state": "MERGED",
+    "title": "refactor(kewenangan): remove redundant sertifikat validations "
+  },
+  {
+    "number": 126,
+    "state": "MERGED",
+    "title": "docs(kewenangan): remove redundant sertifikat fields from stubs"
+  },
+  {
+    "number": 128,
+    "state": "MERGED",
+    "title": "fix(kewenangan): ensure publisher is always an object to prevent frotend crash"
+  },
+  {
+    "number": 130,
+    "state": "MERGED",
+    "title": "feat: Implementasi Laravel Doctor sebagai Pre-Production Check (#129)"
+  },
+  {
+    "number": 132,
+    "state": "MERGED",
+    "title": "chore: migrate deprecated audit config to policy.advisories"
+  },
+  {
+    "number": 133,
+    "state": "MERGED",
+    "title": "fix: downgrade symfony/yaml constraint for php 8.2 compatibility"
+  },
+  {
+    "number": 135,
+    "state": "MERGED",
+    "title": "fix: resolve remote URL handling in DownloadKkprlFileJob"
+  },
+  {
+    "number": 149,
+    "state": "MERGED",
+    "title": "Feat: Penyatuan API Manajemen Dokumen Penjadwalan & Ekstraksi Python"
+  },
+  {
+    "number": 150,
+    "state": "MERGED",
+    "title": "fix: ensure daftar penjadwalan stub extends JsonResource for scramble…"
+  },
+  {
+    "number": 151,
+    "state": "MERGED",
+    "title": "fix: remove null values from penjadwalan stub to prevent scramble typ…"
+  },
+  {
+    "number": 152,
+    "state": "MERGED",
+    "title": "fix: extract array item to variable to help Scramble AST type inference"
+  },
+  {
+    "number": 153,
+    "state": "MERGED",
+    "title": "wip: Fitur/laporan hasil pengawasan -> unggah -> identitas -> extract -> simpan"
+  },
+  {
+    "number": 154,
+    "state": "MERGED",
+    "title": "Feature/kepatuhan teknis skip logic"
+  },
+  {
+    "number": 155,
+    "state": "MERGED",
+    "title": "Fix #127: Format perhitungan form inspeksi dibuat dua angka di belakang koma"
+  },
+  {
+    "number": 156,
+    "state": "MERGED",
+    "title": "fix(kepatuhan-teknis): perbaiki deteksi baris keterangan pasca skor j…"
+  },
+  {
+    "number": 161,
+    "state": "MERGED",
+    "title": "fix: add specific max size file on server"
+  },
+  {
+    "number": 162,
+    "state": "MERGED",
+    "title": "Feature/kepatuhan teknis skip logic: replace analis result"
+  },
+  {
+    "number": 163,
+    "state": "MERGED",
+    "title": "feat: Implementasi Sleep Drip WA Objek Pengawasan"
+  },
+  {
+    "number": 164,
+    "state": "MERGED",
+    "title": "Merge master_backup ke master"
+  },
+  {
+    "number": 165,
+    "state": "MERGED",
+    "title": "Fitur Laporan Hasil Pengawasan & Penjadwalan Pengawasan"
+  },
+  {
+    "number": 166,
+    "state": "MERGED",
+    "title": "fix(penjadwalan): perbaiki path output PDF notula UAT"
+  },
+  {
+    "number": 167,
+    "state": "MERGED",
+    "title": "fix(penjadwalan): paksa penggunaan disk local untuk output PDF notula…"
+  },
+  {
+    "number": 168,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan"
+  },
+  {
+    "number": 169,
+    "state": "MERGED",
+    "title": "fix(penjadwalan): sembunyikan detail ekstraksi dokumen yang tidak ter…"
+  },
+  {
+    "number": 170,
+    "state": "MERGED",
+    "title": "refactor(test): ubah format output generate surat UAT menjadi array"
+  },
+  {
+    "number": 171,
+    "state": "MERGED",
+    "title": "fix: permission"
+  },
+  {
+    "number": 172,
+    "state": "MERGED",
+    "title": "fix(seeder): tambahkan permission read dan extract dokumen ke operato…"
+  },
+  {
+    "number": 173,
+    "state": "MERGED",
+    "title": "fix: ubah urutan upload dokumen penjadwalan"
+  },
+  {
+    "number": 174,
+    "state": "MERGED",
+    "title": "test(helper): tambahkan target reset 'sedang_inspeksi_lapangan'"
+  },
+  {
+    "number": 175,
+    "state": "MERGED",
+    "title": "fix(ekstrak): gunakan LIKE untuk pencocokan NKU dan Nomor ST"
+  },
+  {
+    "number": 176,
+    "state": "MERGED",
+    "title": "fix(test): set jadwal ke H+1 saat reset objek pengawasan ke disetujui oss"
+  },
+  {
+    "number": 177,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: jangan reset pengawas"
+  },
+  {
+    "number": 178,
+    "state": "MERGED",
+    "title": "docs(test): catat PR merge #165-177 di PRD, plan & skill + selaraskan…"
+  },
+  {
+    "number": 179,
+    "state": "MERGED",
+    "title": "﻿feat(inspeksi): fallback daftar dan validasi jika job penjadwalan ex…"
+  },
+  {
+    "number": 180,
+    "state": "MERGED",
+    "title": "﻿feat(test): ubah endpoint simulasi job ke mass update"
+  },
+  {
+    "number": 181,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: detail dokumen laporan inspeksi"
+  },
+  {
+    "number": 182,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan"
+  },
+  {
+    "number": 183,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: laporan dan penjadwalan improvement"
+  },
+  {
+    "number": 184,
+    "state": "MERGED",
+    "title": "feat(uat): target reset terlewat + reset massal penjadwalan"
+  },
+  {
+    "number": 185,
+    "state": "MERGED",
+    "title": "fix(penjadwalan): sisa_hari positif untuk jadwal mendatang"
+  },
+  {
+    "number": 186,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: update validasi nku/st current"
+  },
+  {
+    "number": 187,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan"
+  },
+  {
+    "number": 188,
+    "state": "MERGED",
+    "title": "fix(uat): sesuaikan nama folder dokumen UAT dengan format URL ID"
+  },
+  {
+    "number": 189,
+    "state": "MERGED",
+    "title": "fix(gateway): izinkan akses dokumen real dari gateway menggunakan ID numeric"
+  },
+  {
+    "number": 190,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan"
+  },
+  {
+    "number": 191,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan"
+  },
+  {
+    "number": 192,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan"
+  },
+  {
+    "number": 193,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: issue stkl"
+  },
+  {
+    "number": 194,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: validasi stkl dan sp oss null"
+  },
+  {
+    "number": 195,
+    "state": "MERGED",
+    "title": "fix(cleanup): bersihkan kolom legacy stale saat hapus phantom"
+  },
+  {
+    "number": 196,
+    "state": "MERGED",
+    "title": "feat(lhp): lengkapi kontrak integrasi FE (issue sip #159)"
+  },
+  {
+    "number": 197,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: extract fallback folder numerik generator UAT"
+  },
+  {
+    "number": 198,
+    "state": "MERGED",
+    "title": "fix(gateway): perbaiki pencarian folder lokal jika URL menggunakan ID terenkripsi"
+  },
+  {
+    "number": 199,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: show km, generate st legacy"
+  },
+  {
+    "number": 200,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: reset cooldown"
+  },
+  {
+    "number": 201,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: update docs dan fix bug extract dan simpan"
+  },
+  {
+    "number": 211,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: issue extract/simpan dan detail dokumen"
+  },
+  {
+    "number": 213,
+    "state": "MERGED",
+    "title": "feat(lhp): kirim km di objek laporan"
+  },
+  {
+    "number": 215,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: tidak wajib extract st jika sudah ada nku valid existing dan validasi tombol lengkapi dokumen"
+  },
+  {
+    "number": 217,
+    "state": "MERGED",
+    "title": "feat(uat): mode tampil generate SP-UPT/ST/Laporan"
+  },
+  {
+    "number": 218,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: improve lengkapi dokumen penjadwalan dan lhp"
+  },
+  {
+    "number": 219,
+    "state": "MERGED",
+    "title": "feat(inspeksi): tambah atribut laporan di detail inspeksi lapangan"
+  },
+  {
+    "number": 220,
+    "state": "MERGED",
+    "title": "feat(extract): optimalisasi ekstraksi izin OSS + rapikan korpus Wasrisk"
+  },
+  {
+    "number": 221,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan"
+  },
+  {
+    "number": 222,
+    "state": "MERGED",
+    "title": "fix(extract): batasi kewenangan + saring status pencocokan cadangan, satukan penyaringan peran"
+  },
+  {
+    "number": 223,
+    "state": "MERGED",
+    "title": "test(ppbbr): kunci invarian jendela pra-inspeksi vs syarat tombol unggah"
+  },
+  {
+    "number": 224,
+    "state": "MERGED",
+    "title": "fix(ppbbr-lhp): tambah KP 440 ke KM_PER_JENIS['laporan'] untuk extrac…"
+  },
+  {
+    "number": 225,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: update uat tool"
+  },
+  {
+    "number": 227,
+    "state": "MERGED",
+    "title": "feat(uat): generate-laporan verifikasi kelengkapan dokumen"
+  },
+  {
+    "number": 228,
+    "state": "MERGED",
+    "title": "fix(penjadwalan): selaraskan konvensi status_tombol dengan FE"
+  },
+  {
+    "number": 229,
+    "state": "MERGED",
+    "title": "fix(penjadwalan): fallback status PenjadwalanTerlewat di resource saat scheduler belum jalan"
+  },
+  {
+    "number": 230,
+    "state": "MERGED",
+    "title": "refactor(pengawasan): sentralisasi filter fase inspeksi dan fallback scheduler ke Model"
+  },
+  {
+    "number": 231,
+    "state": "MERGED",
+    "title": "fix(inspeksi): pastikan tombol inspeksi hanya aktif persis di hari H"
+  },
+  {
+    "number": 232,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: fallback jadwal terlewat"
+  },
+  {
+    "number": 233,
+    "state": "MERGED",
+    "title": "fix(inspeksi): tampilkan MenungguInspeksi masa depan di Inspeksi Lapangan, hapus bug jadwal null"
+  },
+  {
+    "number": 235,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: lengkapi dokumen bisa di hari h"
+  },
+  {
+    "number": 236,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: perbaiki status jadwal terlewat"
+  },
+  {
+    "number": 237,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: breaking changes stkl and surat pemberitahuan"
+  },
+  {
+    "number": 238,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: fix status tombol laporan"
+  },
+  {
+    "number": 241,
+    "state": "MERGED",
+    "title": "feat: Cherry-pick Sleep Drip WA Notification ke Production"
+  },
+  {
+    "number": 242,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: improve"
+  },
+  {
+    "number": 250,
+    "state": "MERGED",
+    "title": "feat(ppbbr): wajib ekstrak notula/ST/laporan, SP/STKL bebas"
+  },
+  {
+    "number": 251,
+    "state": "MERGED",
+    "title": "fix(ppbbr): sesi ekstrak-ulang invalid tetap ditolak walau record ada"
+  },
+  {
+    "number": 252,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: reschedule penjadwalan terlewat oleh op pusat"
+  },
+  {
+    "number": 253,
+    "state": "MERGED",
+    "title": "﻿fix(ppbbr): perbaiki karakter literal di AkunPenjadwalanLhpSeeder"
+  },
+  {
+    "number": 255,
+    "state": "MERGED",
+    "title": "﻿refactor(ppbbr): pisah fitur Penjadwalan dan Dokumen Penjadwalan"
+  },
+  {
+    "number": 258,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: spesifikan pesan error penjadwalan kembali"
+  },
+  {
+    "number": 259,
+    "state": "MERGED",
+    "title": "feat(ppbbr): auto-tag HUWAP untuk SP dan NDLWP untuk laporan CSRS"
+  },
+  {
+    "number": 261,
+    "state": "MERGED",
+    "title": "feat(ppbbr): keluarkan PW240 dari SP/laporan, laporan tambah TU140"
+  },
+  {
+    "number": 262,
+    "state": "MERGED",
+    "title": "feat(lhp): validasi link dokumen pendukung wajib URL"
+  },
+  {
+    "number": 263,
+    "state": "MERGED",
+    "title": "fix: resolve HACCP validation bugs, API OSS timeout, and undefined variables in Pengawasan"
+  },
+  {
+    "number": 264,
+    "state": "MERGED",
+    "title": "fix: enhance haccp answers recovery strategy by scanning storage"
+  },
+  {
+    "number": 267,
+    "state": "MERGED",
+    "title": "fix: correct numbering for nested self declare questions"
+  },
+  {
+    "number": 268,
+    "state": "MERGED",
+    "title": "fix(kepatuhan-teknis): perbaiki rollup akumulasi skor parent (Issue #244)"
+  },
+  {
+    "number": 269,
+    "state": "MERGED",
+    "title": "refactor(kepatuhan-teknis): ekstrak logika + recompute non-destruktif & kirim skor mentah"
+  },
+  {
+    "number": 270,
+    "state": "MERGED",
+    "title": "fix(kepatuhan-teknis): buang artefak float pada skor output (1.9100000000000001 -> 1.91)"
+  },
+  {
+    "number": 271,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: fix pertanyaan inspeksi dan penjadwalan masih menunggu"
+  },
+  {
+    "number": 272,
+    "state": "MERGED",
+    "title": "fix(penjadwalan): sembunyikan MenungguInspeksi hanya H-0, selaras dgn inspeksi"
+  },
+  {
+    "number": 276,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: tambah sisa hari, tambah km di sp"
+  },
+  {
+    "number": 278,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: keterangan bkpm"
+  },
+  {
+    "number": 279,
+    "state": "MERGED",
+    "title": "feat(ppbbr): rinci ukuran file di pesan validasi upload"
+  },
+  {
+    "number": 280,
+    "state": "MERGED",
+    "title": "fix(lhp): perketat validasi host link pendukung"
+  },
+  {
+    "number": 282,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: simpan jenis usaha"
+  },
+  {
+    "number": 284,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: validasi unggah dokumentasi"
+  },
+  {
+    "number": 285,
+    "state": "MERGED",
+    "title": "feat: add UploadDokumentasiInspeksiLapanganRequest for field inspecti…"
+  },
+  {
+    "number": 286,
+    "state": "MERGED",
+    "title": "feat(bap): simpan draft tab 3 tanpa generate"
+  },
+  {
+    "number": 287,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: perbaikin permission seeder ppbbr"
+  },
+  {
+    "number": 290,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: tambah km di SP"
+  },
+  {
+    "number": 292,
+    "state": "MERGED",
+    "title": "fix(ppbbr): koreksi PW129 jadi PW120 untuk SP"
+  },
+  {
+    "number": 293,
+    "state": "MERGED",
+    "title": "feat(lhp): tambah PW140/PW150 ke KM laporan"
+  },
+  {
+    "number": 294,
+    "state": "MERGED",
+    "title": "fix(penjadwalan): integrasi kategori otomatis CSRS untuk HUWAP dan STWAP"
+  },
+  {
+    "number": 295,
+    "state": "MERGED",
+    "title": "fix(notifikasi): implementasi pengingat WA laporan hasil pengawasan (#288)"
+  },
+  {
+    "number": 296,
+    "state": "MERGED",
+    "title": "perf(userman): optimasi cache 24 jam untuk pencarian pegawai internal"
+  },
+  {
+    "number": 297,
+    "state": "MERGED",
+    "title": "fix(penjadwalan): otomatis buat kategori STWAP/HUWAP jika master data kosong"
+  },
+  {
+    "number": 298,
+    "state": "MERGED",
+    "title": "fix(wa): tampilkan nomor surat dummy dan public link"
+  },
+  {
+    "number": 299,
+    "state": "MERGED",
+    "title": "fix(penjadwalan): perbaiki offset array kategori saat edit ST/STKL/SP"
+  },
+  {
+    "number": 301,
+    "state": "MERGED",
+    "title": "fix(ppbbr): wajib sesi memuat current + record harus termetadata"
+  },
+  {
+    "number": 303,
+    "state": "MERGED",
+    "title": "feat(ppbbr): command audit dokumen tanpa ekstrak + NIP invalid"
+  },
+  {
+    "number": 304,
+    "state": "MERGED",
+    "title": "fix(export): null-safe map penjadwalan/inspeksi/hasil"
+  },
+  {
+    "number": 305,
+    "state": "MERGED",
+    "title": "fix(ppbbr): lengkap quan notula/ST wajib NKU current valid"
+  },
+  {
+    "number": 306,
+    "state": "MERGED",
+    "title": "feat: kelengkapan ST/notula + is_valid laporan wajib NKU/ST current"
+  },
+  {
+    "number": 307,
+    "state": "MERGED",
+    "title": "docs: luruskan komentar gerbang notif UAT"
+  },
+  {
+    "number": 308,
+    "state": "MERGED",
+    "title": "fix(notif): gerbang link BAP jadi UAT dan DEV_MODE"
+  },
+  {
+    "number": 309,
+    "state": "MERGED",
+    "title": "feat(notif): tambah STKL di ringkasan disetujui OSS"
+  },
+  {
+    "number": 312,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: fix issue lengkapi dokumen ketika invalid nku/st"
+  },
+  {
+    "number": 313,
+    "state": "MERGED",
+    "title": "Fitur/laporan hasil pengawasan: perbaiki reset data jomplang"
+  }
+]

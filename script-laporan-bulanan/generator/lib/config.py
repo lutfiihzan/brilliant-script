@@ -11,6 +11,20 @@ def load_config(period):
     if not config_path.exists():
         raise FileNotFoundError("Config tidak ditemukan: " + str(config_path))
     cfg = json.loads(config_path.read_text(encoding="utf-8"))
+    
+    global_config_path = root / "config_global.json"
+    if global_config_path.exists():
+        try:
+            global_cfg = json.loads(global_config_path.read_text(encoding="utf-8"))
+            if "github" in global_cfg:
+                if "github" not in cfg:
+                    cfg["github"] = {}
+                for k, v in global_cfg["github"].items():
+                    if k not in cfg["github"]:
+                        cfg["github"][k] = v
+        except Exception:
+            pass
+            
     cfg["period"] = period
     return cfg
 
