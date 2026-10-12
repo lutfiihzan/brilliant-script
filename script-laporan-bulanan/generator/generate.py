@@ -24,6 +24,11 @@ def main():
         config.setdefault("github", {})["fetch_always"] = True
 
     prs = load_or_fetch_prs(config, input_dir(args.period) / "prs.json")
+    groups_path = input_dir(args.period) / "detail_groups.json"
+    if groups_path.exists():
+        import json
+        excluded = set(json.loads(groups_path.read_text(encoding="utf-8")).get("exclude", []))
+        prs = [p for p in prs if p["number"] not in excluded]
     diffs = load_or_fetch_diffs(config, prs, input_dir(args.period) / "prs_diff.json")
     
     # 1. Build Main Document (BAB 1 - 3)

@@ -1,0 +1,1471 @@
+[
+ {
+  "number": 4769,
+  "title": "Fitur/master data: perbaikan berdasarkan 20260103_Perbaikan_MNKorespondensi_MNKKPRL_MNMOMI_SBMNPemanfatanRL.pdf",
+  "mergedAt": "2026-03-01",
+  "headRefName": "fitur/master_data",
+  "sha": "c6c4d3b2eeb96ea299d0f42d64a94909edacf569",
+  "files": [
+   "Modules/Gateway/Entities/PortalDokumen.php",
+   "Modules/PengawasanPerizinanBerusaha/Services/SDK/PemantauanService.php",
+   "Modules/PengawasanPerizinanBerusaha/Transformers/SDK/PemantauanResource.php",
+   "Modules/Userman/Exports/Master/KKPRLPerizinanExport.php",
+   "Modules/Userman/Http/Controllers/MomiController.php",
+   "Modules/Userman/Library/SortableService.php",
+   "Modules/Userman/Services/Master/KKPRL/LaporanTahunanService.php",
+   "Modules/Userman/Services/Master/KKPRL/PerizinanService.php",
+   "Modules/Userman/Services/Master/KorespondensiCSRS/KorespondensiCRSService.php",
+   "Modules/Userman/Services/Master/MomiService.php",
+   "Modules/Userman/Transformers/KKPRL/PerizinanResource.php",
+   "Modules/Userman/Transformers/LaporanKKPRLResource.php",
+   "Modules/Userman/Transformers/Master/PORTAL/DetailDokumenSuratResource.php",
+   "Modules/Userman/Transformers/Master/PORTAL/DokumenSuratResource.php",
+   "Modules/Userman/Transformers/PerizinanMomiResource.php",
+   "routes/modul/master.php"
+  ],
+  "body": "- fix: tambah filter tahun laporan, dan tambah kolom\n- feat: tambah filter tahun laporan\n- feat: introduce Momi master data management and expand master API routes.\n- feat: tambah kategori wilayah, status_izin\n- feat: tambah npwp, source overveiew, hapus portal data di subjek hukum\n- fix: tambah kolom npwp, filter unit_inspeksi\n- feat: tambah kolom export perizinan\n- fix: sorting letter date, dan tambah filter category_type"
+ },
+ {
+  "number": 4770,
+  "title": "Fitur/master data: export and sorting",
+  "mergedAt": "2026-03-01",
+  "headRefName": "fitur/master_data",
+  "sha": "f82e9a0936bed0ec3ea25aba6227ad9cb4ad3b1b",
+  "files": [
+   "Modules/Userman/Services/Master/KKPRL/LaporanTahunanService.php",
+   "Modules/Userman/Services/Master/KKPRL/PerizinanService.php",
+   "Modules/Userman/Services/Master/KorespondensiCSRS/KorespondensiCRSService.php",
+   "Modules/Userman/Services/Master/MomiService.php",
+   "routes/modul/master.php"
+  ],
+  "body": "- feat: export korespondensi\n- refactor: export momi, korespondensi, kkprl, laporan tahunan"
+ },
+ {
+  "number": 4771,
+  "title": "fix: issue tandai korespondensi",
+  "mergedAt": "2026-03-02",
+  "headRefName": "fitur/master_data",
+  "sha": "af17c2da31524072ea23e14cc6cb47f734bd280e",
+  "files": [
+   "Modules/Userman/Services/Master/KorespondensiCSRS/KorespondensiCRSService.php"
+  ],
+  "body": "- fix: issue tandai korespondensi"
+ },
+ {
+  "number": 4772,
+  "title": "Modul: Penanganan Pelanggaran - Penetapan Sanksi",
+  "mergedAt": "2026-03-03",
+  "headRefName": "fitur/master_data",
+  "sha": "167deac764df376faa76f817377317bcadbbed65",
+  "files": [
+   "Modules/Gateway/Entities/OSS/PerizinanProyek.php",
+   "Modules/Gateway/Http/Controllers/PortalData/PencarianPerizinanKKPRLController.php",
+   "Modules/Gateway/Routes/api.php",
+   "Modules/Gateway/Services/PORTALDATA/PencarianPerizinanKKPRLService.php",
+   "Modules/PenangananPelanggaran/Config/.gitkeep",
+   "Modules/PenangananPelanggaran/Config/config.php",
+   "Modules/PenangananPelanggaran/Console/.gitkeep",
+   "Modules/PenangananPelanggaran/Database/Migrations/.gitkeep",
+   "Modules/PenangananPelanggaran/Database/Seeders/.gitkeep",
+   "Modules/PenangananPelanggaran/Database/Seeders/PenangananPelanggaranDatabaseSeeder.php",
+   "Modules/PenangananPelanggaran/Database/factories/.gitkeep",
+   "Modules/PenangananPelanggaran/Entities/.gitkeep",
+   "Modules/PenangananPelanggaran/Http/Controllers/.gitkeep",
+   "Modules/PenangananPelanggaran/Http/Controllers/PenangananPelanggaranController.php",
+   "Modules/PenangananPelanggaran/Http/Middleware/.gitkeep",
+   "Modules/PenangananPelanggaran/Http/Requests/.gitkeep",
+   "Modules/PenangananPelanggaran/Http/Requests/PenetapanSanksi/TandaiPenetapanSanksiRequest.php",
+   "Modules/PenangananPelanggaran/Providers/.gitkeep",
+   "Modules/PenangananPelanggaran/Providers/PenangananPelanggaranServiceProvider.php",
+   "Modules/PenangananPelanggaran/Providers/RouteServiceProvider.php",
+   "Modules/PenangananPelanggaran/Resources/assets/.gitkeep",
+   "Modules/PenangananPelanggaran/Resources/assets/js/app.js",
+   "Modules/PenangananPelanggaran/Resources/assets/sass/app.scss",
+   "Modules/PenangananPelanggaran/Resources/lang/.gitkeep",
+   "Modules/PenangananPelanggaran/Resources/views/.gitkeep",
+   "Modules/PenangananPelanggaran/Resources/views/index.blade.php",
+   "Modules/PenangananPelanggaran/Resources/views/layouts/master.blade.php",
+   "Modules/PenangananPelanggaran/Routes/.gitkeep",
+   "Modules/PenangananPelanggaran/Routes/api.php",
+   "Modules/PenangananPelanggaran/Routes/web.php",
+   "Modules/PenangananPelanggaran/Services/PenetapanSanksiService.php",
+   "Modules/PenangananPelanggaran/Tests/Feature/.gitkeep",
+   "Modules/PenangananPelanggaran/Tests/Unit/.gitkeep",
+   "Modules/PenangananPelanggaran/composer.json",
+   "Modules/PenangananPelanggaran/module.json",
+   "Modules/PenangananPelanggaran/package.json",
+   "Modules/PenangananPelanggaran/webpack.mix.js",
+   "Modules/SadarGakum/Http/Controllers/SadarGakumController.php",
+   "Modules/SadarGakum/Services/KelompokPelanggaranService.php",
+   "Modules/SadarGakum/Services/PencarianPelanggaranService.php",
+   "Modules/SadarGakum/Transformers/PencarianPelanggaranResource.php",
+   "Modules/Userman/Database/Migrations/2026_03_02_150714_add_column_to_portal_dokumen_pelanggaran.php",
+   "Modules/Userman/Entities/KKPRL/Perizinan.php",
+   "Modules/Userman/Entities/Master/PortalKorespondensiCRS/PenangananPelanggaran.php",
+   "Modules/Userman/Http/Controllers/Master/PotalCRS/PenangananPelanggaranController.php",
+   "Modules/Userman/Transformers/Master/PORTAL/PenangananPelanggaranResource.php",
+   "app/Http/Resources/Gateway/PortalData/IdentitasResource.php",
+   "app/Http/Resources/Gateway/PortalData/PerizinanResource.php",
+   "app/Providers/MacroServiceProvider.php",
+   "modules_statuses.json",
+   "routes/modul/master.php"
+  ],
+  "body": "- feat: improve penetapan sanksi\n- wip: penandaan penetapan sanksi\n- wip: pencarian data portal - kkprl\n- feat: pencarian pelanggaran dan improve kelompok pelanggaran\n- wip: sumber\n- feat: daftar sumber\n- feat: modul penanganan pelanggaran"
+ },
+ {
+  "number": 4773,
+  "title": "Fitur/master data: filter jenis keterangan kkprl, improve GW api oss dan api kkprl",
+  "mergedAt": "2026-03-04",
+  "headRefName": "fitur/master_data",
+  "sha": "840e87cac021facef441762872893c0eeff3a689",
+  "files": [
+   "Modules/Gateway/Services/OSS/V2/PencarianPerizinanBerusahaService.php",
+   "Modules/Gateway/Services/PORTALDATA/PencarianPerizinanKKPRLService.php",
+   "Modules/PenangananPelanggaran/Http/Controllers/PenangananPelanggaranController.php",
+   "Modules/PenangananPelanggaran/Http/Requests/PenetapanSanksi/TandaiPenetapanSanksiRequest.php",
+   "Modules/PenangananPelanggaran/Routes/api.php",
+   "Modules/PenangananPelanggaran/Services/PenetapanSanksiService.php",
+   "Modules/PenangananPelanggaran/Transformers/PenetapanSanksiResource.php",
+   "Modules/Userman/Http/Controllers/Master/KKPRL/KKPRLController.php",
+   "Modules/Userman/Services/Master/KKPRL/PerizinanService.php",
+   "Modules/Userman/Transformers/KKPRL/PerizinanResource.php",
+   "app/Http/Library/StringHelper.php",
+   "app/Http/Resources/Gateway/OSS/V2/PelakuUsahaResource.php",
+   "app/Http/Resources/Gateway/OSS/V2/SubjekHukumResource.php",
+   "app/Http/Resources/Gateway/PortalData/IdentitasResource.php",
+   "app/Http/Resources/Gateway/PortalData/PerizinanResource.php",
+   "app/Http/Resources/Gateway/PortalData/SubjekHukumResource.php",
+   "routes/modul/master.php"
+  ],
+  "body": "- feat: improve filter keterangan true false\n- feat: ubah route jenis izin\n- feat: dropdown\n- feat: penetapan sanksi, improve resource oss/kkprl"
+ },
+ {
+  "number": 4774,
+  "title": "fix: perbaikan relasi momi di pengamatan tidak langsung",
+  "mergedAt": "2026-03-04",
+  "headRefName": "fitur/master_data",
+  "sha": "cb1c56b021374ca5e072729821449ad5ed455223",
+  "files": [
+   "Modules/PengawasanPerizinanBerusaha/Services/SDK/PemantauanService.php",
+   "Modules/PengawasanPerizinanBerusaha/Transformers/SDK/PemantauanResource.php",
+   "Modules/Userman/Entities/KKPRL/Perizinan.php"
+  ],
+  "body": "- fix: perbaikan relasi momi di pengamatan tidak langsung"
+ },
+ {
+  "number": 4776,
+  "title": "Fitur/master data: permission master data, asta data, penanganan pelanggaran",
+  "mergedAt": "2026-03-04",
+  "headRefName": "fitur/master_data",
+  "sha": "3b4ed7bf9ffcbb96083e113e4a4e8c991c83139d",
+  "files": [
+   "Modules/Gateway/Routes/api.php",
+   "Modules/PenangananPelanggaran/Database/Seeders/AkunTableSeeder.php",
+   "Modules/PenangananPelanggaran/Database/Seeders/PenangananPelanggaranDatabaseSeeder.php",
+   "Modules/PenangananPelanggaran/Http/Controllers/PenangananPelanggaranController.php",
+   "Modules/PenangananPelanggaran/Routes/api.php",
+   "Modules/PenangananPelanggaran/Services/PenetapanSanksiService.php",
+   "Modules/PengawasanPerizinanBerusaha/Database/Seeders/SDK/AkunTableSeeder.php",
+   "Modules/PengawasanPerizinanBerusaha/Routes/api.php",
+   "Modules/Userman/Database/Seeders/AkunMasterTableSeeder.php"
+  ],
+  "body": "- fix: permission master data\n- feat: update permission penanganan pelanggaran\n- feat: permission penanganan pelanggaran\n- feat: export penanganan pelanggaran - penetapan sanksi\n- feat: update permission pengamatan tidak langsung\n- feat: permission kkprl, momi, korespondensi"
+ },
+ {
+  "number": 4777,
+  "title": "Fitur/master data: improve pencarian oss/kkprl",
+  "mergedAt": "2026-03-04",
+  "headRefName": "fitur/master_data",
+  "sha": "cd212206f98c110af6034b2e195a10f48f678427",
+  "files": [
+   "Modules/PenangananPelanggaran/Http/Controllers/PenangananPelanggaranController.php",
+   "Modules/PenangananPelanggaran/Routes/api.php",
+   "Modules/PenangananPelanggaran/Services/PenetapanSanksiService.php",
+   "app/Http/Resources/Gateway/OSS/V2/PelakuUsahaResource.php",
+   "app/Http/Resources/Gateway/PortalData/IdentitasResource.php"
+  ],
+  "body": "- feat: jenis_izin portal data\n- feat: tambah jenis_izin di identitas resource"
+ },
+ {
+  "number": 4778,
+  "title": "fix: filter in_complete",
+  "mergedAt": "2026-03-04",
+  "headRefName": "fitur/master_data",
+  "sha": "52b1ac90b8a36d9c73b6ae2783d8656f90b8d8a6",
+  "files": [
+   "Modules/Userman/Services/Master/KKPRL/PerizinanService.php"
+  ],
+  "body": "- fix: filter in_complete"
+ },
+ {
+  "number": 4780,
+  "title": "Fitur/master data",
+  "mergedAt": "2026-03-05",
+  "headRefName": "fitur/master_data",
+  "sha": "fd71918f2d6e1f1b104e3592bfa19a147679b7c9",
+  "files": [
+   "Modules/PenangananPelanggaran/Services/PenetapanSanksiService.php",
+   "Modules/Userman/Services/Master/KKPRL/PerizinanService.php"
+  ],
+  "body": "- fix: filter in_complete null\n- fix: handle error penetapan sanksi"
+ },
+ {
+  "number": 4781,
+  "title": "fix: unit inspeksi",
+  "mergedAt": "2026-03-05",
+  "headRefName": "fitur/master_data",
+  "sha": "04d481c82985bd7cab975367d783788203a31312",
+  "files": [
+   "Modules/Userman/Services/Master/KKPRL/PerizinanService.php"
+  ],
+  "body": "- fix: unit inspeksi"
+ },
+ {
+  "number": 4782,
+  "title": "feat: relasi pengamatan tidak langsung ke penetapan sanksi",
+  "mergedAt": "2026-03-05",
+  "headRefName": "fitur/master_data",
+  "sha": "39d2186f12399022dce1054cf5887789c9edbbd4",
+  "files": [
+   "Modules/PenangananPelanggaran/Http/Requests/PenetapanSanksi/TandaiPenetapanSanksiRequest.php",
+   "Modules/PenangananPelanggaran/Services/PenetapanSanksiService.php",
+   "Modules/PengawasanPerizinanBerusaha/Services/SDK/PemantauanService.php",
+   "Modules/PengawasanPerizinanBerusaha/Transformers/SDK/PemantauanResource.php",
+   "Modules/Userman/Database/Migrations/2026_03_05_105037_add_nomor_izin_to_portal_dokumen_pelanggaran_table.php",
+   "Modules/Userman/Entities/KKPRL/Perizinan.php"
+  ],
+  "body": "- feat: relasi pengamatan tidak langsung ke penetapan sanksi"
+ },
+ {
+  "number": 4783,
+  "title": "fix: error Call to a member function getRealPath() on null",
+  "mergedAt": "2026-03-05",
+  "headRefName": "fitur/master_data",
+  "sha": "28680e1d80081466fc5051bba326bd66a613521f",
+  "files": [
+   "Modules/Userman/Services/Master/MomiService.php",
+   "Modules/Userman/Services/Sync/SyncMasterService.php"
+  ],
+  "body": "- fix: error Call to a member function getRealPath() on null"
+ },
+ {
+  "number": 4784,
+  "title": "fix: kode wiup to show geojson",
+  "mergedAt": "2026-03-05",
+  "headRefName": "fitur/master_data",
+  "sha": "6ccbffaad0659bc73fd2057ecb35871ab1f90882",
+  "files": [
+   "Modules/Userman/Transformers/PerizinanMomiResource.php"
+  ],
+  "body": "- fix: kode wiup to show geojson"
+ },
+ {
+  "number": 4785,
+  "title": "fix: show geojson momi",
+  "mergedAt": "2026-03-05",
+  "headRefName": "fitur/master_data",
+  "sha": "d90c96e5e02f8d4f906b3a1e9f37893b955f30f6",
+  "files": [
+   "Modules/Userman/Transformers/PerizinanMomiResource.php"
+  ],
+  "body": "- fix: show geojson momi"
+ },
+ {
+  "number": 4786,
+  "title": "feat: add middleware to momi",
+  "mergedAt": "2026-03-05",
+  "headRefName": "fitur/master_data",
+  "sha": "df48271bb495b7dcbf8d7e9ffc71c8ad9ef66c02",
+  "files": [
+   "Modules/Userman/Http/Controllers/MomiController.php"
+  ],
+  "body": "- feat: add middleware to momi"
+ },
+ {
+  "number": 4787,
+  "title": "fix: set middleware to kkprl and penanganan pelanggaran",
+  "mergedAt": "2026-03-05",
+  "headRefName": "fitur/master_data",
+  "sha": "c1628ea1591fd7f591d74bfa7825538ca353bd51",
+  "files": [
+   "Modules/PenangananPelanggaran/Http/Controllers/PenangananPelanggaranController.php",
+   "Modules/Userman/Http/Controllers/Master/KKPRL/KKPRLController.php"
+  ],
+  "body": "- fix: set middleware to kkprl and penanganan pelanggaran"
+ },
+ {
+  "number": 4788,
+  "title": "fix: update filter by in complete untuk all perizinan kkprl",
+  "mergedAt": "2026-03-05",
+  "headRefName": "fitur/master_data",
+  "sha": "57d239c0aae13e8390c86939bab5535624bed840",
+  "files": [
+   "Modules/Userman/Services/Master/KKPRL/PerizinanService.php"
+  ],
+  "body": "- fix: update filter by in complete untuk all perizinan kkprl"
+ },
+ {
+  "number": 4790,
+  "title": "fix: pencarian kkprl",
+  "mergedAt": "2026-03-05",
+  "headRefName": "fitur/master_data",
+  "sha": "3beccc35af34fcd4ba50293a0f4cae8bd8977304",
+  "files": [
+   "Modules/Userman/Services/Master/KKPRL/PerizinanService.php"
+  ],
+  "body": "- fix: pencarian kkprl"
+ },
+ {
+  "number": 4791,
+  "title": "fix: add url to penetapan sanksi",
+  "mergedAt": "2026-03-05",
+  "headRefName": "fitur/master_data",
+  "sha": "c554548a327ae7094378b5f4a3965990573b9a17",
+  "files": [
+   "Modules/PenangananPelanggaran/Transformers/PenetapanSanksiResource.php"
+  ],
+  "body": "- fix: add url to penetapan sanksi"
+ },
+ {
+  "number": 4792,
+  "title": "feat: implement PerizinanService for managing KKPRL licensing data",
+  "mergedAt": "2026-03-05",
+  "headRefName": "fitur/master_data",
+  "sha": "7f4fafdbeb400f52365e5b392dd92d8d074f740a",
+  "files": [
+   "Modules/Userman/Services/Master/KKPRL/PerizinanService.php"
+  ],
+  "body": "- feat: implement PerizinanService for managing KKPRL licensing data"
+ },
+ {
+  "number": 4793,
+  "title": "fix: nib true show in detail false",
+  "mergedAt": "2026-03-05",
+  "headRefName": "fitur/master_data",
+  "sha": "afd1fef7723d125ae8ef87e087cfa5e96b315939",
+  "files": [
+   "Modules/Userman/Services/Master/KKPRL/PerizinanService.php"
+  ],
+  "body": "- fix: nib true show in detail false"
+ },
+ {
+  "number": 4794,
+  "title": "fix",
+  "mergedAt": "2026-03-05",
+  "headRefName": "fitur/master_data",
+  "sha": "c3e1adc318297dfad80a174f5ba93712bfad7ae0",
+  "files": [
+   "Modules/Userman/Services/Master/KKPRL/PerizinanService.php"
+  ],
+  "body": "- fix"
+ },
+ {
+  "number": 4795,
+  "title": "Fitur/master data: improve memilih subjek hukum lebih dari 1",
+  "mergedAt": "2026-03-06",
+  "headRefName": "fitur/master_data",
+  "sha": "f649f26b45c4eb3e0895d35737a13e8e632279ec",
+  "files": [
+   "Modules/Gateway/Entities/OSS/PerizinanProyek.php",
+   "Modules/Gateway/Entities/PortalDokumen.php",
+   "Modules/PenangananPelanggaran/Http/Requests/PenetapanSanksi/TandaiPenetapanSanksiRequest.php",
+   "Modules/PenangananPelanggaran/Services/PenetapanSanksiService.php",
+   "Modules/PenangananPelanggaran/Transformers/PenetapanSanksiResource.php",
+   "Modules/Userman/Database/Migrations/2026_03_06_064823_add_nib_to_portal_dokumen_pelanggaran_table.php",
+   "Modules/Userman/Database/Migrations/2026_03_06_065742_add_has_related_subjek_hukum_to_portal_dokumen_table.php",
+   "Modules/Userman/Database/Migrations/2026_03_06_080907_create_portal_subjek_hukum_table.php",
+   "Modules/Userman/Entities/KKPRL/Perizinan.php",
+   "Modules/Userman/Entities/Master/PortalKorespondensiCRS/PenangananPelanggaran.php",
+   "Modules/Userman/Entities/Master/PortalKorespondensiCRS/PenetapanSanksi.php",
+   "Modules/Userman/Entities/Master/PortalKorespondensiCRS/SubjekHukum.php"
+  ],
+  "body": "- update: typo has_subjek_hukum\n- feat: Create `PenetapanSanksiResource` to transform penalty determination data, including detailed violation information and associated legal subjects.\n- feat: improve tandai penetapan sanksi"
+ },
+ {
+  "number": 4796,
+  "title": "fix: relasi",
+  "mergedAt": "2026-03-06",
+  "headRefName": "fitur/master_data",
+  "sha": "b9b8680f7fb13bcd049552a092820e9602379aaa",
+  "files": [
+   "Modules/PengawasanPerizinanBerusaha/Services/SDK/PemantauanService.php"
+  ],
+  "body": "- fix: relasi"
+ },
+ {
+  "number": 4797,
+  "title": "Fitur/master data",
+  "mergedAt": "2026-03-06",
+  "headRefName": "fitur/master_data",
+  "sha": "5c2d15ab7c6844b8c8e850afab7b41738a050fe8",
+  "files": [
+   "Modules/PenangananPelanggaran/Transformers/PenetapanSanksiResource.php",
+   "Modules/Userman/Services/Master/KKPRL/PerizinanService.php",
+   "Modules/Userman/Services/Master/MomiService.php",
+   "Modules/Userman/Transformers/KKPRL/PerizinanResource.php",
+   "Modules/Userman/Transformers/PerizinanMomiResource.php",
+   "app/Http/Library/StringHelper.php"
+  ],
+  "body": "- fix: url dokumen\n- wip: filter momi\n- fix: filter momi"
+ },
+ {
+  "number": 4798,
+  "title": "fix: handle error penetapan sanksi",
+  "mergedAt": "2026-03-08",
+  "headRefName": "fitur/master_data",
+  "sha": "4577f6685f6afba2023a4590cb4fee00e3367b0d",
+  "files": [
+   "Modules/PenangananPelanggaran/Services/PenetapanSanksiService.php"
+  ],
+  "body": "- fix: handle error penetapan sanksi"
+ },
+ {
+  "number": 4799,
+  "title": "fix: update resource momi",
+  "mergedAt": "2026-03-08",
+  "headRefName": "fitur/master_data",
+  "sha": "367bace04670ed03a7d0bd29277b4c6a09c1f89d",
+  "files": [
+   "Modules/Userman/Transformers/PerizinanMomiResource.php"
+  ],
+  "body": "- fix: update resource momi"
+ },
+ {
+  "number": 4800,
+  "title": "fix: add filter kategori pelanggaran",
+  "mergedAt": "2026-03-09",
+  "headRefName": "fitur/master_data",
+  "sha": "e1e0c82122d6b81daf416fc30de664291a6ed93b",
+  "files": [
+   "Modules/SadarGakum/Services/KategoriPelanggaranService.php"
+  ],
+  "body": "- fix: add filter kategori pelanggaran"
+ },
+ {
+  "number": 4801,
+  "title": "feat: export korespondensi",
+  "mergedAt": "2026-03-09",
+  "headRefName": "fitur/smart-export",
+  "sha": "aa380feb41af35d2f2bed2fc5a07263f4abedccb",
+  "files": [
+   "Modules/Userman/Exports/Master/KorespondensiExport.php",
+   "Modules/Userman/Http/Controllers/Master/PotalCRS/KorespondensiCRSController.php",
+   "Modules/Userman/Jobs/Email/ExportDataJob.php",
+   "Modules/Userman/Services/Master/KorespondensiCSRS/KorespondensiCRSService.php",
+   "routes/modul/master.php"
+  ],
+  "body": "- feat: export korespondensi"
+ },
+ {
+  "number": 4802,
+  "title": "Fitur/master data: improve rbac, export korespondensi",
+  "mergedAt": "2026-03-09",
+  "headRefName": "fitur/master_data",
+  "sha": "9aa3c3215b10a1915bef3c0b8a18604ea98e0336",
+  "files": [
+   "Modules/Userman/Exports/Master/KorespondensiExport.php",
+   "Modules/Userman/Http/Controllers/Master/PotalCRS/KorespondensiCRSController.php",
+   "Modules/Userman/Jobs/Email/ExportDataJob.php",
+   "Modules/Userman/Services/Master/KorespondensiCSRS/KorespondensiCRSService.php",
+   "app/Http/Controllers/API/V1/RBAC/FeatureController.php",
+   "app/Http/Controllers/API/V1/RBAC/ModulController.php",
+   "app/Http/Resources/FeatureResource.php",
+   "app/Http/Resources/ModulResource.php",
+   "app/Http/Resources/PeranIndexResource.php",
+   "app/Services/PeranService.php",
+   "routes/modul/master.php"
+  ],
+  "body": "- Merge pull request #4801 from setditjen-psdkp/fitur/smart-export\n- improve: rbac resource\n- feat: export korespondensi"
+ },
+ {
+  "number": 4803,
+  "title": "Fitur/master data: fix view file korespondensi",
+  "mergedAt": "2026-03-09",
+  "headRefName": "fitur/master_data",
+  "sha": "0156a6a0f1fbab856c52e4294ab50ac08fe2c717",
+  "files": [
+   "Modules/PenangananPelanggaran/Transformers/PenetapanSanksiResource.php",
+   "Modules/Userman/Jobs/Sync/SyncKorespondensiJob.php"
+  ],
+  "body": "- fix: error view file korespondensi\n- refactor: sync korespondensi"
+ },
+ {
+  "number": 4804,
+  "title": "Fitur/master data: Perbaikan API Penanganan Pelanggaran dan Pencarian Subjek Hukum/Objek Hukum",
+  "mergedAt": "2026-03-09",
+  "headRefName": "fitur/master_data",
+  "sha": "b689c2c986984a81772fa43af8492891e4388a17",
+  "files": [
+   "Modules/Gateway/Services/OSS/V2/PencarianPerizinanBerusahaService.php",
+   "Modules/Gateway/Services/PORTALDATA/PencarianPerizinanKKPRLService.php",
+   "Modules/PenangananPelanggaran/Http/Requests/PenetapanSanksi/TandaiPenetapanSanksiRequest.php",
+   "Modules/PenangananPelanggaran/Services/PenetapanSanksiService.php",
+   "Modules/PenangananPelanggaran/Transformers/PenetapanSanksiResource.php",
+   "app/Http/Resources/Gateway/OSS/V2/PelakuUsahaResource.php",
+   "app/Http/Resources/Gateway/PortalData/IdentitasResource.php"
+  ],
+  "body": "- fix: penetapan sanksi\n- fix: penetapan sanksi"
+ },
+ {
+  "number": 4805,
+  "title": "fix: pencarian pelanggaran",
+  "mergedAt": "2026-03-09",
+  "headRefName": "fitur/master_data",
+  "sha": "349abba0a48432bad905e229b940665c25bd07fe",
+  "files": [
+   "Modules/SadarGakum/Entities/JenisPelanggaran.php",
+   "Modules/SadarGakum/Transformers/PencarianPelanggaranResource.php"
+  ],
+  "body": "- fix: pencarian pelanggaran"
+ },
+ {
+  "number": 4806,
+  "title": "Fitur/master data",
+  "mergedAt": "2026-03-09",
+  "headRefName": "fitur/master_data",
+  "sha": "0b9313d096e6968bc02c5adf648c747e6d24b6d4",
+  "files": [
+   "Modules/PenangananPelanggaran/Http/Requests/PenetapanSanksi/TandaiPenetapanSanksiRequest.php",
+   "Modules/SadarGakum/Transformers/PencarianPelanggaranResource.php"
+  ],
+  "body": "- fix: request validation\n- fix: pelanggaran id"
+ },
+ {
+  "number": 4808,
+  "title": "Issue/bap wasrisk",
+  "mergedAt": "2026-03-09",
+  "headRefName": "issue/bap-wasrisk",
+  "sha": "ef6558253d22e75b1691bd44c797a3c6d0823eca",
+  "files": [
+   "resources/views/header.blade.php"
+  ],
+  "body": "- fix: format unit kerja pada BAP\n- Merge pull request #4669 from setditjen-psdkp/issue/missing-middleware"
+ },
+ {
+  "number": 4809,
+  "title": "fix: nib tidak kesimpan",
+  "mergedAt": "2026-03-09",
+  "headRefName": "fitur/master_data",
+  "sha": "68a42a0b55dcf59454515e680e7587a605458c57",
+  "files": [
+   "Modules/Userman/Http/Requests/Master/MOMI/AddMomiRequest.php"
+  ],
+  "body": "- fix: nib tidak kesimpan"
+ },
+ {
+  "number": 4810,
+  "title": "fix: validasi momi",
+  "mergedAt": "2026-03-09",
+  "headRefName": "fitur/master_data",
+  "sha": "0c0ffc27f7662a9fbf1a617e53dd980491a5ce7d",
+  "files": [
+   "Modules/Userman/Http/Requests/Master/MOMI/AddMomiRequest.php"
+  ],
+  "body": "- fix: validasi momi"
+ },
+ {
+  "number": 4811,
+  "title": "fix: validasi",
+  "mergedAt": "2026-03-09",
+  "headRefName": "fitur/master_data",
+  "sha": "69ae485e335616e2c18ea517cd008404655d768c",
+  "files": [
+   "Modules/Userman/Http/Requests/Master/MOMI/AddMomiRequest.php"
+  ],
+  "body": "- fix: validasi"
+ },
+ {
+  "number": 4812,
+  "title": "fix: simpan nib, npwp",
+  "mergedAt": "2026-03-09",
+  "headRefName": "fitur/master_data",
+  "sha": "c301da1d2bb17ae6a974bd8b703b0e44f8d9579f",
+  "files": [
+   "Modules/Userman/Services/Master/MomiService.php"
+  ],
+  "body": "- fix: simpan nib, npwp"
+ },
+ {
+  "number": 4813,
+  "title": "fix: relasi pengamatan lansung vs penetapan sanksi by nomor_penerbitan",
+  "mergedAt": "2026-03-09",
+  "headRefName": "fitur/master_data",
+  "sha": "4667b1ae3db9b6b810bc3a0b373af46d8bc4e151",
+  "files": [
+   "Modules/PenangananPelanggaran/Services/PenetapanSanksiService.php"
+  ],
+  "body": "- fix: relasi pengamatan lansung vs penetapan sanksi by nomor_penerbitan"
+ },
+ {
+  "number": 4814,
+  "title": "Fitur/master data: perbaikan sinkron geojson kkprl dan pencarian pelanggaran",
+  "mergedAt": "2026-03-10",
+  "headRefName": "fitur/master_data",
+  "sha": "b093ad3fc7721d8d1e2b11d3712f07f825374d7f",
+  "files": [
+   "Modules/Gateway/Services/PORTALDATA/KKPRLService.php",
+   "Modules/SadarGakum/Services/PencarianPelanggaranService.php"
+  ],
+  "body": "- fix: add search pelanggaran by jenis pelanggaran\n- fix: sinkron kkprl get geojson"
+ },
+ {
+  "number": 4816,
+  "title": "feat: tetapkan notif kirim objek pengawasan selama 5 menit",
+  "mergedAt": "2026-03-10",
+  "headRefName": "issue/bap-wasrisk",
+  "sha": "c8d556a12606cb87c851a4b3c3f1bd54d6290fb6",
+  "files": [
+   "app/Http/Library/WaNotifications.php",
+   "app/Services/Gateway/WhatsappService.php"
+  ],
+  "body": "- feat: tetapkan notif kirim objek pengawasan selama 5 menit"
+ },
+ {
+  "number": 4818,
+  "title": "fix: sinkron oss jika data nib tidak ada di DB",
+  "mergedAt": "2026-03-10",
+  "headRefName": "fitur/master_data",
+  "sha": "59e354b40e5b2c4eec1964a4e9c30b2b571f97c9",
+  "files": [
+   "Modules/Gateway/Services/OSS/V2/PencarianPerizinanBerusahaService.php"
+  ],
+  "body": "- fix: sinkron oss jika data nib tidak ada di DB"
+ },
+ {
+  "number": 4820,
+  "title": "fix: perbaikan validasi",
+  "mergedAt": "2026-03-11",
+  "headRefName": "fitur/master_data",
+  "sha": "65216fa6ae575929a268b824d2d863dcfb6995f6",
+  "files": [
+   "Modules/PenangananPelanggaran/Http/Requests/PenetapanSanksi/TandaiPenetapanSanksiRequest.php",
+   "Modules/PenangananPelanggaran/Transformers/PenetapanSanksiResource.php"
+  ],
+  "body": "- fix: perbaikan validasi"
+ },
+ {
+  "number": 4821,
+  "title": "feat: add param usage in jenis pelanggaran",
+  "mergedAt": "2026-03-11",
+  "headRefName": "fitur/master_data",
+  "sha": "46b6c5e7d6b5d9d7aa22e31ca89b0d4cb5120d2a",
+  "files": [
+   "Modules/SadarGakum/Http/Controllers/JenisPelanggaranController.php"
+  ],
+  "body": "- feat: add param usage in jenis pelanggaran"
+ },
+ {
+  "number": 4824,
+  "title": "fix: sinkatan",
+  "mergedAt": "2026-03-11",
+  "headRefName": "fitur/master_data",
+  "sha": "0a75899c5dd170d0314a3196664fdf788be52807",
+  "files": [
+   "Modules/PenangananPelanggaran/Transformers/PenetapanSanksiResource.php"
+  ],
+  "body": "- fix: sinkatan"
+ },
+ {
+  "number": 4825,
+  "title": "fix: penyesuaian response jenis pelanggaran pada list penetapan sanksi",
+  "mergedAt": "2026-03-11",
+  "headRefName": "fitur/master_data",
+  "sha": "199cc398498fdf7a8932a43a8b5758e30a5cd47f",
+  "files": [
+   "Modules/PenangananPelanggaran/Transformers/PenetapanSanksiResource.php"
+  ],
+  "body": "- fix: penyesuaian response jenis pelanggaran pada list penetapan sanksi"
+ },
+ {
+  "number": 4826,
+  "title": "feat: add flag denda",
+  "mergedAt": "2026-03-11",
+  "headRefName": "fitur/master_data",
+  "sha": "3715dbc43da564ee3e0675844557d36572096a4e",
+  "files": [
+   "Modules/PenangananPelanggaran/Transformers/PenetapanSanksiResource.php"
+  ],
+  "body": "- feat: add flag denda"
+ },
+ {
+  "number": 4827,
+  "title": "fix: perbaikan filter penetapan sanksi",
+  "mergedAt": "2026-03-11",
+  "headRefName": "fitur/master_data",
+  "sha": "c78bdf272c60cc7ecb973dd8c0dc76a3e5b086e3",
+  "files": [
+   "Modules/PenangananPelanggaran/Services/PenetapanSanksiService.php"
+  ],
+  "body": "- fix: perbaikan filter penetapan sanksi"
+ },
+ {
+  "number": 4828,
+  "title": "fix: den",
+  "mergedAt": "2026-03-11",
+  "headRefName": "fitur/master_data",
+  "sha": "d59d6631e4aa0be4ee790fec3c701f997d3025cf",
+  "files": [
+   "Modules/PenangananPelanggaran/Services/PenetapanSanksiService.php"
+  ],
+  "body": "- fix: den"
+ },
+ {
+  "number": 4832,
+  "title": "fix: pencarian perizinan berusaha service",
+  "mergedAt": "2026-03-11",
+  "headRefName": "issue/pencarian-berusaha-service",
+  "sha": "9482cb84eb6abfb65aa426abe202697cc868c1a7",
+  "files": [
+   "Modules/Gateway/Transformers/OSS/PerizinanBerusahaKapal.php",
+   "Modules/LaporanKegiatanUsaha/Services/PelaporanService.php",
+   "app/Services/PengawasanPerizinanBerusaha/PertanyaanSelfDeclareService.php"
+  ],
+  "body": "- fix: pencarian perizinan berusaha service"
+ },
+ {
+  "number": 4833,
+  "title": "Fitur/master data: pencarian by category type",
+  "mergedAt": "2026-03-11",
+  "headRefName": "fitur/master_data",
+  "sha": "94021231ae249fdc32e11a0d777507ee95f0e07c",
+  "files": [
+   "Modules/PenangananPelanggaran/Services/PenetapanSanksiService.php"
+  ],
+  "body": "- fix: pencarian by kategori\n- fix: pencarian by category type"
+ },
+ {
+  "number": 4834,
+  "title": "fix: typo",
+  "mergedAt": "2026-03-11",
+  "headRefName": "fitur/master_data",
+  "sha": "f189aad84caf2ef072f200f45796c2d6cdc81101",
+  "files": [
+   "Modules/PenangananPelanggaran/Http/Requests/PenetapanSanksi/TandaiPenetapanSanksiRequest.php"
+  ],
+  "body": "- fix: typo"
+ },
+ {
+  "number": 4835,
+  "title": "Fitur/master data",
+  "mergedAt": "2026-03-11",
+  "headRefName": "fitur/master_data",
+  "sha": "2a460826027a420b39ab0754c40f16956ba90b34",
+  "files": [
+   "Modules/PenangananPelanggaran/Http/Requests/PenetapanSanksi/TandaiPenetapanSanksiRequest.php",
+   "Modules/PenangananPelanggaran/Services/PenetapanSanksiService.php"
+  ],
+  "body": "- fix: typo\n- fix: typo lg"
+ },
+ {
+  "number": 4836,
+  "title": "fix: remove validasi string contains category type",
+  "mergedAt": "2026-03-11",
+  "headRefName": "fitur/master_data",
+  "sha": "55dc2a302957b52aa6ac24d793ccf87c14c80540",
+  "files": [
+   "Modules/PenangananPelanggaran/Http/Requests/PenetapanSanksi/TandaiPenetapanSanksiRequest.php"
+  ],
+  "body": "- fix: remove validasi string contains category type"
+ },
+ {
+  "number": 4838,
+  "title": "fix: perbaiki validasi nilai denda",
+  "mergedAt": "2026-03-11",
+  "headRefName": "fitur/master_data",
+  "sha": "9a4dc70455118b81f1f2d2fb6c6d7ce6590d1a70",
+  "files": [
+   "Modules/PenangananPelanggaran/Http/Requests/PenetapanSanksi/TandaiPenetapanSanksiRequest.php"
+  ],
+  "body": "- fix: perbaiki validasi nilai denda"
+ },
+ {
+  "number": 4839,
+  "title": "Fitur/master data: typo nilai denda",
+  "mergedAt": "2026-03-11",
+  "headRefName": "fitur/master_data",
+  "sha": "074152b49a3d64b755c81d24aa1bcce4512d010a",
+  "files": [],
+  "body": "- fix: typo nilai denda\n- fix: typo denda to nilai_dena"
+ },
+ {
+  "number": 4840,
+  "title": "Fitur/master data: sinkron oss by nib, update penetapan sanksi, filter list penetapan sanksi",
+  "mergedAt": "2026-03-11",
+  "headRefName": "fitur/master_data",
+  "sha": "f50fc20c80714ca4de36f7b14a4838bafc5182e5",
+  "files": [
+   "Modules/PenangananPelanggaran/Services/PenetapanSanksiService.php",
+   "Modules/Userman/Http/Requests/Master/SyncMasterRequest.php",
+   "Modules/Userman/Jobs/Sync/OSS/SyncOssDataByNibJob.php",
+   "Modules/Userman/Services/Master/KorespondensiCSRS/KorespondensiCRSService.php",
+   "Modules/Userman/Services/Sync/SyncMasterService.php",
+   "config/master.php"
+  ],
+  "body": "- feat: perbaikan update tandai sanksi, dan penambahan filter pada list penetapan sanksi\n- fix: typo subjek hukum id\n- feat: sinkron oss by nib\n- feat: sinkron oss by nib"
+ },
+ {
+  "number": 4841,
+  "title": "Issue/bap wasrisk: update template BAP dan notif kirim objek pengawasan 5 menit",
+  "mergedAt": "2026-03-11",
+  "headRefName": "issue/bap-wasrisk",
+  "sha": "ceb789786af097a5258921143f9de0f6937aafe8",
+  "files": [
+   "app/Http/Controllers/API/V1/PengawasanPerizinanBerusaha/HasilInspeksiLapanganController.php",
+   "app/Http/Library/WaNotifications.php",
+   "app/Models/PengawasanPerizinanBerusaha/LaporanPengawasan/LaporanHasilInspeksi.php",
+   "app/Models/PengawasanPerizinanBerusaha/LaporanPengawasan/RiwayatLaporanInspeksi.php",
+   "app/Models/PengawasanPerizinanBerusaha/ObjekPengawasan/ObjekPengawasan.php",
+   "app/Services/Gateway/WhatsappService.php",
+   "app/Services/PengawasanPerizinanBerusaha/HasilInspeksiLapanganService.php",
+   "database/migrations/2026_03_10_142121_crate_ppbbr_laporan_hasil_inspeksi_table.php",
+   "resources/views/header.blade.php",
+   "routes/modul/ppbbr.php"
+  ],
+  "body": "- wip: laporan\n- feat: migrasi table laporan hasil pengawasan\n- feat: tetapkan notif kirim objek pengawasan selama 5 menit\n- fix: format unit kerja pada BAP"
+ },
+ {
+  "number": 4843,
+  "title": "Issue/bap wasrisk: migrasi laporan, fix detail objek",
+  "mergedAt": "2026-03-11",
+  "headRefName": "issue/bap-wasrisk",
+  "sha": "5182fe7b462cd5f5183427c9d54bfae7ca542ec2",
+  "files": [
+   "app/Http/Controllers/API/V1/PengawasanPerizinanBerusaha/HasilInspeksiLapanganController.php",
+   "app/Http/Resources/PengawasanPerizinanBerusaha/ObjekPengawasan/ObjekPengawasanResource.php",
+   "app/Models/PengawasanPerizinanBerusaha/LaporanPengawasan/LaporanHasilInspeksi.php",
+   "app/Models/PengawasanPerizinanBerusaha/LaporanPengawasan/RiwayatLaporanInspeksi.php",
+   "app/Models/PengawasanPerizinanBerusaha/ObjekPengawasan/ObjekPengawasan.php",
+   "app/Services/PengawasanPerizinanBerusaha/HasilInspeksiLapanganService.php",
+   "database/migrations/2026_03_10_142121_crate_ppbbr_laporan_hasil_inspeksi_table.php",
+   "routes/modul/ppbbr.php"
+  ],
+  "body": "- fix: provinsi. kab, kec, kel are null\n- wip: laporan\n- feat: migrasi table laporan hasil pengawasan"
+ },
+ {
+  "number": 4853,
+  "title": "Fitur/master data: perbaikan format jenis izin dan relasi pengamatan tidak langsung to portal data",
+  "mergedAt": "2026-03-12",
+  "headRefName": "fitur/master_data",
+  "sha": "e68a58c44a7700a2b2befab6e7000784e5c15f46",
+  "files": [
+   "Modules/PenangananPelanggaran/Transformers/PenetapanSanksiResource.php",
+   "Modules/PengawasanPerizinanBerusaha/Services/SDK/PemantauanService.php",
+   "Modules/PengawasanPerizinanBerusaha/Transformers/SDK/PemantauanResource.php",
+   "app/Http/Resources/Gateway/OSS/V2/SubjekHukumResource.php"
+  ],
+  "body": "- fix: relasi penetapan sanksi to pengamatan tidak langsung\n- fix: salah logic format jenis izin"
+ },
+ {
+  "number": 4855,
+  "title": "fix: menambahkan nik pada response pencarian oss dan portal data",
+  "mergedAt": "2026-03-12",
+  "headRefName": "fitur/master_data",
+  "sha": "fd921e0b90dd2fa763da8562e3cf83188efcdf6e",
+  "files": [
+   "Modules/PengawasanPerizinanBerusaha/Transformers/SDK/PemantauanDetailResource.php",
+   "app/Http/Resources/Gateway/OSS/V2/PelakuUsahaResource.php",
+   "app/Http/Resources/Gateway/OSS/V2/PerizinanBerusahaResource.php",
+   "app/Http/Resources/Gateway/PortalData/IdentitasResource.php"
+  ],
+  "body": "- fix: menambahkan nik pada response pencarian oss dan portal data"
+ },
+ {
+  "number": 4867,
+  "title": "Optimize/pencarian oss",
+  "mergedAt": "2026-03-13",
+  "headRefName": "optimize/pencarian-oss",
+  "sha": "d1b71815f71e2117f359e36c2a96129e94bb3a89",
+  "files": [
+   "app/Http/Resources/Gateway/OSS/ProyekResource.php",
+   "app/Http/Resources/PengawasanPerizinanBerusaha/PencarianPerizinanBerusaha/ProyekResource.php",
+   "app/Services/KapalPerikananService.php"
+  ],
+  "body": "- feat: Introduce ProyekResource API resources and KapalPerikananService for handling project and fishery vessel data.\n- Merge pull request #4841 from setditjen-psdkp/issue/bap-wasrisk"
+ },
+ {
+  "number": 4868,
+  "title": "feat: Introduce ProyekResource API resources and KapalPerikananService for handling project and fishery vessel data.",
+  "mergedAt": "2026-03-13",
+  "headRefName": "optimize/pencarian-oss",
+  "sha": "36445615bfadf370c722ade06a99259f556bb453",
+  "files": [
+   "app/Http/Resources/Gateway/OSS/ProyekResource.php",
+   "app/Http/Resources/PengawasanPerizinanBerusaha/PencarianPerizinanBerusaha/ProyekResource.php",
+   "app/Services/KapalPerikananService.php"
+  ],
+  "body": "- feat: Introduce ProyekResource API resources and KapalPerikananService for handling project and fishery vessel data."
+ },
+ {
+  "number": 4869,
+  "title": "fix: remove casting tanggal",
+  "mergedAt": "2026-03-13",
+  "headRefName": "fitur/master_data",
+  "sha": "dca173c6d01e26d801fc5b294f1affa694eb211f",
+  "files": [
+   "Modules/Gateway/Entities/OSS/PerizinanProyek.php"
+  ],
+  "body": "- fix: remove casting tanggal"
+ },
+ {
+  "number": 4870,
+  "title": "fix: remove casting tanggal",
+  "mergedAt": "2026-03-13",
+  "headRefName": "optimize/pencarian-oss",
+  "sha": "382842e9c943317ed4e13035cae3049dd475fa19",
+  "files": [],
+  "body": "- fix: remove casting tanggal"
+ },
+ {
+  "number": 4871,
+  "title": "Fitur/master data: refactor oss pencarian berusaha",
+  "mergedAt": "2026-03-13",
+  "headRefName": "fitur/master_data",
+  "sha": "63c98937ae96cca3c8860044ceaf54f8b57be76a",
+  "files": [
+   "Modules/Gateway/Transformers/OSS/PerizinanBerusahaKapal.php",
+   "app/Imports/ObjekPengawasanImport.php"
+  ],
+  "body": "- Merge branch 'internal' into fitur/master_data\n- fix: refactor oss terlewat\n- fix: refactor oss yg terlewat"
+ },
+ {
+  "number": 4874,
+  "title": "Refactor/oss",
+  "mergedAt": "2026-03-13",
+  "headRefName": "refactor/oss",
+  "sha": "291d8851327a22f51d6eb42c6dbf1aeca7b1ba4b",
+  "files": [
+   "Modules/Gateway/Entities/OSS/PerizinanProyek.php",
+   "Modules/Gateway/Http/Controllers/PencarianPerizinanBerusahaController.php",
+   "Modules/Gateway/Services/OSS/PencarianPerizinanBerusahaService.php",
+   "Modules/Gateway/Transformers/OSS/PerizinanBerusahaKapal.php",
+   "Modules/LaporanKegiatanUsaha/Http/Controllers/AuthLkuController.php",
+   "Modules/LaporanKegiatanUsaha/Services/AuthLkuService.php",
+   "Modules/LaporanKegiatanUsaha/Services/PelaporanService.php",
+   "app/Http/Library/StringHelper.php",
+   "app/Http/Resources/PengawasanPerizinanBerusaha/InspeksiLapangan/InspeksiLapanganDenganPenanggungJawabResource.php",
+   "app/Imports/ObjekPengawasanImport.php",
+   "app/Jobs/Gateway/OSS/SimpanDataLangsungOSS.php",
+   "app/Jobs/Gateway/OSS/SimpanDataOSS.php",
+   "app/Jobs/Gateway/OSS/SimpanDataProyek.php",
+   "app/Jobs/PengawasanPerizinanBerusaha/CreateUsulanObjekPengawasan.php",
+   "app/Services/PengawasanPerizinanBerusaha/BeritaAcaraPemeriksaanService.php",
+   "app/Services/PengawasanPerizinanBerusaha/InspeksiLapanganService.php",
+   "app/Services/PengawasanPerizinanBerusaha/ObjekPengawasanService.php",
+   "app/Services/PengawasanPerizinanBerusaha/PertanyaanSelfDeclareService.php",
+   "routes/modul/ppbbr.php"
+  ],
+  "body": "- refactor: simpan proyek\n- fix: casting tanggal\n- refactor: PelaporanService\n- refactor: AuthLkuService\n- refactor: AuthLkuController\n- refactor: PerizinanBerusahaKapal\n- refactor: PertanyaanSelfDeclareService\n- refactor: ObjekPengawasanService\n- refactor: InspeksiLapanganService\n- refactor: BeritaAcaraPemeriksaanService\n- refactor: CreateUsulanObjekPengawasan\n- refactor: SimpanDataOSS\n- refactor: SimpanDataLangsungOSS\n- refactor: ObjekPengawasanImport\n- refactor: inspeksi lapangan service\n- wip: refactor perizinan berusaha"
+ },
+ {
+  "number": 4875,
+  "title": "Refactor/oss: merged from prod",
+  "mergedAt": "2026-03-13",
+  "headRefName": "refactor/oss",
+  "sha": "12ce1e712b3600edee243406fdc236a7a6a5eafd",
+  "files": [],
+  "body": "- refactor: simpan proyek\n- fix: casting tanggal\n- refactor: PelaporanService\n- refactor: AuthLkuService\n- refactor: AuthLkuController\n- refactor: PerizinanBerusahaKapal\n- refactor: PertanyaanSelfDeclareService\n- refactor: ObjekPengawasanService\n- refactor: InspeksiLapanganService\n- refactor: BeritaAcaraPemeriksaanService\n- refactor: CreateUsulanObjekPengawasan\n- refactor: SimpanDataOSS\n- refactor: SimpanDataLangsungOSS\n- refactor: ObjekPengawasanImport\n- refactor: inspeksi lapangan service\n- wip: refactor perizinan berusaha\n- Merge pull request #4868 from setditjen-psdkp/optimize/pencarian-oss"
+ },
+ {
+  "number": 4877,
+  "title": "fix: macro where like",
+  "mergedAt": "2026-03-13",
+  "headRefName": "fitur/master_data",
+  "sha": "868d10b24a43b0936ac6e57961af1abcbe10ded7",
+  "files": [
+   "app/Providers/MacroServiceProvider.php"
+  ],
+  "body": "- fix: macro where like"
+ },
+ {
+  "number": 4878,
+  "title": "Refactor/sinkron pegawai",
+  "mergedAt": "2026-03-13",
+  "headRefName": "refactor/sinkron-pegawai",
+  "sha": "0f2cef5ffbb59e52ddb2b0dc4ec3ed56cf508df7",
+  "files": [
+   "Modules/Gateway/Console/SIMPEG/SinkronPortalPegawaiCommand.php",
+   "Modules/Gateway/Jobs/SIMPEG/SinkronDataPortalPegawai.php",
+   "Modules/Gateway/Jobs/SIMPEG/SinkronDataSimpeg.php",
+   "Modules/Gateway/Services/SIMPEG/PegawaiPortalDataService.php",
+   "Modules/Userman/Jobs/Sync/KEPEGAWAIAN/SyncSimpegJob.php",
+   "app/Console/Kernel.php",
+   "app/Services/UserService.php",
+   "database/seeders/UserManagement/Akun/SetupContactSeeder.php"
+  ],
+  "body": "- feat: sinkron pegawai dari portal data\n- Merge pull request #4874 from setditjen-psdkp/refactor/oss"
+ },
+ {
+  "number": 4879,
+  "title": "feat: sinkron pegawai dari portal data",
+  "mergedAt": "2026-03-13",
+  "headRefName": "refactor/sinkron-pegawai",
+  "sha": "de1dd2c3bfcfcf357dc7218e3a61e5648e3c44cb",
+  "files": [
+   "Modules/Gateway/Console/SIMPEG/SinkronPortalPegawaiCommand.php",
+   "Modules/Gateway/Jobs/SIMPEG/SinkronDataPortalPegawai.php",
+   "Modules/Gateway/Jobs/SIMPEG/SinkronDataSimpeg.php",
+   "Modules/Gateway/Services/SIMPEG/PegawaiPortalDataService.php",
+   "Modules/Userman/Jobs/Sync/KEPEGAWAIAN/SyncSimpegJob.php",
+   "app/Console/Kernel.php",
+   "app/Services/UserService.php",
+   "database/seeders/UserManagement/Akun/SetupContactSeeder.php"
+  ],
+  "body": "- feat: sinkron pegawai dari portal data"
+ },
+ {
+  "number": 4884,
+  "title": "Bug/query exception perizinan service",
+  "mergedAt": "2026-03-15",
+  "headRefName": "bug/QueryException-PerizinanService",
+  "sha": "ae61e3ff67da9d1e4ea4c579daa137d75da094cf",
+  "files": [
+   "Modules/Userman/Transformers/PerizinanOssResource.php"
+  ],
+  "body": "- fix: comment proyek and pelakuUsaha\n- Merge pull request #4879 from setditjen-psdkp/refactor/sinkron-pegawai"
+ },
+ {
+  "number": 4885,
+  "title": "fix: comment proyek and pelakuUsaha",
+  "mergedAt": "2026-03-15",
+  "headRefName": "bug/QueryException-PerizinanService",
+  "sha": "4544babc5b04e7e0ac216b5411383d4c9151cc42",
+  "files": [
+   "Modules/Userman/Transformers/PerizinanOssResource.php"
+  ],
+  "body": "- fix: comment proyek and pelakuUsaha"
+ },
+ {
+  "number": 4886,
+  "title": "Bug/exception generate rekapitulasi eslo harian",
+  "mergedAt": "2026-03-15",
+  "headRefName": "bug/Exception-GenerateRekapitulasiESLOHarian",
+  "sha": "dced73b300b2509359364f822ed9563a7c52d7a8",
+  "files": [
+   "Modules/Gateway/Http/Controllers/ESLOController.php",
+   "Modules/Gateway/Services/ESLO/RekapitulasiService.php",
+   "app/Jobs/Gateway/ESLO/GenerateRekapitulasiESLOHarian.php"
+  ],
+  "body": "- refactor: rekap eslo, trip kapal\n- Merge pull request #4885 from setditjen-psdkp/bug/QueryException-PerizinanService"
+ },
+ {
+  "number": 4887,
+  "title": "refactor: rekap eslo, trip kapal",
+  "mergedAt": "2026-03-15",
+  "headRefName": "bug/Exception-GenerateRekapitulasiESLOHarian",
+  "sha": "3147b912180df0be67a29154ec6781dab5a03158",
+  "files": [
+   "Modules/Gateway/Http/Controllers/ESLOController.php",
+   "Modules/Gateway/Services/ESLO/RekapitulasiService.php",
+   "app/Jobs/Gateway/ESLO/GenerateRekapitulasiESLOHarian.php"
+  ],
+  "body": "- refactor: rekap eslo, trip kapal"
+ },
+ {
+  "number": 4888,
+  "title": "Bug/missing import koordinatcontroller and typo double comma",
+  "mergedAt": "2026-03-15",
+  "headRefName": "bug/missing-import-koordinatcontroller",
+  "sha": "eaaa10e34d2197ba4ba76a3cfea7f8e2a004398b",
+  "files": [
+   "app/Http/Requests/Userman/RBAC/AccessModule/deleteIjinAksesRequest.php"
+  ],
+  "body": "- fix: double comma in deleteIjinAksesRequest\n- fix: change konversiController to koordinatController"
+ },
+ {
+  "number": 4889,
+  "title": "Bug/missing import koordinatcontroller and typo double comma",
+  "mergedAt": "2026-03-15",
+  "headRefName": "bug/missing-import-koordinatcontroller",
+  "sha": "8fc625c9822ee808b95d3b2229d982b4e385e63e",
+  "files": [
+   "app/Http/Requests/Userman/RBAC/AccessModule/deleteIjinAksesRequest.php",
+   "routes/api.php"
+  ],
+  "body": "- fix: double comma in deleteIjinAksesRequest\n- fix: change konversiController to koordinatController"
+ },
+ {
+  "number": 4893,
+  "title": "Issue/rate limit",
+  "mergedAt": "2026-03-16",
+  "headRefName": "issue/rate-limit",
+  "sha": "8392c180612da2b68237bde0b95e7fb2211d2457",
+  "files": [
+   "app/Providers/RouteServiceProvider.php",
+   "generate_tree.ps1"
+  ],
+  "body": "- fix: issue rate limit\n- Merge pull request #4889 from setditjen-psdkp/bug/missing-import-koordinatcontroller\n- Merge pull request #4887 from setditjen-psdkp/bug/Exception-GenerateRekapitulasiESLOHarian"
+ },
+ {
+  "number": 4894,
+  "title": "fix: issue rate limit",
+  "mergedAt": "2026-03-16",
+  "headRefName": "issue/rate-limit",
+  "sha": "a0d5af12dbfb65eaee76d60e62d0fde93eb12f12",
+  "files": [
+   "app/Providers/RouteServiceProvider.php",
+   "generate_tree.ps1"
+  ],
+  "body": "- fix: issue rate limit"
+ },
+ {
+  "number": 4895,
+  "title": "fix: add stkl column",
+  "mergedAt": "2026-03-16",
+  "headRefName": "issue/export-hasil-inspeksi",
+  "sha": "fcad4b7a80efce8861ff45defb25a72fc58ca722",
+  "files": [
+   "app/Exports/PengawasanPerizinanBerusaha/HasilInspeksi/BahanVerifikasiPengawasanExport.php"
+  ],
+  "body": "- fix: add stkl column"
+ },
+ {
+  "number": 4896,
+  "title": "fix: add stkl column",
+  "mergedAt": "2026-03-16",
+  "headRefName": "issue/export-hasil-inspeksi",
+  "sha": "f625a4cf3e75e77743b109f3a2b6acc7e1167fc5",
+  "files": [
+   "app/Exports/PengawasanPerizinanBerusaha/HasilInspeksi/BahanVerifikasiPengawasanExport.php"
+  ],
+  "body": "- fix: add stkl column"
+ },
+ {
+  "number": 4897,
+  "title": "Issue/bentrok role operator pengawas",
+  "mergedAt": "2026-03-16",
+  "headRefName": "issue/bentrok-role-operator-pengawas",
+  "sha": "d362df14b5a20e8772dd37af982bc0f2a753750a",
+  "files": [
+   "app/Services/PengawasanPerizinanBerusaha/BeritaAcaraPemeriksaanService.php",
+   "app/Services/PengawasanPerizinanBerusaha/DokumenHasilInspeksiService.php",
+   "app/Services/PengawasanPerizinanBerusaha/HasilInspeksiLapanganService.php",
+   "app/Services/PengawasanPerizinanBerusaha/InspeksiLapanganService.php",
+   "app/Services/PengawasanPerizinanBerusaha/ObjekPengawasanService.php",
+   "app/Services/PengawasanPerizinanBerusaha/PenjadwalanService.php",
+   "app/Services/PengawasanPerizinanBerusaha/PertanyaanKepatuhanTeknisService.php",
+   "app/Services/PengawasanPerizinanBerusaha/PertanyaanPbUmkuService.php",
+   "app/Services/PengawasanPerizinanBerusaha/PertanyaanSelfDeclareService.php",
+   "app/Services/PengawasanPerizinanBerusaha/RiwayatPelakuUsahaService.php"
+  ],
+  "body": "- fix: operator upt yg memiliki role pengawas perikanan dapat melihat penjadwalan, inspeksi dan hasil inspeksi\n- fix: rapihkan namespace\n- fix: perbaiki validasi ppbbr\n- Merge pull request #4896 from setditjen-psdkp/issue/export-hasil-inspeksi\n- Merge pull request #4894 from setditjen-psdkp/issue/rate-limit"
+ },
+ {
+  "number": 4898,
+  "title": "fix: error explode in whatsappservice",
+  "mergedAt": "2026-03-16",
+  "headRefName": "bug/TypeError-Whatsappservice",
+  "sha": "60a4ad7a21661da3f257c336340d02a9d4b7b72c",
+  "files": [
+   "app/Services/Gateway/WhatsappService.php"
+  ],
+  "body": "- fix: error explode in whatsappservice"
+ },
+ {
+  "number": 4899,
+  "title": "fix: error explode in whatsappservice",
+  "mergedAt": "2026-03-16",
+  "headRefName": "bug/TypeError-Whatsappservice",
+  "sha": "7b25e887fcbd1257a0c11e59fcc0b2bd805c03d2",
+  "files": [
+   "app/Services/Gateway/WhatsappService.php"
+  ],
+  "body": "- fix: error explode in whatsappservice"
+ },
+ {
+  "number": 4900,
+  "title": "fix: filter penjadwalan, inspeksi dan hasil inspeksi",
+  "mergedAt": "2026-03-17",
+  "headRefName": "issue/bentrok-role-operator-pengawas",
+  "sha": "e3db0642ecd8f7fd9a51f09dc78c5948370e6a5a",
+  "files": [
+   "app/Services/PengawasanPerizinanBerusaha/HasilInspeksiLapanganService.php",
+   "app/Services/PengawasanPerizinanBerusaha/InspeksiLapanganService.php",
+   "app/Services/PengawasanPerizinanBerusaha/PenjadwalanService.php"
+  ],
+  "body": "- fix: filter penjadwalan, inspeksi dan hasil inspeksi"
+ },
+ {
+  "number": 4903,
+  "title": "fix: role filter",
+  "mergedAt": "2026-03-17",
+  "headRefName": "issue/bentrok-role-operator-pengawas",
+  "sha": "9d29f03fd95e5d03abce378ae68c54dae4ba58c5",
+  "files": [
+   "app/Services/PengawasanPerizinanBerusaha/HasilInspeksiLapanganService.php",
+   "app/Services/PengawasanPerizinanBerusaha/InspeksiLapanganService.php",
+   "app/Services/PengawasanPerizinanBerusaha/PenjadwalanService.php"
+  ],
+  "body": "- fix: role filter"
+ },
+ {
+  "number": 4904,
+  "title": "fix: filter",
+  "mergedAt": "2026-03-17",
+  "headRefName": "issue/bentrok-role-operator-pengawas",
+  "sha": "09844559205d97b0fb21fee0579bece193cb5a08",
+  "files": [
+   "app/Services/PengawasanPerizinanBerusaha/PenjadwalanService.php"
+  ],
+  "body": "- fix: filter"
+ },
+ {
+  "number": 4905,
+  "title": "fix: role filter",
+  "mergedAt": "2026-03-17",
+  "headRefName": "issue/bentrok-role-operator-pengawas",
+  "sha": "8b16040cfd0308d62bd0cdce22adb3848ddbe493",
+  "files": [
+   "app/Services/PengawasanPerizinanBerusaha/HasilInspeksiLapanganService.php",
+   "app/Services/PengawasanPerizinanBerusaha/InspeksiLapanganService.php",
+   "app/Services/PengawasanPerizinanBerusaha/PenjadwalanService.php"
+  ],
+  "body": "- fix: role filter"
+ },
+ {
+  "number": 4906,
+  "title": "fix: improvement role filter",
+  "mergedAt": "2026-03-17",
+  "headRefName": "issue/bentrok-role-operator-pengawas",
+  "sha": "c9971981f15152c01cb672f03205063a04f5614b",
+  "files": [
+   "app/Services/PengawasanPerizinanBerusaha/HasilInspeksiLapanganService.php",
+   "app/Services/PengawasanPerizinanBerusaha/InspeksiLapanganService.php",
+   "app/Services/PengawasanPerizinanBerusaha/PenjadwalanService.php"
+  ],
+  "body": "- fix: improvement role filter"
+ },
+ {
+  "number": 4907,
+  "title": "Upgrade/api sip 11",
+  "mergedAt": "2026-03-17",
+  "headRefName": "upgrade/api-sip-11",
+  "sha": "18ee30d943cbb4feaa7bd1cfdf05a0364e5d3504",
+  "files": [
+   ".env.example",
+   ".gitignore",
+   "CHANGELOG.md",
+   "Modules/Gateway/Jobs/Kejaksaan/SinkronDataInfoPerkaraPerSatker.php",
+   "Modules/Gateway/Services/MahkamahKonstitusi/MahkamahKonstitusiService.php",
+   "README.md",
+   "app/Console/Kernel.php",
+   "app/Exceptions/Handler.php",
+   "app/Http/Kernel.php",
+   "app/Services/Gateway/NotificationOtpService.php",
+   "app/Services/Master/PelabuhanService.php",
+   "app/Services/Master/UnitDinasService.php",
+   "artisan",
+   "bootstrap/app.php",
+   "composer.json",
+   "composer_backup.json",
+   "docs/arsitektur_teknis.md",
+   "docs/daftar_komponen_app.md",
+   "docs/daftar_komponen_modules.md",
+   "docs/database_dan_seeder.md",
+   "docs/deployment.md",
+   "docs/modular_architecture.md",
+   "docs/struktur.md",
+   "public/index.php",
+   "routes/console.php"
+  ],
+  "body": "- Merge branch 'internal' into upgrade/api-sip-11\n- fix: docs\n- fix: docs\n- wip: update docs\n- feat: update readme\n- fix: optional parameter\n- feat: add change log\n- feat: update env example\n- fix: upgrade laravel 11\n- sync: master\n- error: terkena error dr waf cloudflare\n- fix: resolve Carbon strict typing issues in NotificationOtpService\n- upgrade: middleware, schedule, exception handler\n- upgrade: fw and package"
+ },
+ {
+  "number": 4908,
+  "title": "Refactor/notification: add notifiable and delay",
+  "mergedAt": "2026-03-17",
+  "headRefName": "refactor/notification",
+  "sha": "a0c60f6c3783fdbf3bdd0246b5640fc60ec64fd2",
+  "files": [
+   "Modules/AgendaPimpinan/Jobs/NotifikasiAgendaPegawai.php",
+   "Modules/AgendaPimpinan/Jobs/NotifikasiAgendaPimpinan.php",
+   "Modules/Gateway/Jobs/DEPHUB/SinkronKapal.php",
+   "Modules/HaloPSDKP/Jobs/NotifikasiPertanyaanBaruKeAgen.php",
+   "Modules/HaloPSDKP/Jobs/NotifikasiPertanyaanDijawab.php",
+   "Modules/LaporanKegiatanUsaha/Jobs/PelaporanLKU/KonfirmasiPendaftaran.php",
+   "Modules/LaporanKegiatanUsaha/Jobs/PelaporanLKU/NotifikasiKirimLKU.php",
+   "Modules/LaporanKegiatanUsaha/Jobs/PelaporanLKU/NotifikasiKirimVerifikasiLKU.php",
+   "Modules/LaporanKegiatanUsaha/Jobs/PelaporanLKU/OtpPendaftaranPelakuUsaha.php",
+   "Modules/LaporanKegiatanUsaha/Jobs/PelaporanLKU/ReminderPenyampaianLKU.php",
+   "Modules/PengawasanPerizinanBerusaha/Jobs/SDK/NotifikasiDisetujuiSupervisi.php",
+   "Modules/PengawasanPerizinanBerusaha/Jobs/SDK/NotifikasiPenjadwalan.php",
+   "Modules/PengawasanPerizinanBerusaha/Jobs/SDK/NotifikasiPermohonanSupervisi.php",
+   "Modules/PengawasanPerizinanBerusaha/Jobs/SDK/NotifikasiRevisiSupervisi.php",
+   "app/Http/Library/EmailNotifications.php",
+   "app/Http/Library/WaNotifications.php",
+   "app/Jobs/PengawasanPerizinanBerusaha/NotifikasiInputPengawas.php",
+   "app/Jobs/PengawasanPerizinanBerusaha/NotifikasiPersetujuanPenjadwalanMandiri.php",
+   "app/Jobs/PengawasanPerizinanBerusaha/NotifikasiPersetujuanPenjadwalanOSS.php",
+   "app/Jobs/PengawasanPerizinanBerusaha/NotifikasiSahkanDokumenPengawasan.php",
+   "app/Jobs/PengawasanPerizinanBerusaha/NotifikasiVerifikasiDokumenHasilInspeksi.php",
+   "app/Jobs/PengawasanPerizinanBerusaha/NotifikasiVerifikasiDokumenPengawasan.php",
+   "app/Jobs/Profile/JobUpdateContact.php",
+   "app/Jobs/ResetPassword/JobResetPassword.php",
+   "app/Services/Gateway/WhatsappService.php"
+  ],
+  "body": "- Merge branch 'upgrade/api-sip-11' of https://github.com/setditjen-psdkp/api-sip into refactor/notification\n- refactor: notification"
+ },
+ {
+  "number": 4909,
+  "title": "fix: issue psr-4 dan update docs",
+  "mergedAt": "2026-03-17",
+  "headRefName": "upgrade/api-sip-11",
+  "sha": "5ebf0fcfe4321d0a484e12d7fce2e063f94ae4a9",
+  "files": [
+   "Modules/Userman/Entities/DJPT/KapalDJPT.php",
+   "app/Http/Library/Conversion/KonversiHelper.php",
+   "composer.json",
+   "docs/arsitektur_teknis.md"
+  ],
+  "body": "- fix: issue psr-4 dan update docs"
+ },
+ {
+  "number": 4910,
+  "title": "update: docs",
+  "mergedAt": "2026-03-17",
+  "headRefName": "upgrade/api-sip-11",
+  "sha": "001fd54fe82af9733ff8bafb27e6dab1b63c0a67",
+  "files": [
+   "docs/arsitektur_teknis.md"
+  ],
+  "body": "- update: docs"
+ },
+ {
+  "number": 4911,
+  "title": "fix: filter operator upt dan pengawas",
+  "mergedAt": "2026-03-17",
+  "headRefName": "issue/bentrok-role-operator-pengawas",
+  "sha": "22ce03b93b7455318fcddfc28274429f8065bdd8",
+  "files": [
+   "app/Services/PengawasanPerizinanBerusaha/PenjadwalanService.php"
+  ],
+  "body": "- fix: filter operator upt dan pengawas"
+ },
+ {
+  "number": 4912,
+  "title": "fix: filter penjadwalan, inspeksi dan hasil inspeksi untuk operator UPT",
+  "mergedAt": "2026-03-18",
+  "headRefName": "issue/bentrok-role-operator-pengawas",
+  "sha": "468aa94c811e1223b0d1bb21a83a5e06c228de32",
+  "files": [
+   "app/Services/PengawasanPerizinanBerusaha/HasilInspeksiLapanganService.php",
+   "app/Services/PengawasanPerizinanBerusaha/InspeksiLapanganService.php",
+   "app/Services/PengawasanPerizinanBerusaha/PenjadwalanService.php"
+  ],
+  "body": "- wip: filter penjadwalan, inspeksi dan hasil inspeksi"
+ },
+ {
+  "number": 4914,
+  "title": "feat: nonaktifin notif halopsdkp",
+  "mergedAt": "2026-03-20",
+  "headRefName": "issue/matiin-notif-halopsdkp",
+  "sha": "f537cd33adceda0b79cbe188e29204934d6e1602",
+  "files": [
+   "app/Console/Kernel.php"
+  ],
+  "body": "- feat: iya siap"
+ },
+ {
+  "number": 4918,
+  "title": "Issue/bentrok role operator pengawas",
+  "mergedAt": "2026-03-29",
+  "headRefName": "issue/bentrok-role-operator-pengawas",
+  "sha": "33ef667694cfbdff68345e4401bb9a904103ce4d",
+  "files": [
+   "app/Services/PengawasanPerizinanBerusaha/BeritaAcaraPemeriksaanService.php",
+   "app/Services/PengawasanPerizinanBerusaha/DokumenHasilInspeksiService.php",
+   "app/Services/PengawasanPerizinanBerusaha/HasilInspeksiLapanganService.php",
+   "app/Services/PengawasanPerizinanBerusaha/InspeksiLapanganService.php",
+   "app/Services/PengawasanPerizinanBerusaha/ObjekPengawasanService.php",
+   "app/Services/PengawasanPerizinanBerusaha/PenjadwalanService.php",
+   "app/Services/PengawasanPerizinanBerusaha/PertanyaanKepatuhanTeknisService.php",
+   "app/Services/PengawasanPerizinanBerusaha/PertanyaanPbUmkuService.php",
+   "app/Services/PengawasanPerizinanBerusaha/PertanyaanSelfDeclareService.php",
+   "app/Services/PengawasanPerizinanBerusaha/RiwayatPelakuUsahaService.php"
+  ],
+  "body": "- wip: filter penjadwalan, inspeksi dan hasil inspeksi\n- fix: filter operator upt dan pengawas\n- fix: improvement role filter\n- fix: role filter\n- fix: filter\n- fix: role filter\n- fix: filter penjadwalan, inspeksi dan hasil inspeksi\n- fix: operator upt yg memiliki role pengawas perikanan dapat melihat penjadwalan, inspeksi dan hasil inspeksi\n- fix: rapihkan namespace\n- fix: perbaiki validasi ppbbr"
+ },
+ {
+  "number": "WIP-4921",
+  "title": "Issue/bap wasrisk: bentrok admin (dikerjakan, di-merge #4921 2026-04-02)",
+  "mergedAt": "2026-03-31",
+  "headRefName": "issue/bap-wasrisk",
+  "sha": "67a52ef9b833b8beacb8deb516c2bc850e0e7e64",
+  "files": [
+   "app/Enums/PengawasanPerizinanBerusaha/StatusLaporanEnum.php",
+   "app/Http/Controllers/API/V1/PengawasanPerizinanBerusaha/HasilInspeksiLapanganController.php",
+   "app/Http/Controllers/API/V1/PengawasanPerizinanBerusaha/LaporanHasilInspeksiController.php",
+   "app/Http/Library/WaNotifications.php",
+   "app/Http/Requests/PengawasanPerizinanBerusaha/HasilInspeksiLapangan/RequestRevisionRequest.php",
+   "app/Http/Requests/PengawasanPerizinanBerusaha/HasilInspeksiLapangan/UploadLaporanRequest.php",
+   "app/Http/Requests/PengawasanPerizinanBerusaha/HasilInspeksiLapangan/VerifyLaporanRequest.php",
+   "app/Http/Resources/PengawasanPerizinanBerusaha/HasilInspeksiLapangan/HasilInspeksiLapanganResource.php",
+   "app/Http/Resources/PengawasanPerizinanBerusaha/HasilInspeksiLapangan/VerifikasiLaporanResource.php",
+   "app/Jobs/PengawasanPerizinanBerusaha/ProcessSendWaLaporanInspeksi.php",
+   "app/Models/PengawasanPerizinanBerusaha/LaporanPengawasan/LaporanHasilInspeksi.php",
+   "app/Services/PengawasanPerizinanBerusaha/HasilInspeksiLapanganService.php",
+   "app/Services/PengawasanPerizinanBerusaha/InspeksiLapanganService.php",
+   "app/Services/PengawasanPerizinanBerusaha/LaporanHasilInspeksiService.php",
+   "app/Services/PengawasanPerizinanBerusaha/PenjadwalanService.php",
+   "config/ppbbr.php",
+   "database/migrations/2026_03_10_142121_crate_ppbbr_laporan_hasil_inspeksi_table.php",
+   "routes/modul/ppbbr.php"
+  ],
+  "body": "- fix: filter admin\n- fix: route\n- wip: laporan dan verifikasi hasil inspeksi"
+ },
+ {
+  "number": "WIP-4961",
+  "title": "Upgrade/api sip 11 (dikerjakan, di-merge #4961 2026-04-14)",
+  "mergedAt": "2026-03-25",
+  "headRefName": "upgrade/api-sip-11",
+  "sha": "57f7e72a21e7dc3b9ec66ab27677ae24a40357c6",
+  "files": [
+   "CHANGELOG.md",
+   "Dockerfile",
+   "Modules/DashboardPimpinan/Http/Controllers/KeragaanPSDKPController.php",
+   "Modules/DashboardPimpinan/Routes/api.php",
+   "Modules/DashboardPimpinan/Transformers/KeragaanPSDKP/KeragaanPSDKPResource.php",
+   "Modules/Userman/Entities/Master/DJPT/KapalDJPT.php",
+   "Modules/Userman/Entities/Master/DJPT/KapalDaerahDJPT.php",
+   "Modules/Userman/Imports/DjptKapalDaerahImport.php",
+   "Modules/Userman/Services/Master/DJPTService.php",
+   "README.md",
+   "app/Console/Kernel.php",
+   "app/Exceptions/Handler.php",
+   "app/Http/Kernel.php",
+   "app/Http/Library/ApiHelpers.php",
+   "app/Http/Library/Conversion/KonversiHelper.php",
+   "app/Services/Master/PelabuhanService.php",
+   "app/Services/Master/UnitDinasService.php",
+   "app/Services/OperasiPengawasanDiLaut/PelaksanaanOperasiService.php",
+   "artisan",
+   "bootstrap/app.php",
+   "composer.json",
+   "config/database.php",
+   "config/master.php",
+   "diff_files.txt",
+   "docker-compose.yml",
+   "docker/mysql/init/create_databases.sql",
+   "docker/nginx/conf.d/app.conf",
+   "docker/php/frankenphp.ini",
+   "docker/php/local.ini",
+   "docker/supervisor/worker.conf",
+   "docs/arsitektur_teknis.md",
+   "docs/cleanup_history.md",
+   "docs/daftar_komponen_app.md",
+   "docs/daftar_komponen_modules.md",
+   "docs/database_dan_seeder.md",
+   "docs/deployment.md",
+   "docs/docker.md",
+   "docs/modular_architecture.md",
+   "docs/struktur.md",
+   "internal_files.txt",
+   "legitimate_new_files.txt",
+   "new_files_in_polluted.txt",
+   "polluted_new_files.txt",
+   "public/frankenphp-worker.php",
+   "public/index.php",
+   "routes/console.php"
+  ],
+  "body": "- fix: guzzle\n- fix: not comply psr4\n- chore: remove temporary audit files\n- fix: restore missing infrastructure and configuration files\n- docs: add cryptojs encryption package to readme\n- docs: audit packages and add deprecation notes in readme\n- fix: resolve php deprecation warnings for implicit nullable types\n- docs: add cleanup history and link all documentation in readme\n- docs: comprehensive changelog update from 2026-01-01 with clickable links\n- docs: finalize clickable links for all historical entries in changelog\n- docs: reformat changelog to Keep a Changelog standard\n- docs: finalize readme with api docs link and routes command\n- docs: update readme for laravel 11 and doc links\n- docs: update changelog for laravel 11 upgrade\n- upgrade: api sip 11 (clean from internal pollution)"
+ }
+]

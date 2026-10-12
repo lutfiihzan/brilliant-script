@@ -1,0 +1,369 @@
+{
+  "exclude": [],
+  "modules": [
+    {
+      "title": "Pembaharuan Webservice Modul Master Data - Sinkronisasi KKPRL",
+      "intro": "Pada kegiatan ini Tenaga Teknis Implementasi Logika Sistem memperbaharui webservice sinkronisasi perizinan KKPRL pada Modul Master Data, sebagai berikut:",
+      "activities": [
+        {
+          "subtitle": "Implementasi sinkronisasi KKPRL berantai multi sumber",
+          "deskripsi": "Telah diimplementasikan sinkronisasi data perizinan KKPRL secara berantai dari berbagai sumber (Portal, ESEAMAP, OSS, Plus Code, dan input manual) dalam satu alur proses, termasuk penyimpanan data GeoJSON hasil sinkronisasi.",
+          "utama": [
+            "Alur sinkronisasi berantai seluruh sumber KKPRL.",
+            "Script ESEAMAP untuk pengambilan data KKPRL.",
+            "Perbaikan script SKP."
+          ],
+          "manfaat": [
+            "Seluruh data KKPRL dapat disinkronkan dalam satu proses."
+          ],
+          "prs": [
+            4547
+          ]
+        },
+        {
+          "subtitle": "Memperbaharui job sinkronisasi dan laporan progres",
+          "deskripsi": "Telah diperbarui job sinkronisasi KKPRL agar setiap tahap mengirimkan event progres dan tetap tercatat ketika salah satu tahap gagal.",
+          "utama": [
+            "Pembaruan job sinkronisasi dan perbaikan class job.",
+            "Pengiriman event progres untuk 5 tahap job.",
+            "Penanganan progres tahap yang gagal."
+          ],
+          "manfaat": [
+            "Proses sinkronisasi dapat dipantau secara realtime oleh pengguna."
+          ],
+          "prs": [
+            4548,
+            4551,
+            4555,
+            4557
+          ]
+        },
+        {
+          "subtitle": "Memperbaharui sumber data Plus Code, manual, dan ESEAMAP",
+          "deskripsi": "Telah diperbaiki pengambilan data dari sumber Plus Code, input manual, dan ESEAMAP pada sinkronisasi KKPRL.",
+          "utama": [
+            "Perbaikan sumber Plus Code dan input manual.",
+            "Penyesuaian sinkronisasi hingga tahap ESEAMAP.",
+            "Perbaikan typo wilayah menjadi manual dan pembaruan gitignore."
+          ],
+          "manfaat": [
+            "Data dari setiap sumber tersimpan dengan label sumber yang benar."
+          ],
+          "prs": [
+            4550,
+            4552,
+            4553,
+            4554
+          ]
+        },
+        {
+          "subtitle": "Penyesuaian label tahapan sinkronisasi",
+          "deskripsi": "Telah disesuaikan label tahapan sinkronisasi KKPRL yang ditampilkan kepada pengguna.",
+          "utama": [
+            "Perbaikan label tahapan sinkronisasi."
+          ],
+          "manfaat": [
+            "Pengguna memahami tahap sinkronisasi yang sedang berjalan."
+          ],
+          "prs": [
+            4558
+          ]
+        },
+        {
+          "subtitle": "Menyusun status kelengkapan dokumen, GeoJSON, dan koordinat",
+          "deskripsi": "Telah disusun pengecekan status kelengkapan data perizinan KKPRL (dokumen, GeoJSON, dan koordinat) pada setiap sumber sinkronisasi menggunakan state manager dinamis.",
+          "utama": [
+            "Penambahan kolom status_kelengkapan.",
+            "Pengecekan kelengkapan pada data ESEAMAP, OSS, dan perizinan.",
+            "State manager dinamis untuk status kelengkapan."
+          ],
+          "manfaat": [
+            "Data perizinan yang belum lengkap teridentifikasi otomatis."
+          ],
+          "prs": [
+            4549,
+            4559
+          ]
+        },
+        {
+          "subtitle": "Perbaikan resource dan status kelengkapan",
+          "deskripsi": "Telah diperbaiki resource perizinan KKPRL serta penanganan status kelengkapan yang bernilai null.",
+          "utama": [
+            "Perbaikan resource perizinan.",
+            "Penanganan status null dan penghapusan keterangan tidak ada koordinat."
+          ],
+          "manfaat": [
+            "Status kelengkapan tampil konsisten."
+          ],
+          "prs": [
+            4560,
+            4561
+          ]
+        },
+        {
+          "subtitle": "Menyusun sinkronisasi manual interaktif dan daftar perizinan tidak lengkap",
+          "deskripsi": "Telah disusun sinkronisasi manual interaktif, unggah manual dengan validasi unggah ulang, serta daftar perizinan yang belum lengkap.",
+          "utama": [
+            "Sinkronisasi manual interaktif dengan pembaruan status kelengkapan.",
+            "Validasi unggah ulang dokumen.",
+            "Endpoint daftar perizinan yang belum lengkap."
+          ],
+          "manfaat": [
+            "Operator dapat melengkapi data tanpa menunggu sinkronisasi terjadwal."
+          ],
+          "prs": [
+            4565
+          ]
+        },
+        {
+          "subtitle": "Menyusun unggah banyak file PDF",
+          "deskripsi": "Telah ditambahkan dukungan unggah banyak file sekaligus untuk dokumen bertipe PDF.",
+          "utama": [
+            "Unggah multiple file untuk tipe PDF."
+          ],
+          "manfaat": [
+            "Dokumen pendukung dapat diunggah sekaligus."
+          ],
+          "prs": [
+            4572
+          ]
+        },
+        {
+          "subtitle": "Penyederhanaan resource dan sorting daftar perizinan",
+          "deskripsi": "Telah disederhanakan resource daftar utama perizinan KKPRL, sorting kolom, serta ditambahkan informasi jenis usaha.",
+          "utama": [
+            "Pemisahan detail dari resource utama dan pembaruan resource detail.",
+            "Penyederhanaan sorting kolom daftar utama.",
+            "Penambahan jenis usaha pada resource utama."
+          ],
+          "manfaat": [
+            "Daftar perizinan dimuat lebih cepat dan informatif."
+          ],
+          "prs": [
+            4573,
+            4574,
+            4575,
+            4578
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Penyusunan Webservice Modul Master Data - Master Spasial",
+      "intro": "Pada kegiatan ini Tenaga Teknis Implementasi Logika Sistem menyusun webservice master spasial pada Modul Master Data, sebagai berikut:",
+      "activities": [
+        {
+          "subtitle": "Menyusun input koordinat dinamis (DD/DMS/DM)",
+          "deskripsi": "Telah disusun webservice master spasial dengan input koordinat dinamis dalam format DD, DMS, dan DM beserta validasinya, serta penyimpanan data spasial dari PDF.",
+          "utama": [
+            "Input koordinat format DD, DMS, dan DM.",
+            "Validasi koordinat.",
+            "Simpan data spasial dari PDF dan hapus data spasial."
+          ],
+          "manfaat": [
+            "Data spasial dapat diinput dari format koordinat yang umum digunakan."
+          ],
+          "prs": [
+            4566
+          ]
+        },
+        {
+          "subtitle": "Menyusun unggah Excel dan template data spasial",
+          "deskripsi": "Telah disusun unggah data spasial melalui Excel beserta template Excel yang dapat diunduh pengguna.",
+          "utama": [
+            "Perbaikan unggah Excel.",
+            "Penambahan template Excel."
+          ],
+          "manfaat": [
+            "Data spasial dalam jumlah banyak dapat diinput sekaligus."
+          ],
+          "prs": [
+            4567,
+            4582
+          ]
+        },
+        {
+          "subtitle": "Memperbaharui atribut dan resource data spasial",
+          "deskripsi": "Telah ditambahkan atribut sumber, tipe input, dan tipe spasial pada detail spasial serta penyesuaian resource GeoJSON.",
+          "utama": [
+            "Penambahan source, input_type, dan spatial_type.",
+            "Perbaikan resource GeoJSON dan pemindahan resource provinsi ke detail.",
+            "Penghapusan aturan editable dan perbaikan typo spatial_name."
+          ],
+          "manfaat": [
+            "Data spasial dapat dibedakan berdasarkan sumber dan tipenya."
+          ],
+          "prs": [
+            4568,
+            4569,
+            4570,
+            4571
+          ]
+        },
+        {
+          "subtitle": "Menyusun tambah, ubah, dan aktivasi spasial beserta peraturan",
+          "deskripsi": "Telah disusun fitur tambah, ubah, dan aktivasi data spasial utama beserta peraturan yang terkait.",
+          "utama": [
+            "Aktivasi dan pembaruan data spasial utama.",
+            "Tambah dan ubah peraturan serta detail spasial.",
+            "Refactor pembuatan data spasial."
+          ],
+          "manfaat": [
+            "Data spasial terhubung dengan dasar hukumnya."
+          ],
+          "prs": [
+            4579
+          ]
+        },
+        {
+          "subtitle": "Memperbaharui detail spasial, sub spasial, dan peraturan",
+          "deskripsi": "Telah dikembangkan lanjutan webservice master spasial, meliputi detail dan sub spasial, kategori serta data peraturan, status aktivasi, auto save input manual, dan unggah GeoJSON/Excel. Pekerjaan ini dikerjakan pada akhir Januari dan di-merge ke branch utama pada awal Februari 2026.",
+          "utama": [
+            "Detail spasial dan sub spasial beserta daftar, filter status, input_type, dan geometry_type.",
+            "Kategori peraturan, tanggal terbit, tahun, dan file peraturan pada data spasial.",
+            "Aktivasi status spasial dan sub spasial.",
+            "Auto save input manual, input koordinat DD, dan input multi geometri.",
+            "Refactor converter dan controller koordinat, serta perbaikan unggah GeoJSON dan Excel.",
+            "Penampilan lokasi kerja dan URL GeoJSON pada detail perizinan KKPRL."
+          ],
+          "manfaat": [
+            "Data spasial dapat dikelola lengkap bersama dasar hukum (peraturan) yang berlaku."
+          ],
+          "prs": [
+            "WIP-4646"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pembaharuan Webservice Modul User Management",
+      "intro": "Pada kegiatan ini Tenaga Teknis Implementasi Logika Sistem memperbaharui webservice Modul User Management, sebagai berikut:",
+      "activities": [
+        {
+          "subtitle": "Menyusun pembaruan permission secara realtime",
+          "deskripsi": "Telah disusun penetapan permission role, kewenangan, dan perizinan per pengguna secara realtime, termasuk perbaikan race condition.",
+          "utama": [
+            "Penetapan permission role, kewenangan, dan perizinan per user secara realtime.",
+            "Perbaikan race condition dan assign seluruh permission.",
+            "Penghapusan event start/end yang tidak diperlukan."
+          ],
+          "manfaat": [
+            "Perubahan hak akses langsung berlaku tanpa login ulang."
+          ],
+          "prs": [
+            4535,
+            4536,
+            4537
+          ]
+        },
+        {
+          "subtitle": "Perbaikan event realtime dan batas pesan Pusher",
+          "deskripsi": "Telah diperbaiki pengiriman event realtime, meliputi batas ukuran konten Pusher, pesan event, dan user id yang hilang.",
+          "utama": [
+            "Penanganan batas ukuran konten Pusher.",
+            "Pembaruan job dan pesan event assign permission.",
+            "Perbaikan user id yang hilang pada notifikasi."
+          ],
+          "manfaat": [
+            "Notifikasi perubahan hak akses terkirim tanpa gagal."
+          ],
+          "prs": [
+            4539,
+            4540,
+            4541
+          ]
+        },
+        {
+          "subtitle": "Optimasi assign permission pada UserService",
+          "deskripsi": "Telah dioptimalkan proses assign permission pengguna, role, dan kewenangan pada UserService.",
+          "utama": [
+            "Penyederhanaan assign permission user, role, dan kewenangan."
+          ],
+          "manfaat": [
+            "Kode pengelolaan hak akses lebih ringkas dan mudah dipelihara."
+          ],
+          "prs": [
+            4542
+          ]
+        },
+        {
+          "subtitle": "Menyimpan daftar permission dalam tabel",
+          "deskripsi": "Telah dipindahkan daftar permission dari file JSON ke tabel database.",
+          "utama": [
+            "Migrasi data permission JSON ke tabel."
+          ],
+          "manfaat": [
+            "Permission lebih mudah dikelola dan dikueri."
+          ],
+          "prs": [
+            4545,
+            4546
+          ]
+        },
+        {
+          "subtitle": "Menyusun unduh file SKP",
+          "deskripsi": "Telah disusun proses sinkronisasi dan unduh file Surat Keterangan Penerbitan (SKP) melalui script Python dan job sinkronisasi.",
+          "utama": [
+            "Job SyncSKPJob dan SKPService untuk sinkronisasi file SKP.",
+            "Script Python untuk mengunduh file SKP."
+          ],
+          "manfaat": [
+            "File SKP tersedia di sistem tanpa unduh manual."
+          ],
+          "prs": [
+            "WIP-4636"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pemeliharaan Sistem dan Keamanan",
+      "intro": "Pada kegiatan ini Tenaga Teknis Implementasi Logika Sistem melakukan pemeliharaan sistem dan keamanan aplikasi, sebagai berikut:",
+      "activities": [
+        {
+          "subtitle": "Implementasi middleware mode on hold",
+          "deskripsi": "Telah diimplementasikan middleware CheckRouteOnHold untuk menonaktifkan sementara route pada modul yang belum siap digunakan.",
+          "utama": [
+            "Middleware CheckRouteOnHold.",
+            "Penerapan pada modul Anev Importir dan Operasi Kapal Pengawas."
+          ],
+          "manfaat": [
+            "Modul yang belum siap tidak dapat diakses pengguna."
+          ],
+          "prs": [
+            4576,
+            4577
+          ]
+        },
+        {
+          "subtitle": "Penerapan mode on hold pada permohonan profil",
+          "deskripsi": "Telah diterapkan mode on hold pada fitur permohonan profil.",
+          "utama": [
+            "Route permohonan profil diberi status on hold."
+          ],
+          "manfaat": [
+            "Mencegah penggunaan fitur sebelum siap."
+          ],
+          "prs": [
+            4580,
+            4581
+          ]
+        },
+        {
+          "subtitle": "Perbaikan sinkronisasi proyek OSS",
+          "deskripsi": "Telah diperbaiki sinkronisasi data proyek OSS dengan penanganan objek bernilai null.",
+          "utama": [
+            "Penanganan objek nullable pada sinkronisasi proyek OSS."
+          ],
+          "manfaat": [
+            "Sinkronisasi proyek OSS tidak gagal karena data kosong."
+          ],
+          "prs": [
+            4563,
+            4564
+          ]
+        }
+      ]
+    }
+  ]
+}

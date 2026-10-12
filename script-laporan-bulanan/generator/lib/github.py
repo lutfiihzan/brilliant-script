@@ -75,9 +75,14 @@ def fetch_prs(repo, author, date_ranges, gh_config=None):
 def load_or_fetch_prs(config, prs_path):
     gh = config.get("github", {})
     if prs_path.exists() and not gh.get("fetch_always", False):
-        return sorted(json.loads(prs_path.read_text(encoding="utf-8")), key=lambda x: x["number"])
+        return sorted(json.loads(prs_path.read_text(encoding="utf-8")), key=lambda x: (isinstance(x["number"], str), str(x["number"])))
     if not gh.get("fetch_if_missing", True) and not gh.get("fetch_always", False):
         return []
+    if gh.get("local_repo_path"):
+        from .local_git import list_merged_prs
+        prs = list_merged_prs(gh["local_repo_path"], gh["date_ranges"])
+        prs_path.write_text(json.dumps(prs, ensure_ascii=False, indent=2), encoding="utf-8")
+        return prs
     prs = fetch_prs(gh["repo"], gh["author"], gh["date_ranges"], gh_config=gh)
     prs_path.write_text(json.dumps(prs, ensure_ascii=False, indent=2), encoding="utf-8")
     return prs
@@ -106,7 +111,11 @@ def load_or_fetch_diffs(config, prs, prs_diff_path):
     gh = config.get("github", {})
     if prs_diff_path.exists() and not gh.get("fetch_always", False):
         return json.loads(prs_diff_path.read_text(encoding="utf-8"))
-    
-    diffs = fetch_diffs(gh["repo"], prs, gh_config=gh)
+
+    if gh.get("local_repo_path"):
+        from .local_git import pr_diff
+        diffs = {str(pr["number"]): pr_diff(gh["local_repo_path"], pr) for pr in prs}
+    else:
+        diffs = fetch_diffs(gh["repo"], prs, gh_config=gh)
     prs_diff_path.write_text(json.dumps(diffs, ensure_ascii=False, indent=2), encoding="utf-8")
     return diffs

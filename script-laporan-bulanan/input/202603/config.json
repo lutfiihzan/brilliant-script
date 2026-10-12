@@ -1,0 +1,51 @@
+{
+  "period": "202603",
+  "bulan": "Maret",
+  "bulan_up": "MARET",
+  "tahun": 2026,
+  "nama": "Lutfi Ihsan",
+  "jabatan": "Tenaga Teknis Implementasi Logika Sistem",
+  "output_filename": "Laporan Bulanan_Lutfi Ihsan - Maret 2026.docx",
+  "detail_docx": "detail_laporan.docx",
+  "detail_txt": "detail_github.txt",
+  "weekly_user_filter": "Lutfi",
+  "github": {
+    "repo": "psdkplabs/api-sip",
+    "author": "lutfiihsan",
+    "date_ranges": [
+      "2026-03-01..2026-03-10",
+      "2026-03-11..2026-03-20",
+      "2026-03-21..2026-03-31"
+    ],
+    "fetch_if_missing": true,
+    "fetch_always": false,
+    "local_repo_path": "C:/Users/DATA-PSDKP/Documents/PSDKP/api-sip"
+  },
+  "tech": {
+    "language": "PHP v8.2",
+    "framework": "Laravel 11",
+    "repo_url": "https://github.com/psdkplabs/api-sip"
+  },
+  "code_snippet": {
+    "title": "Contoh Cuplikan Kode Sumber",
+    "content": ""
+  },
+  "media": {
+    "github_screenshots": [],
+    "server_screenshots": [],
+    "lampiran_screenshots": []
+  },
+  "bab1": {
+    "pencapaian": "Pada bulan Maret 2026, kami telah mencapai sejumlah pencapaian penting. Kami berhasil menyusun webservice Modul Penanganan Pelanggaran untuk penetapan sanksi administrasi, termasuk pengelolaan denda, pencarian pelanggaran, dan relasinya dengan data pengamatan tidak langsung. Pada Modul Master Data, kami memperbaharui pengelolaan MOMI, filter dan pencarian perizinan KKPRL, sinkronisasi NIB dan OSS, serta export korespondensi. Kami juga melakukan optimasi pencarian OSS, sinkronisasi pegawai dari Portal Data, serta perbaikan bentrok role operator dan pengawas pada Modul WasRisk.",
+    "tantangan": "Selama penyusunan, kami juga dihadapkan pada beberapa tantangan teknis, seperti integrasi data dari berbagai sumber eksternal (OSS, Portal Data, dan KKPRL) dengan format yang berbeda, serta pengaturan hak akses untuk pengguna yang memiliki lebih dari satu peran. Namun, kami telah mengambil langkah-langkah yang strategis dan menerapkan solusi yang tepat untuk mengatasi tantangan teknis tersebut."
+  },
+  "bab3": {
+    "kesimpulan_items": [
+      "Modul Penanganan Pelanggaran",
+      "Modul Master Data",
+      "Integrasi OSS dan Portal Data",
+      "Modul Pengawasan Perizinan Berusaha (WasRisk)",
+      "Pemeliharaan Sistem dan Perbaikan Bug"
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "period": "202601",
+  "bulan": "Januari",
+  "bulan_up": "JANUARI",
+  "tahun": 2026,
+  "nama": "Lutfi Ihsan",
+  "jabatan": "Tenaga Teknis Implementasi Logika Sistem",
+  "output_filename": "Laporan Bulanan_Lutfi Ihsan - Januari 2026.docx",
+  "detail_docx": "detail_laporan.docx",
+  "detail_txt": "detail_github.txt",
+  "weekly_user_filter": "Lutfi",
+  "github": {
+    "repo": "psdkplabs/api-sip",
+    "author": "lutfiihsan",
+    "date_ranges": [
+      "2026-01-01..2026-01-10",
+      "2026-01-11..2026-01-20",
+      "2026-01-21..2026-01-31"
+    ],
+    "fetch_if_missing": true,
+    "fetch_always": false,
+    "local_repo_path": "C:/Users/DATA-PSDKP/Documents/PSDKP/api-sip"
+  },
+  "tech": {
+    "language": "PHP v8.2",
+    "framework": "Laravel 11",
+    "repo_url": "https://github.com/psdkplabs/api-sip"
+  },
+  "code_snippet": {
+    "title": "Contoh Cuplikan Kode Sumber",
+    "content": ""
+  },
+  "media": {
+    "github_screenshots": [],
+    "server_screenshots": [],
+    "lampiran_screenshots": []
+  },
+  "bab1": {
+    "pencapaian": "Pada bulan Januari 2026, kami telah mencapai sejumlah pencapaian penting. Kami berhasil mengimplementasikan sinkronisasi data perizinan KKPRL secara berantai dari berbagai sumber beserta pengecekan kelengkapan dokumen, GeoJSON, dan koordinat. Kami juga menyusun webservice master spasial dengan input koordinat dinamis, mengoptimalkan pembaruan permission pengguna secara realtime, serta menerapkan mode on hold untuk modul yang belum siap digunakan.",
+    "tantangan": "Selama penyusunan, kami juga dihadapkan pada beberapa tantangan teknis, seperti volume data spasial KKPRL yang besar dari berbagai sumber, race condition pada pembaruan permission secara bersamaan, serta batas ukuran pesan pada layanan realtime. Namun, kami telah mengambil langkah-langkah yang strategis dan menerapkan solusi yang tepat untuk mengatasi tantangan teknis tersebut."
+  },
+  "bab3": {
+    "kesimpulan_items": [
+      "Modul Master Data - Sinkronisasi KKPRL",
+      "Modul Master Data - Master Spasial",
+      "Modul User Management",
+      "Pemeliharaan Sistem dan Keamanan"
+    ]
+  }
+}

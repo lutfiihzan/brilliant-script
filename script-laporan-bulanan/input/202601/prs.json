@@ -1,0 +1,413 @@
+[
+  {
+    "number": 4535,
+    "title": "`[FIX & PERF] Optimasi Update Permission: Fix Race Condition, Payload Efficiency & Service N+1`",
+    "state": "MERGED",
+    "sha": "ab2f71c35f51d497180d64969f8a2d5e21fa4790",
+    "branch": "fitur/permission-realtime",
+    "mergedAt": "2026-01-06"
+  },
+  {
+    "number": 4536,
+    "title": "feat: hapus start / end event",
+    "state": "MERGED",
+    "sha": "7da7ac25cbc534948a1935b25be21089771420c2",
+    "branch": "fitur/permission-realtime",
+    "mergedAt": "2026-01-06"
+  },
+  {
+    "number": 4537,
+    "title": "fix: assign all permission",
+    "state": "MERGED",
+    "sha": "df5019b8b46f5a6be58b841a446124e8a94efd9d",
+    "branch": "fitur/permission-realtime",
+    "mergedAt": "2026-01-06"
+  },
+  {
+    "number": 4539,
+    "title": "fix: handle max exceeded content pusher",
+    "state": "MERGED",
+    "sha": "6887f2dd94bc86356e88cfab9789daaad390ae54",
+    "branch": "fitur/permission-realtime",
+    "mergedAt": "2026-01-07"
+  },
+  {
+    "number": 4540,
+    "title": "Fitur/permission realtime: update job and event message",
+    "state": "MERGED",
+    "sha": "7a16f3842470466bce75246aaad091546ca85676",
+    "branch": "fitur/permission-realtime",
+    "mergedAt": "2026-01-07"
+  },
+  {
+    "number": 4541,
+    "title": "fix: missing user id",
+    "state": "MERGED",
+    "sha": "c58e3b570217220782a68d6139bdb6e5c4529073",
+    "branch": "fitur/permission-realtime",
+    "mergedAt": "2026-01-08"
+  },
+  {
+    "number": 4542,
+    "title": "Improve Fitur/permission realtime",
+    "state": "MERGED",
+    "sha": "6b8f6387af850568637b093262709b155a9cbc09",
+    "branch": "fitur/permission-realtime",
+    "mergedAt": "2026-01-08"
+  },
+  {
+    "number": 4545,
+    "title": "feat: add permission json to table",
+    "state": "MERGED",
+    "sha": "5f50a8628d03803be8d7fed85f37add87faf1143",
+    "branch": "fitur/permission-json-table",
+    "mergedAt": "2026-01-13"
+  },
+  {
+    "number": 4546,
+    "title": "feat: add permission json to table",
+    "state": "MERGED",
+    "sha": "0edb9352b8026f8b19f30c7230a0c594eb991c4e",
+    "branch": "fitur/permission-json-table",
+    "mergedAt": "2026-01-13"
+  },
+  {
+    "number": 4547,
+    "title": "`feat(sync): Implementasi Sinkronisasi KKPRL Berantai (Portal -> OSS -> Seamap -> Plus Code -> Manual) dengan SSE`",
+    "state": "MERGED",
+    "sha": "7ba30637b87b07dfd3e550953f6751f70de2321c",
+    "branch": "sinkron/kkprl",
+    "mergedAt": "2026-01-13"
+  },
+  {
+    "number": 4548,
+    "title": "Sinkron/kkprl",
+    "state": "MERGED",
+    "sha": "ab9c7da5bc8111933e5725f0fbbbf095b2361654",
+    "branch": "sinkron/kkprl",
+    "mergedAt": "2026-01-13"
+  },
+  {
+    "number": 4549,
+    "title": "wip: add status_kelengkapan",
+    "state": "MERGED",
+    "sha": "cb251d251debade07548721897a8594ff5ad4db0",
+    "branch": "sinkron/kkprl",
+    "mergedAt": "2026-01-13"
+  },
+  {
+    "number": 4550,
+    "title": "fix: typo wilayah to manual",
+    "state": "MERGED",
+    "sha": "4fcc127dd7dc1c483c931f9ccbb7014fb6f5e488",
+    "branch": "sinkron/kkprl",
+    "mergedAt": "2026-01-13"
+  },
+  {
+    "number": 4551,
+    "title": "fix: error class job",
+    "state": "MERGED",
+    "sha": "5db18017c14da6dde20571d97995041ca803d864",
+    "branch": "sinkron/kkprl",
+    "mergedAt": "2026-01-13"
+  },
+  {
+    "number": 4552,
+    "title": "Sinkron/kkprl",
+    "state": "MERGED",
+    "sha": "b354607f345136b24ea37b1f473c310191ab791b",
+    "branch": "sinkron/kkprl",
+    "mergedAt": "2026-01-13"
+  },
+  {
+    "number": 4553,
+    "title": "wip: berhasil sampai eseamap saja",
+    "state": "MERGED",
+    "sha": "be9e5fd1134395d13653fb2e6912814850efc55c",
+    "branch": "sinkron/kkprl",
+    "mergedAt": "2026-01-13"
+  },
+  {
+    "number": 4554,
+    "title": "fix: sumber plus-code dan manual",
+    "state": "MERGED",
+    "sha": "2605d81671664d3c92a605b1a22a2a1471b4d69b",
+    "branch": "sinkron/kkprl",
+    "mergedAt": "2026-01-13"
+  },
+  {
+    "number": 4555,
+    "title": "improve: send 5 event job",
+    "state": "MERGED",
+    "sha": "63bb012d1a849e56ac23811f7a8c927e379303e9",
+    "branch": "sinkron/kkprl",
+    "mergedAt": "2026-01-13"
+  },
+  {
+    "number": 4557,
+    "title": "fix: step progress when failed",
+    "state": "MERGED",
+    "sha": "6f5d51a34bd67da1aab4a593dc180ba3852983c5",
+    "branch": "sinkron/kkprl",
+    "mergedAt": "2026-01-14"
+  },
+  {
+    "number": 4558,
+    "title": "Sinkron/kkprl: penyesuaian label",
+    "state": "MERGED",
+    "sha": "1722d448803b678c9eb16dfa764ca604d3e6b381",
+    "branch": "sinkron/kkprl",
+    "mergedAt": "2026-01-14"
+  },
+  {
+    "number": 4559,
+    "title": "Sinkron/kkprl: cek kelengkapan dokumen/geojson/koordinat",
+    "state": "MERGED",
+    "sha": "d030e423783f3f4646e4c001580dc08d47038f4a",
+    "branch": "sinkron/kkprl",
+    "mergedAt": "2026-01-14"
+  },
+  {
+    "number": 4560,
+    "title": "fix: resource",
+    "state": "MERGED",
+    "sha": "3e7d443b8005c709ebd4822225677ba7fde775dc",
+    "branch": "sinkron/kkprl",
+    "mergedAt": "2026-01-14"
+  },
+  {
+    "number": 4561,
+    "title": "Sinkron/kkprl",
+    "state": "MERGED",
+    "sha": "6fb286b61f8fb4454ae41ed696fb89362f041cf3",
+    "branch": "sinkron/kkprl",
+    "mergedAt": "2026-01-14"
+  },
+  {
+    "number": 4563,
+    "title": "Issue/sinkron oss proyek",
+    "state": "MERGED",
+    "sha": "c2e04a817ec143c8fc76e4bea5f684a66569a88b",
+    "branch": "issue/sinkron-oss-proyek",
+    "mergedAt": "2026-01-16"
+  },
+  {
+    "number": 4564,
+    "title": "fix: handle nullable objek",
+    "state": "MERGED",
+    "sha": "b7a7c5fc0c3d200be7be12db4c61be70d2b0a12d",
+    "branch": "issue/sinkron-oss-proyek",
+    "mergedAt": "2026-01-16"
+  },
+  {
+    "number": 4565,
+    "title": "Sinkron/kkprl: manual sync, upload manual, list incomplete, list status",
+    "state": "MERGED",
+    "sha": "e307e9513621b172af2403bdd3ef952e9348205e",
+    "branch": "sinkron/kkprl",
+    "mergedAt": "2026-01-18"
+  },
+  {
+    "number": 4566,
+    "title": "`feat(spatial): Dynamic Coordinate Input (DD/DMS/DM), Validation Rules & Raw Data Storage`",
+    "state": "MERGED",
+    "sha": "318dce58907afeac1a59f4d0c146e0bcd92ab70f",
+    "branch": "fitur/master_spasial",
+    "mergedAt": "2026-01-19"
+  },
+  {
+    "number": 4567,
+    "title": "fix: upload excel",
+    "state": "MERGED",
+    "sha": "f7b31fdd2c9e8e3c1a822599dbef0b10ed4ddbde",
+    "branch": "fitur/master_spasial",
+    "mergedAt": "2026-01-19"
+  },
+  {
+    "number": 4568,
+    "title": "feat: add source to mst_spasial_detail",
+    "state": "MERGED",
+    "sha": "d8a02d1665a6177ad11cc6a4468785082e34a159",
+    "branch": "fitur/master_spasial",
+    "mergedAt": "2026-01-19"
+  },
+  {
+    "number": 4569,
+    "title": "fix: pindah resource provinsi ke detail",
+    "state": "MERGED",
+    "sha": "80906c93620da4b631cbbb14eaca3fbeb37e94fa",
+    "branch": "fitur/master_spasial",
+    "mergedAt": "2026-01-19"
+  },
+  {
+    "number": 4570,
+    "title": "Fitur/master spasial",
+    "state": "MERGED",
+    "sha": "22702d0e068eb60ce752f436c7e02a7714172a33",
+    "branch": "fitur/master_spasial",
+    "mergedAt": "2026-01-19"
+  },
+  {
+    "number": 4571,
+    "title": "Fitur/master spasial",
+    "state": "MERGED",
+    "sha": "24a298d6f9e7043fbb41ed6ea89d7725a39a0043",
+    "branch": "fitur/master_spasial",
+    "mergedAt": "2026-01-19"
+  },
+  {
+    "number": 4572,
+    "title": "feat: upload multiple for pdf type",
+    "state": "MERGED",
+    "sha": "5b748e2910cab461e1bdc827247f0a1a92509b32",
+    "branch": "sinkron/kkprl",
+    "mergedAt": "2026-01-20"
+  },
+  {
+    "number": 4573,
+    "title": "feat: remove detils in main resource",
+    "state": "MERGED",
+    "sha": "455bdc5bcfb7bb68308a59ef3054878de229d0e1",
+    "branch": "sinkron/kkprl",
+    "mergedAt": "2026-01-20"
+  },
+  {
+    "number": 4574,
+    "title": "update: detail resource",
+    "state": "MERGED",
+    "sha": "0e261e2e791bea9f5c88ad79c313762435eda2f9",
+    "branch": "sinkron/kkprl",
+    "mergedAt": "2026-01-20"
+  },
+  {
+    "number": 4575,
+    "title": "update: simplify sorting column in main list",
+    "state": "MERGED",
+    "sha": "ca816c89f1e2186227e8dede42683b2c6edac7cf",
+    "branch": "sinkron/kkprl",
+    "mergedAt": "2026-01-20"
+  },
+  {
+    "number": 4576,
+    "title": "Security/on hold mode",
+    "state": "MERGED",
+    "sha": "f13c5a898c5f40a8cea396561aa5f783a72fbf9b",
+    "branch": "security/on-hold-mode",
+    "mergedAt": "2026-01-20"
+  },
+  {
+    "number": 4577,
+    "title": "`feat: add CheckRouteOnHold middleware for temporary route blocking`",
+    "state": "MERGED",
+    "sha": "7199d28282071d73a1fabb88cc53e18193ec5430",
+    "branch": "security/on-hold-mode",
+    "mergedAt": "2026-01-20"
+  },
+  {
+    "number": 4578,
+    "title": "update: add jenis usaha to main resource",
+    "state": "MERGED",
+    "sha": "d5d0b5e148171397ab206eb4783ed430fac7a812",
+    "branch": "sinkron/kkprl",
+    "mergedAt": "2026-01-20"
+  },
+  {
+    "number": 4579,
+    "title": "Fitur/master spasial: add, edit (spasial) dan add/edit peraturan",
+    "state": "MERGED",
+    "sha": "18d30e5a391f52b435b32487e632f666deab94a9",
+    "branch": "fitur/master_spasial",
+    "mergedAt": "2026-01-20"
+  },
+  {
+    "number": 4580,
+    "title": "feat: on hold for permohonan profile",
+    "state": "MERGED",
+    "sha": "42230187623f7ed56c17242821ca6517fb33bce3",
+    "branch": "security/on-hold-mode",
+    "mergedAt": "2026-01-21"
+  },
+  {
+    "number": 4581,
+    "title": "feat: on hold for permohonan profile",
+    "state": "MERGED",
+    "sha": "79d687373aecd558487c263f09643db15b87050c",
+    "branch": "security/on-hold-mode",
+    "mergedAt": "2026-01-21"
+  },
+  {
+    "number": 4582,
+    "title": "feat: add template excel",
+    "state": "MERGED",
+    "sha": "4bb39857b7263f0de2623e2def425da9b2abdf97",
+    "branch": "fitur/master_spasial",
+    "mergedAt": "2026-01-21"
+  },
+  {
+    "number": "WIP-4646",
+    "state": "WIP",
+    "commits": [
+      "2545ce4687ce2cc73570706cace584a42ee3eb36",
+      "d6c972e15d6a9e85bcaf859a8261323bd73426ae",
+      "b5b43275c325c4dc5219b6876284e58ffdfe35e0",
+      "0c44a974c5c3bfc29a8747b5227da1110617cd16",
+      "32666d4f46c8d1e34d8d45fd4a99d5a83f72260c",
+      "f1b7a94ec5d035486479bd5b34bd121e1e036f80",
+      "b359ea519c7b5d7817bfb8121110b4ff0396f931",
+      "846205d8ec4f1f7165111b6f0875797211dcdc40",
+      "02a677dcbda454c9f1abfb5dff5be29d0512c58c",
+      "4e3d6180f2935c2ec044d34f503504478f31b577",
+      "e2e04ba289ffd59ec5dbba053703c52f7d1bed85",
+      "b148c268bd5900be7427ca3b0c112fcbb6f76243",
+      "59b9786a0fde287a5f52c073082ad302a38040f8",
+      "18b4cb960821c8cd177155ccb6a4be8684a7cfd2",
+      "62738580f7db47266f48a7e3374a53f6e0a4e712",
+      "f806f5d9e4c8139230b4547f5a740bd3a532f9c6",
+      "eec230966b2b3e6ea178ab67af173afd305ebb1a",
+      "500ffa897bcd74a46145878f801a79013f55791d",
+      "e66f179c5cfca4872dbc39e2adb3f5f28a8240b1",
+      "03aa947eb6155e1cabfe9b5ed22a01d22fa6f1ef",
+      "0f2b2a8523157bf13e9376da38e50b692ace1e33",
+      "cb5ad8938b0028d3813321ba901c2d0540e5442c",
+      "13504cdbe71e78ec39a67168a7e8882ed12c75ff",
+      "5c902713cd53ced765b25d32744c9a7ac8315092",
+      "769e1ef47fdbf61058067a2f2ba542e1420448f7",
+      "d832b782d38060be417c37be0585c8b07e2b6cf4",
+      "5dae4069a72cb0d5a7e54a9baab2852f75b87a65",
+      "1e09715e49c791fda6862becb2d7d0e6aaa2b9f9",
+      "29c25927da32907911536e646d5ab2bca0bd247d",
+      "067c0665226c76fcf5e814158b73d37111267bcc",
+      "2dd7ea9d31b6e265f6463e68db62e9c794b1dd73",
+      "025b9afa37a22d4ecff6484283e5abce2efa3428",
+      "25a1afb24ec7352b1af6a9752e98856a44347a87",
+      "fa0b46c26c3e7e75838fe0ea0ea6db4a91102f91",
+      "0b90ff141e642dbeb25f978ed0cd0b68d6ebb579",
+      "0f1094f9452afefc58c7d646a1c9186d22cabfa2",
+      "5df6de3a15dd49a0a6243e813e0055591145484b",
+      "b8e6976bb31bcfcd1d965db5a9e889ca096534ed",
+      "b70d042253a00019b30200c50384c7b4b9adcc6f",
+      "53a861998b43cda784fa4d383e704cdf25187bdb",
+      "90d8ab0200b1ca525d45b6fdf285a6baeaac20e7",
+      "f33067d8330864b29dcba6637945aa12e8f26594",
+      "bd3891c140de8da0990989c20c9d31848eeb12ba",
+      "ca6ba150f76488cc3ecef86c7c5fc37f85a36616",
+      "28832640fbf72382191654ff4e9483dc8a444294",
+      "4ad45f6630aae1fb3fe572d598dc6602da5291d3",
+      "76c7ea9bbf59c939280d8703d9aa27d3a318c459",
+      "39804d8995e339b5d624a3aafa56ff07011bae60"
+    ],
+    "mergedAt": "2026-01-30",
+    "branch": "issue/simkada-column-status",
+    "title": "Issue/simkada column status (dikerjakan, di-merge #4646 2026-02-08)"
+  },
+  {
+    "number": "WIP-4636",
+    "state": "WIP",
+    "commits": [
+      "1f1cbedf39bceb45a94284b23d136a5f2dbc86f0"
+    ],
+    "mergedAt": "2026-01-26",
+    "branch": "sinkron/korespondensi-custom",
+    "title": "Sinkron/korespondensi custom (dikerjakan, di-merge #4636 2026-02-05)"
+  }
+]

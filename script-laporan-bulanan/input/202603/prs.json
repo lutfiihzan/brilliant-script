@@ -1,0 +1,830 @@
+[
+  {
+    "number": 4769,
+    "title": "Fitur/master data: perbaikan berdasarkan 20260103_Perbaikan_MNKorespondensi_MNKKPRL_MNMOMI_SBMNPemanfatanRL.pdf",
+    "state": "MERGED",
+    "sha": "c6c4d3b2eeb96ea299d0f42d64a94909edacf569",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-01"
+  },
+  {
+    "number": 4770,
+    "title": "Fitur/master data: export and sorting",
+    "state": "MERGED",
+    "sha": "f82e9a0936bed0ec3ea25aba6227ad9cb4ad3b1b",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-01"
+  },
+  {
+    "number": 4771,
+    "title": "fix: issue tandai korespondensi",
+    "state": "MERGED",
+    "sha": "af17c2da31524072ea23e14cc6cb47f734bd280e",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-02"
+  },
+  {
+    "number": 4772,
+    "title": "Modul: Penanganan Pelanggaran - Penetapan Sanksi",
+    "state": "MERGED",
+    "sha": "167deac764df376faa76f817377317bcadbbed65",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-03"
+  },
+  {
+    "number": 4773,
+    "title": "Fitur/master data: filter jenis keterangan kkprl, improve GW api oss dan api kkprl",
+    "state": "MERGED",
+    "sha": "840e87cac021facef441762872893c0eeff3a689",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-04"
+  },
+  {
+    "number": 4774,
+    "title": "fix: perbaikan relasi momi di pengamatan tidak langsung",
+    "state": "MERGED",
+    "sha": "cb1c56b021374ca5e072729821449ad5ed455223",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-04"
+  },
+  {
+    "number": 4776,
+    "title": "Fitur/master data: permission master data, asta data, penanganan pelanggaran",
+    "state": "MERGED",
+    "sha": "3b4ed7bf9ffcbb96083e113e4a4e8c991c83139d",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-04"
+  },
+  {
+    "number": 4777,
+    "title": "Fitur/master data: improve pencarian oss/kkprl",
+    "state": "MERGED",
+    "sha": "cd212206f98c110af6034b2e195a10f48f678427",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-04"
+  },
+  {
+    "number": 4778,
+    "title": "fix: filter in_complete",
+    "state": "MERGED",
+    "sha": "52b1ac90b8a36d9c73b6ae2783d8656f90b8d8a6",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-04"
+  },
+  {
+    "number": 4780,
+    "title": "Fitur/master data",
+    "state": "MERGED",
+    "sha": "fd71918f2d6e1f1b104e3592bfa19a147679b7c9",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-05"
+  },
+  {
+    "number": 4781,
+    "title": "fix: unit inspeksi",
+    "state": "MERGED",
+    "sha": "04d481c82985bd7cab975367d783788203a31312",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-05"
+  },
+  {
+    "number": 4782,
+    "title": "feat: relasi pengamatan tidak langsung ke penetapan sanksi",
+    "state": "MERGED",
+    "sha": "39d2186f12399022dce1054cf5887789c9edbbd4",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-05"
+  },
+  {
+    "number": 4783,
+    "title": "fix: error Call to a member function getRealPath() on null",
+    "state": "MERGED",
+    "sha": "28680e1d80081466fc5051bba326bd66a613521f",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-05"
+  },
+  {
+    "number": 4784,
+    "title": "fix: kode wiup to show geojson",
+    "state": "MERGED",
+    "sha": "6ccbffaad0659bc73fd2057ecb35871ab1f90882",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-05"
+  },
+  {
+    "number": 4785,
+    "title": "fix: show geojson momi",
+    "state": "MERGED",
+    "sha": "d90c96e5e02f8d4f906b3a1e9f37893b955f30f6",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-05"
+  },
+  {
+    "number": 4786,
+    "title": "feat: add middleware to momi",
+    "state": "MERGED",
+    "sha": "df48271bb495b7dcbf8d7e9ffc71c8ad9ef66c02",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-05"
+  },
+  {
+    "number": 4787,
+    "title": "fix: set middleware to kkprl and penanganan pelanggaran",
+    "state": "MERGED",
+    "sha": "c1628ea1591fd7f591d74bfa7825538ca353bd51",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-05"
+  },
+  {
+    "number": 4788,
+    "title": "fix: update filter by in complete untuk all perizinan kkprl",
+    "state": "MERGED",
+    "sha": "57d239c0aae13e8390c86939bab5535624bed840",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-05"
+  },
+  {
+    "number": 4790,
+    "title": "fix: pencarian kkprl",
+    "state": "MERGED",
+    "sha": "3beccc35af34fcd4ba50293a0f4cae8bd8977304",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-05"
+  },
+  {
+    "number": 4791,
+    "title": "fix: add url to penetapan sanksi",
+    "state": "MERGED",
+    "sha": "c554548a327ae7094378b5f4a3965990573b9a17",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-05"
+  },
+  {
+    "number": 4792,
+    "title": "feat: implement PerizinanService for managing KKPRL licensing data",
+    "state": "MERGED",
+    "sha": "7f4fafdbeb400f52365e5b392dd92d8d074f740a",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-05"
+  },
+  {
+    "number": 4793,
+    "title": "fix: nib true show in detail false",
+    "state": "MERGED",
+    "sha": "afd1fef7723d125ae8ef87e087cfa5e96b315939",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-05"
+  },
+  {
+    "number": 4794,
+    "title": "fix",
+    "state": "MERGED",
+    "sha": "c3e1adc318297dfad80a174f5ba93712bfad7ae0",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-05"
+  },
+  {
+    "number": 4795,
+    "title": "Fitur/master data: improve memilih subjek hukum lebih dari 1",
+    "state": "MERGED",
+    "sha": "f649f26b45c4eb3e0895d35737a13e8e632279ec",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-06"
+  },
+  {
+    "number": 4796,
+    "title": "fix: relasi",
+    "state": "MERGED",
+    "sha": "b9b8680f7fb13bcd049552a092820e9602379aaa",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-06"
+  },
+  {
+    "number": 4797,
+    "title": "Fitur/master data",
+    "state": "MERGED",
+    "sha": "5c2d15ab7c6844b8c8e850afab7b41738a050fe8",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-06"
+  },
+  {
+    "number": 4798,
+    "title": "fix: handle error penetapan sanksi",
+    "state": "MERGED",
+    "sha": "4577f6685f6afba2023a4590cb4fee00e3367b0d",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-08"
+  },
+  {
+    "number": 4799,
+    "title": "fix: update resource momi",
+    "state": "MERGED",
+    "sha": "367bace04670ed03a7d0bd29277b4c6a09c1f89d",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-08"
+  },
+  {
+    "number": 4800,
+    "title": "fix: add filter kategori pelanggaran",
+    "state": "MERGED",
+    "sha": "e1e0c82122d6b81daf416fc30de664291a6ed93b",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-09"
+  },
+  {
+    "number": 4801,
+    "title": "feat: export korespondensi",
+    "state": "MERGED",
+    "sha": "aa380feb41af35d2f2bed2fc5a07263f4abedccb",
+    "branch": "fitur/smart-export",
+    "mergedAt": "2026-03-09"
+  },
+  {
+    "number": 4802,
+    "title": "Fitur/master data: improve rbac, export korespondensi",
+    "state": "MERGED",
+    "sha": "9aa3c3215b10a1915bef3c0b8a18604ea98e0336",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-09"
+  },
+  {
+    "number": 4803,
+    "title": "Fitur/master data: fix view file korespondensi",
+    "state": "MERGED",
+    "sha": "0156a6a0f1fbab856c52e4294ab50ac08fe2c717",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-09"
+  },
+  {
+    "number": 4804,
+    "title": "Fitur/master data: Perbaikan API Penanganan Pelanggaran dan Pencarian Subjek Hukum/Objek Hukum",
+    "state": "MERGED",
+    "sha": "b689c2c986984a81772fa43af8492891e4388a17",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-09"
+  },
+  {
+    "number": 4805,
+    "title": "fix: pencarian pelanggaran",
+    "state": "MERGED",
+    "sha": "349abba0a48432bad905e229b940665c25bd07fe",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-09"
+  },
+  {
+    "number": 4806,
+    "title": "Fitur/master data",
+    "state": "MERGED",
+    "sha": "0b9313d096e6968bc02c5adf648c747e6d24b6d4",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-09"
+  },
+  {
+    "number": 4808,
+    "title": "Issue/bap wasrisk",
+    "state": "MERGED",
+    "sha": "ef6558253d22e75b1691bd44c797a3c6d0823eca",
+    "branch": "issue/bap-wasrisk",
+    "mergedAt": "2026-03-09"
+  },
+  {
+    "number": 4809,
+    "title": "fix: nib tidak kesimpan",
+    "state": "MERGED",
+    "sha": "68a42a0b55dcf59454515e680e7587a605458c57",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-09"
+  },
+  {
+    "number": 4810,
+    "title": "fix: validasi momi",
+    "state": "MERGED",
+    "sha": "0c0ffc27f7662a9fbf1a617e53dd980491a5ce7d",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-09"
+  },
+  {
+    "number": 4811,
+    "title": "fix: validasi",
+    "state": "MERGED",
+    "sha": "69ae485e335616e2c18ea517cd008404655d768c",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-09"
+  },
+  {
+    "number": 4812,
+    "title": "fix: simpan nib, npwp",
+    "state": "MERGED",
+    "sha": "c301da1d2bb17ae6a974bd8b703b0e44f8d9579f",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-09"
+  },
+  {
+    "number": 4813,
+    "title": "fix: relasi pengamatan lansung vs penetapan sanksi by nomor_penerbitan",
+    "state": "MERGED",
+    "sha": "4667b1ae3db9b6b810bc3a0b373af46d8bc4e151",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-09"
+  },
+  {
+    "number": 4814,
+    "title": "Fitur/master data: perbaikan sinkron geojson kkprl dan pencarian pelanggaran",
+    "state": "MERGED",
+    "sha": "b093ad3fc7721d8d1e2b11d3712f07f825374d7f",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-10"
+  },
+  {
+    "number": 4816,
+    "title": "feat: tetapkan notif kirim objek pengawasan selama 5 menit",
+    "state": "MERGED",
+    "sha": "c8d556a12606cb87c851a4b3c3f1bd54d6290fb6",
+    "branch": "issue/bap-wasrisk",
+    "mergedAt": "2026-03-10"
+  },
+  {
+    "number": 4818,
+    "title": "fix: sinkron oss jika data nib tidak ada di DB",
+    "state": "MERGED",
+    "sha": "59e354b40e5b2c4eec1964a4e9c30b2b571f97c9",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-10"
+  },
+  {
+    "number": 4820,
+    "title": "fix: perbaikan validasi",
+    "state": "MERGED",
+    "sha": "65216fa6ae575929a268b824d2d863dcfb6995f6",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-11"
+  },
+  {
+    "number": 4821,
+    "title": "feat: add param usage in jenis pelanggaran",
+    "state": "MERGED",
+    "sha": "46b6c5e7d6b5d9d7aa22e31ca89b0d4cb5120d2a",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-11"
+  },
+  {
+    "number": 4824,
+    "title": "fix: sinkatan",
+    "state": "MERGED",
+    "sha": "0a75899c5dd170d0314a3196664fdf788be52807",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-11"
+  },
+  {
+    "number": 4825,
+    "title": "fix: penyesuaian response jenis pelanggaran pada list penetapan sanksi",
+    "state": "MERGED",
+    "sha": "199cc398498fdf7a8932a43a8b5758e30a5cd47f",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-11"
+  },
+  {
+    "number": 4826,
+    "title": "feat: add flag denda",
+    "state": "MERGED",
+    "sha": "3715dbc43da564ee3e0675844557d36572096a4e",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-11"
+  },
+  {
+    "number": 4827,
+    "title": "fix: perbaikan filter penetapan sanksi",
+    "state": "MERGED",
+    "sha": "c78bdf272c60cc7ecb973dd8c0dc76a3e5b086e3",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-11"
+  },
+  {
+    "number": 4828,
+    "title": "fix: den",
+    "state": "MERGED",
+    "sha": "d59d6631e4aa0be4ee790fec3c701f997d3025cf",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-11"
+  },
+  {
+    "number": 4832,
+    "title": "fix: pencarian perizinan berusaha service",
+    "state": "MERGED",
+    "sha": "9482cb84eb6abfb65aa426abe202697cc868c1a7",
+    "branch": "issue/pencarian-berusaha-service",
+    "mergedAt": "2026-03-11"
+  },
+  {
+    "number": 4833,
+    "title": "Fitur/master data: pencarian by category type",
+    "state": "MERGED",
+    "sha": "94021231ae249fdc32e11a0d777507ee95f0e07c",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-11"
+  },
+  {
+    "number": 4834,
+    "title": "fix: typo",
+    "state": "MERGED",
+    "sha": "f189aad84caf2ef072f200f45796c2d6cdc81101",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-11"
+  },
+  {
+    "number": 4835,
+    "title": "Fitur/master data",
+    "state": "MERGED",
+    "sha": "2a460826027a420b39ab0754c40f16956ba90b34",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-11"
+  },
+  {
+    "number": 4836,
+    "title": "fix: remove validasi string contains category type",
+    "state": "MERGED",
+    "sha": "55dc2a302957b52aa6ac24d793ccf87c14c80540",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-11"
+  },
+  {
+    "number": 4838,
+    "title": "fix: perbaiki validasi nilai denda",
+    "state": "MERGED",
+    "sha": "9a4dc70455118b81f1f2d2fb6c6d7ce6590d1a70",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-11"
+  },
+  {
+    "number": 4839,
+    "title": "Fitur/master data: typo nilai denda",
+    "state": "MERGED",
+    "sha": "074152b49a3d64b755c81d24aa1bcce4512d010a",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-11"
+  },
+  {
+    "number": 4840,
+    "title": "Fitur/master data: sinkron oss by nib, update penetapan sanksi, filter list penetapan sanksi",
+    "state": "MERGED",
+    "sha": "f50fc20c80714ca4de36f7b14a4838bafc5182e5",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-11"
+  },
+  {
+    "number": 4841,
+    "title": "Issue/bap wasrisk: update template BAP dan notif kirim objek pengawasan 5 menit",
+    "state": "MERGED",
+    "sha": "ceb789786af097a5258921143f9de0f6937aafe8",
+    "branch": "issue/bap-wasrisk",
+    "mergedAt": "2026-03-11"
+  },
+  {
+    "number": 4843,
+    "title": "Issue/bap wasrisk: migrasi laporan, fix detail objek",
+    "state": "MERGED",
+    "sha": "5182fe7b462cd5f5183427c9d54bfae7ca542ec2",
+    "branch": "issue/bap-wasrisk",
+    "mergedAt": "2026-03-11"
+  },
+  {
+    "number": 4853,
+    "title": "Fitur/master data: perbaikan format jenis izin dan relasi pengamatan tidak langsung to portal data",
+    "state": "MERGED",
+    "sha": "e68a58c44a7700a2b2befab6e7000784e5c15f46",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-12"
+  },
+  {
+    "number": 4855,
+    "title": "fix: menambahkan nik pada response pencarian oss dan portal data",
+    "state": "MERGED",
+    "sha": "fd921e0b90dd2fa763da8562e3cf83188efcdf6e",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-12"
+  },
+  {
+    "number": 4867,
+    "title": "Optimize/pencarian oss",
+    "state": "MERGED",
+    "sha": "d1b71815f71e2117f359e36c2a96129e94bb3a89",
+    "branch": "optimize/pencarian-oss",
+    "mergedAt": "2026-03-13"
+  },
+  {
+    "number": 4868,
+    "title": "feat: Introduce ProyekResource API resources and KapalPerikananService for handling project and fishery vessel data.",
+    "state": "MERGED",
+    "sha": "36445615bfadf370c722ade06a99259f556bb453",
+    "branch": "optimize/pencarian-oss",
+    "mergedAt": "2026-03-13"
+  },
+  {
+    "number": 4869,
+    "title": "fix: remove casting tanggal",
+    "state": "MERGED",
+    "sha": "dca173c6d01e26d801fc5b294f1affa694eb211f",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-13"
+  },
+  {
+    "number": 4870,
+    "title": "fix: remove casting tanggal",
+    "state": "MERGED",
+    "sha": "382842e9c943317ed4e13035cae3049dd475fa19",
+    "branch": "optimize/pencarian-oss",
+    "mergedAt": "2026-03-13"
+  },
+  {
+    "number": 4871,
+    "title": "Fitur/master data: refactor oss pencarian berusaha",
+    "state": "MERGED",
+    "sha": "63c98937ae96cca3c8860044ceaf54f8b57be76a",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-13"
+  },
+  {
+    "number": 4874,
+    "title": "Refactor/oss",
+    "state": "MERGED",
+    "sha": "291d8851327a22f51d6eb42c6dbf1aeca7b1ba4b",
+    "branch": "refactor/oss",
+    "mergedAt": "2026-03-13"
+  },
+  {
+    "number": 4875,
+    "title": "Refactor/oss: merged from prod",
+    "state": "MERGED",
+    "sha": "12ce1e712b3600edee243406fdc236a7a6a5eafd",
+    "branch": "refactor/oss",
+    "mergedAt": "2026-03-13"
+  },
+  {
+    "number": 4877,
+    "title": "fix: macro where like",
+    "state": "MERGED",
+    "sha": "868d10b24a43b0936ac6e57961af1abcbe10ded7",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-03-13"
+  },
+  {
+    "number": 4878,
+    "title": "Refactor/sinkron pegawai",
+    "state": "MERGED",
+    "sha": "0f2cef5ffbb59e52ddb2b0dc4ec3ed56cf508df7",
+    "branch": "refactor/sinkron-pegawai",
+    "mergedAt": "2026-03-13"
+  },
+  {
+    "number": 4879,
+    "title": "feat: sinkron pegawai dari portal data",
+    "state": "MERGED",
+    "sha": "de1dd2c3bfcfcf357dc7218e3a61e5648e3c44cb",
+    "branch": "refactor/sinkron-pegawai",
+    "mergedAt": "2026-03-13"
+  },
+  {
+    "number": 4884,
+    "title": "Bug/query exception perizinan service",
+    "state": "MERGED",
+    "sha": "ae61e3ff67da9d1e4ea4c579daa137d75da094cf",
+    "branch": "bug/QueryException-PerizinanService",
+    "mergedAt": "2026-03-15"
+  },
+  {
+    "number": 4885,
+    "title": "fix: comment proyek and pelakuUsaha",
+    "state": "MERGED",
+    "sha": "4544babc5b04e7e0ac216b5411383d4c9151cc42",
+    "branch": "bug/QueryException-PerizinanService",
+    "mergedAt": "2026-03-15"
+  },
+  {
+    "number": 4886,
+    "title": "Bug/exception generate rekapitulasi eslo harian",
+    "state": "MERGED",
+    "sha": "dced73b300b2509359364f822ed9563a7c52d7a8",
+    "branch": "bug/Exception-GenerateRekapitulasiESLOHarian",
+    "mergedAt": "2026-03-15"
+  },
+  {
+    "number": 4887,
+    "title": "refactor: rekap eslo, trip kapal",
+    "state": "MERGED",
+    "sha": "3147b912180df0be67a29154ec6781dab5a03158",
+    "branch": "bug/Exception-GenerateRekapitulasiESLOHarian",
+    "mergedAt": "2026-03-15"
+  },
+  {
+    "number": 4888,
+    "title": "Bug/missing import koordinatcontroller and typo double comma",
+    "state": "MERGED",
+    "sha": "eaaa10e34d2197ba4ba76a3cfea7f8e2a004398b",
+    "branch": "bug/missing-import-koordinatcontroller",
+    "mergedAt": "2026-03-15"
+  },
+  {
+    "number": 4889,
+    "title": "Bug/missing import koordinatcontroller and typo double comma",
+    "state": "MERGED",
+    "sha": "8fc625c9822ee808b95d3b2229d982b4e385e63e",
+    "branch": "bug/missing-import-koordinatcontroller",
+    "mergedAt": "2026-03-15"
+  },
+  {
+    "number": 4893,
+    "title": "Issue/rate limit",
+    "state": "MERGED",
+    "sha": "8392c180612da2b68237bde0b95e7fb2211d2457",
+    "branch": "issue/rate-limit",
+    "mergedAt": "2026-03-16"
+  },
+  {
+    "number": 4894,
+    "title": "fix: issue rate limit",
+    "state": "MERGED",
+    "sha": "a0d5af12dbfb65eaee76d60e62d0fde93eb12f12",
+    "branch": "issue/rate-limit",
+    "mergedAt": "2026-03-16"
+  },
+  {
+    "number": 4895,
+    "title": "fix: add stkl column",
+    "state": "MERGED",
+    "sha": "fcad4b7a80efce8861ff45defb25a72fc58ca722",
+    "branch": "issue/export-hasil-inspeksi",
+    "mergedAt": "2026-03-16"
+  },
+  {
+    "number": 4896,
+    "title": "fix: add stkl column",
+    "state": "MERGED",
+    "sha": "f625a4cf3e75e77743b109f3a2b6acc7e1167fc5",
+    "branch": "issue/export-hasil-inspeksi",
+    "mergedAt": "2026-03-16"
+  },
+  {
+    "number": 4897,
+    "title": "Issue/bentrok role operator pengawas",
+    "state": "MERGED",
+    "sha": "d362df14b5a20e8772dd37af982bc0f2a753750a",
+    "branch": "issue/bentrok-role-operator-pengawas",
+    "mergedAt": "2026-03-16"
+  },
+  {
+    "number": 4898,
+    "title": "fix: error explode in whatsappservice",
+    "state": "MERGED",
+    "sha": "60a4ad7a21661da3f257c336340d02a9d4b7b72c",
+    "branch": "bug/TypeError-Whatsappservice",
+    "mergedAt": "2026-03-16"
+  },
+  {
+    "number": 4899,
+    "title": "fix: error explode in whatsappservice",
+    "state": "MERGED",
+    "sha": "7b25e887fcbd1257a0c11e59fcc0b2bd805c03d2",
+    "branch": "bug/TypeError-Whatsappservice",
+    "mergedAt": "2026-03-16"
+  },
+  {
+    "number": 4900,
+    "title": "fix: filter penjadwalan, inspeksi dan hasil inspeksi",
+    "state": "MERGED",
+    "sha": "e3db0642ecd8f7fd9a51f09dc78c5948370e6a5a",
+    "branch": "issue/bentrok-role-operator-pengawas",
+    "mergedAt": "2026-03-17"
+  },
+  {
+    "number": 4903,
+    "title": "fix: role filter",
+    "state": "MERGED",
+    "sha": "9d29f03fd95e5d03abce378ae68c54dae4ba58c5",
+    "branch": "issue/bentrok-role-operator-pengawas",
+    "mergedAt": "2026-03-17"
+  },
+  {
+    "number": 4904,
+    "title": "fix: filter",
+    "state": "MERGED",
+    "sha": "09844559205d97b0fb21fee0579bece193cb5a08",
+    "branch": "issue/bentrok-role-operator-pengawas",
+    "mergedAt": "2026-03-17"
+  },
+  {
+    "number": 4905,
+    "title": "fix: role filter",
+    "state": "MERGED",
+    "sha": "8b16040cfd0308d62bd0cdce22adb3848ddbe493",
+    "branch": "issue/bentrok-role-operator-pengawas",
+    "mergedAt": "2026-03-17"
+  },
+  {
+    "number": 4906,
+    "title": "fix: improvement role filter",
+    "state": "MERGED",
+    "sha": "c9971981f15152c01cb672f03205063a04f5614b",
+    "branch": "issue/bentrok-role-operator-pengawas",
+    "mergedAt": "2026-03-17"
+  },
+  {
+    "number": 4907,
+    "title": "Upgrade/api sip 11",
+    "state": "MERGED",
+    "sha": "18ee30d943cbb4feaa7bd1cfdf05a0364e5d3504",
+    "branch": "upgrade/api-sip-11",
+    "mergedAt": "2026-03-17"
+  },
+  {
+    "number": 4908,
+    "title": "Refactor/notification: add notifiable and delay",
+    "state": "MERGED",
+    "sha": "a0c60f6c3783fdbf3bdd0246b5640fc60ec64fd2",
+    "branch": "refactor/notification",
+    "mergedAt": "2026-03-17"
+  },
+  {
+    "number": 4909,
+    "title": "fix: issue psr-4 dan update docs",
+    "state": "MERGED",
+    "sha": "5ebf0fcfe4321d0a484e12d7fce2e063f94ae4a9",
+    "branch": "upgrade/api-sip-11",
+    "mergedAt": "2026-03-17"
+  },
+  {
+    "number": 4910,
+    "title": "update: docs",
+    "state": "MERGED",
+    "sha": "001fd54fe82af9733ff8bafb27e6dab1b63c0a67",
+    "branch": "upgrade/api-sip-11",
+    "mergedAt": "2026-03-17"
+  },
+  {
+    "number": 4911,
+    "title": "fix: filter operator upt dan pengawas",
+    "state": "MERGED",
+    "sha": "22ce03b93b7455318fcddfc28274429f8065bdd8",
+    "branch": "issue/bentrok-role-operator-pengawas",
+    "mergedAt": "2026-03-17"
+  },
+  {
+    "number": 4912,
+    "title": "fix: filter penjadwalan, inspeksi dan hasil inspeksi untuk operator UPT",
+    "state": "MERGED",
+    "sha": "468aa94c811e1223b0d1bb21a83a5e06c228de32",
+    "branch": "issue/bentrok-role-operator-pengawas",
+    "mergedAt": "2026-03-18"
+  },
+  {
+    "number": 4914,
+    "title": "feat: nonaktifin notif halopsdkp",
+    "state": "MERGED",
+    "sha": "f537cd33adceda0b79cbe188e29204934d6e1602",
+    "branch": "issue/matiin-notif-halopsdkp",
+    "mergedAt": "2026-03-20"
+  },
+  {
+    "number": 4918,
+    "title": "Issue/bentrok role operator pengawas",
+    "state": "MERGED",
+    "sha": "33ef667694cfbdff68345e4401bb9a904103ce4d",
+    "branch": "issue/bentrok-role-operator-pengawas",
+    "mergedAt": "2026-03-29"
+  },
+  {
+    "number": "WIP-4921",
+    "state": "WIP",
+    "commits": [
+      "67a52ef9b833b8beacb8deb516c2bc850e0e7e64",
+      "6ae7db9b5be2a15ead07f84510a2de2bc7b98e55",
+      "794354a9ae11e0ba9797cbb69701bb587f9e4b9e"
+    ],
+    "mergedAt": "2026-03-31",
+    "branch": "issue/bap-wasrisk",
+    "title": "Issue/bap wasrisk: bentrok admin (dikerjakan, di-merge #4921 2026-04-02)"
+  },
+  {
+    "number": "WIP-4961",
+    "state": "WIP",
+    "commits": [
+      "57f7e72a21e7dc3b9ec66ab27677ae24a40357c6",
+      "8b48d00644b6d30ab8101103b3ac1a69acb842c4",
+      "7fbd866bb487ba6a71f84f6e61cdd666ddeda1f7",
+      "a573d9a8da2fe1c909d898685a1c7275fe1e222e",
+      "603be35bb7e7de3bf42a88818bd23a0341b2cd6d",
+      "4f5962e4ffc64e34777d4216d26e3f29f8041eb5",
+      "854bc40c6a429c2464d8d0f0669c241ffe126f47",
+      "9552776e56eb294aabed714cecd048152836e4a5",
+      "c9fbbf9f0f12c85e1c9c34daaa29f25c21723480",
+      "c7e07dfe9607b49b9b2bdbd023bd6e54d5b3dedd",
+      "88f7935524a1c287e42e4ea9297e7758125ccfbf",
+      "67c90403b19c9c4b93bbaaa598993f86395f60ca",
+      "5bd069475380d2d66674c4ec69031477a17a8933",
+      "62c8dd3d3bc989040eacf232866b58152e6d0167",
+      "baedecd3b42c8cca44a74cacd5f67b1f64273921"
+    ],
+    "mergedAt": "2026-03-25",
+    "branch": "upgrade/api-sip-11",
+    "title": "Upgrade/api sip 11 (dikerjakan, di-merge #4961 2026-04-14)"
+  }
+]

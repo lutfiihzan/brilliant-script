@@ -1,0 +1,52 @@
+{
+  "period": "202602",
+  "bulan": "Februari",
+  "bulan_up": "FEBRUARI",
+  "tahun": 2026,
+  "nama": "Lutfi Ihsan",
+  "jabatan": "Tenaga Teknis Implementasi Logika Sistem",
+  "output_filename": "Laporan Bulanan_Lutfi Ihsan - Februari 2026.docx",
+  "detail_docx": "detail_laporan.docx",
+  "detail_txt": "detail_github.txt",
+  "weekly_user_filter": "Lutfi",
+  "github": {
+    "repo": "psdkplabs/api-sip",
+    "author": "lutfiihsan",
+    "date_ranges": [
+      "2026-02-01..2026-02-10",
+      "2026-02-11..2026-02-20",
+      "2026-02-21..2026-02-28"
+    ],
+    "fetch_if_missing": true,
+    "fetch_always": false,
+    "local_repo_path": "C:/Users/DATA-PSDKP/Documents/PSDKP/api-sip"
+  },
+  "tech": {
+    "language": "PHP v8.2",
+    "framework": "Laravel 11",
+    "repo_url": "https://github.com/psdkplabs/api-sip"
+  },
+  "code_snippet": {
+    "title": "Contoh Cuplikan Kode Sumber",
+    "content": ""
+  },
+  "media": {
+    "github_screenshots": [],
+    "server_screenshots": [],
+    "lampiran_screenshots": []
+  },
+  "bab1": {
+    "pencapaian": "Pada bulan Februari 2026, kami telah mencapai sejumlah pencapaian penting. Kami berhasil melakukan refactor sinkronisasi data perizinan KKPRL dari berbagai sumber (SEAMAP, OSS, dan input manual), menyusun input kelengkapan data perizinan, serta menyusun webservice perizinan MOMI. Pada Modul Asta Data, kami memperbaharui detail, filter, dan overview Pemantauan Tidak Langsung serta fitur unduh file KKPRL. Kami juga melakukan refactor sinkronisasi korespondensi dan menyusun pencarian OSS versi 2.",
+    "tantangan": "Selama penyusunan, kami juga dihadapkan pada beberapa tantangan teknis, seperti data duplikat dari sumber sinkronisasi yang berbeda, validasi data spasial (koordinat dan GeoJSON) yang beragam, serta performa pencarian data OSS. Namun, kami telah mengambil langkah-langkah yang strategis dan menerapkan solusi yang tepat untuk mengatasi tantangan teknis tersebut."
+  },
+  "bab3": {
+    "kesimpulan_items": [
+      "Modul Master Data - Perizinan KKPRL",
+      "Modul Master Data - MOMI",
+      "Korespondensi dan Penanganan Pelanggaran",
+      "Modul Asta Data",
+      "Integrasi OSS",
+      "Pemeliharaan Sistem dan Perbaikan Bug"
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "period": "202604",
+  "bulan": "April",
+  "bulan_up": "APRIL",
+  "tahun": 2026,
+  "nama": "Lutfi Ihsan",
+  "jabatan": "Tenaga Teknis Implementasi Logika Sistem",
+  "output_filename": "Laporan Bulanan_Lutfi Ihsan - April 2026.docx",
+  "detail_docx": "detail_laporan.docx",
+  "detail_txt": "detail_github.txt",
+  "weekly_user_filter": "Lutfi",
+  "github": {
+    "repo": "psdkplabs/api-sip",
+    "author": "lutfiihsan",
+    "date_ranges": [
+      "2026-04-01..2026-04-10",
+      "2026-04-11..2026-04-20",
+      "2026-04-21..2026-04-30"
+    ],
+    "fetch_if_missing": true,
+    "fetch_always": false,
+    "local_repo_path": "C:/Users/DATA-PSDKP/Documents/PSDKP/api-sip"
+  },
+  "tech": {
+    "language": "PHP v8.2",
+    "framework": "Laravel 11",
+    "repo_url": "https://github.com/psdkplabs/api-sip"
+  },
+  "code_snippet": {
+    "title": "Contoh Cuplikan Kode Sumber",
+    "content": ""
+  },
+  "media": {
+    "github_screenshots": [],
+    "server_screenshots": [],
+    "lampiran_screenshots": []
+  },
+  "bab1": {
+    "pencapaian": "Pada bulan April 2026, kami telah mencapai sejumlah pencapaian penting. Kami berhasil melakukan upgrade aplikasi API SIP ke Laravel 11 serta mengimplementasikan Sentry untuk pemantauan error secara real-time. Pada Modul Master Data, kami memperbaharui webservice korespondensi, penentuan unit inspeksi berdasarkan koordinat dan GeoJSON, kelengkapan NPWP dan NIB, sinkronisasi OSS, serta fitur filter dan export data dengan dukungan background job. Pada Modul Asta Data, kami memperbaiki sinkronisasi data KKPRL dan memperbaharui overview serta status laporan Pemantauan Tidak Langsung. Selain itu, kami juga melakukan stabilisasi notifikasi penjadwalan dan validasi NIB serta Nomor Kode Proyek pada Modul WasRisk.",
+    "tantangan": "Selama penyusunan, kami juga dihadapkan pada beberapa tantangan teknis, seperti penyesuaian kode dengan perubahan struktur pada Laravel 11, kualitas data spasial KKPRL (koordinat dan GeoJSON yang kosong atau tidak valid), serta data duplikat dari sumber eksternal. Namun, kami telah mengambil langkah-langkah yang strategis dan menerapkan solusi yang tepat untuk mengatasi tantangan teknis tersebut."
+  },
+  "bab3": {
+    "kesimpulan_items": [
+      "Modul Master Data",
+      "Modul Asta Data",
+      "Modul Pengawasan Perizinan Berusaha (WasRisk)",
+      "Modul User Management",
+      "Pemeliharaan Sistem dan Infrastruktur"
+    ]
+  }
+}

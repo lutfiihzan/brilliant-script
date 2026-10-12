@@ -1,0 +1,625 @@
+{
+  "exclude": [],
+  "modules": [
+    {
+      "title": "Pembaharuan Webservice Modul Master Data - Perizinan KKPRL",
+      "intro": "Pada kegiatan ini Tenaga Teknis Implementasi Logika Sistem memperbaharui webservice perizinan KKPRL pada Modul Master Data, sebagai berikut:",
+      "activities": [
+        {
+          "subtitle": "Perbaikan sinkronisasi SEAMAP dan progres SSE",
+          "deskripsi": "Telah diperbaiki logika sinkronisasi data SEAMAP, penanganan Server-Sent Events (SSE) ketika data kosong, serta reset cache lama saat sinkronisasi dimulai.",
+          "utama": [
+            "Perbaikan logika sinkronisasi SEAMAP.",
+            "Penanganan SSE ketika tidak ada data.",
+            "Reset cache lama di awal sinkronisasi."
+          ],
+          "manfaat": [
+            "Progres sinkronisasi tampil akurat dan tidak memakai data usang."
+          ],
+          "prs": [
+            4630,
+            4631,
+            4632
+          ]
+        },
+        {
+          "subtitle": "Refactor resource perizinan dan laporan tahunan KKPRL",
+          "deskripsi": "Telah dilakukan refactor resource perizinan KKPRL serta penyusunan data laporan tahunan pada perizinan.",
+          "utama": [
+            "Refactor resource perizinan.",
+            "Laporan tahunan pada data perizinan KKPRL."
+          ],
+          "manfaat": [
+            "Struktur data perizinan lebih rapi dan siap dikembangkan."
+          ],
+          "prs": [
+            4637
+          ]
+        },
+        {
+          "subtitle": "Optimasi N+1 query dan riwayat sinkronisasi",
+          "deskripsi": "Telah dioptimalkan query data perizinan KKPRL dengan mengatasi masalah N+1 query serta perbaikan format riwayat.",
+          "utama": [
+            "Perbaikan N+1 query pada daftar perizinan.",
+            "Perbaikan array riwayat sinkronisasi."
+          ],
+          "manfaat": [
+            "Daftar perizinan dimuat lebih cepat."
+          ],
+          "prs": [
+            4638,
+            4640,
+            4641
+          ]
+        },
+        {
+          "subtitle": "Penanganan file duplikat pada sinkronisasi",
+          "deskripsi": "Telah ditambahkan penanganan file duplikat pada sinkronisasi manual, OSS, SEAMAP, dan perizinan KKPRL.",
+          "utama": [
+            "Penanganan file duplikat pada syncManual, syncOss, syncSeamap, dan syncPerizinan."
+          ],
+          "manfaat": [
+            "Penyimpanan tidak terisi file ganda."
+          ],
+          "prs": [
+            4639,
+            4642
+          ]
+        },
+        {
+          "subtitle": "Perbaikan simpan GeoJSON dan job status kelengkapan",
+          "deskripsi": "Telah diperbaiki kegagalan simpan GeoJSON dan pembaruan status kelengkapan, termasuk pemisahan proses pembaruan kelengkapan ke job tersendiri.",
+          "utama": [
+            "Penanganan gagal simpan GeoJSON dan pembaruan status kelengkapan.",
+            "Job terpisah untuk pembaruan status kelengkapan.",
+            "Menjalankan script Python ketika perizinan sudah ada."
+          ],
+          "manfaat": [
+            "Status kelengkapan selalu diperbarui walaupun ada data spasial yang gagal disimpan."
+          ],
+          "prs": [
+            4643,
+            4658
+          ]
+        },
+        {
+          "subtitle": "Integrasi API KKPRL dan sinkronisasi OSS berdasarkan nomor penerbitan",
+          "deskripsi": "Telah disusun KKPRLService untuk integrasi dengan API KKPRL serta sinkronisasi data OSS berdasarkan nomor penerbitan.",
+          "utama": [
+            "KKPRLService untuk integrasi API KKPRL.",
+            "Sinkronisasi OSS berdasarkan nomor penerbitan dan dari sumber lain.",
+            "Pesan aksi untuk sinkronisasi SEAMAP."
+          ],
+          "manfaat": [
+            "Data KKPRL dapat diambil langsung dari sumber resmi."
+          ],
+          "prs": [
+            4744,
+            4763
+          ]
+        },
+        {
+          "subtitle": "Validasi unggah koordinat melalui Excel",
+          "deskripsi": "Telah diperbaiki validasi koordinat dan template pada unggah data spasial melalui Excel serta proses konversi koordinat.",
+          "utama": [
+            "Validasi koordinat yang salah pada unggah Excel.",
+            "Perbaikan template unggah.",
+            "Perbaikan konversi koordinat."
+          ],
+          "manfaat": [
+            "Koordinat yang tidak valid ditolak sebelum tersimpan."
+          ],
+          "prs": [
+            4633,
+            4634,
+            4648
+          ]
+        },
+        {
+          "subtitle": "Unggah multi geometri dan pencarian poligon",
+          "deskripsi": "Telah ditambahkan dukungan unggah multi geometri serta pencarian poligon berdasarkan kode WIUP.",
+          "utama": [
+            "Unggah multi geometri khusus.",
+            "Pencarian poligon berdasarkan kode_wiup."
+          ],
+          "manfaat": [
+            "Data spasial dengan banyak bentuk dapat diunggah dan dicari."
+          ],
+          "prs": [
+            4650,
+            4651
+          ]
+        },
+        {
+          "subtitle": "Perbaikan riwayat unggah file",
+          "deskripsi": "Telah diperbaiki pencatatan riwayat unggah file perizinan yang sebelumnya tidak tersimpan.",
+          "utama": [
+            "Data unggah file tercatat pada riwayat."
+          ],
+          "manfaat": [
+            "Setiap unggahan dapat ditelusuri."
+          ],
+          "prs": [
+            4654,
+            4655,
+            4656,
+            4657
+          ]
+        },
+        {
+          "subtitle": "Aktivasi input manual data spasial",
+          "deskripsi": "Telah diaktifkan fungsi input manual pada data spasial utama dan sub-spasial.",
+          "utama": [
+            "Aktivasi input manual spasial utama dan sub-spasial.",
+            "Konversi keterangan menjadi boolean."
+          ],
+          "manfaat": [
+            "Operator dapat menginput data spasial secara manual."
+          ],
+          "prs": [
+            4767
+          ]
+        },
+        {
+          "subtitle": "Penyempurnaan validasi master spasial",
+          "deskripsi": "Telah disempurnakan validasi input master spasial (lanjutan pekerjaan Januari) dan seluruh pekerjaan master spasial digabungkan ke branch utama.",
+          "files": [
+            "Modules/Userman/Http/Controllers/Master/Kewilayahan/WilayahSpasialController.php",
+            "Modules/Userman/Http/Requests/Kewilayahan/CreateSpasialRequest.php",
+            "Modules/Userman/Http/Requests/Kewilayahan/UpdateSpasialRequest.php",
+            "Modules/Userman/Http/Requests/Kewilayahan/ActivateSpasialRequest.php"
+          ],
+          "utama": [
+            "Validasi jumlah titik berdasarkan bentuk geometri serta validasi format DM dan DMS.",
+            "Penanganan nama spasial yang sudah ada pada step 2 dan format nama spasial.",
+            "Format GeoJSON mentah, status aktivasi, dan resource yang hilang."
+          ],
+          "manfaat": [
+            "Data spasial yang diinput sesuai dengan bentuk geometrinya."
+          ],
+          "prs": [
+            4646
+          ]
+        },
+        {
+          "subtitle": "Menyusun input kelengkapan NIB, NPWP, dan data usaha",
+          "deskripsi": "Telah disusun input kelengkapan data perizinan KKPRL berupa NIB, NPWP, data kegiatan, dan SK IUP, termasuk kelengkapan melalui sinkronisasi OSS.",
+          "utama": [
+            "Input NIB KKPRL dan kelengkapan NPWP.",
+            "Input kelengkapan melalui sinkron OSS dan flag kesesuaian subjek hukum.",
+            "Penambahan data kegiatan dan SK IUP.",
+            "Perbaikan relasi sibling KKPRL dan tampilan NPWP pada detail."
+          ],
+          "manfaat": [
+            "Data pelaku usaha pada perizinan menjadi lengkap."
+          ],
+          "prs": [
+            4672,
+            4676,
+            4713,
+            4731,
+            4735,
+            4751,
+            4752
+          ]
+        },
+        {
+          "subtitle": "Memperbaharui aksi update dan status kelengkapan perizinan",
+          "deskripsi": "Telah dipisahkan aksi update perizinan, ditambahkan flag tombol input data, serta disederhanakan status kelengkapan KKPRL.",
+          "utama": [
+            "Pemisahan aksi update perizinan dan status_aksi.",
+            "Flag untuk mengaktifkan tombol input data.",
+            "Status kelengkapan menjadi lengkap dan tidak lengkap.",
+            "Daftar KKPRL dengan nomor yang sama dan penghapusan key related_oss."
+          ],
+          "manfaat": [
+            "Tombol aksi di frontend sesuai dengan kondisi data."
+          ],
+          "prs": [
+            4692,
+            4726,
+            4732,
+            4747,
+            4760,
+            4766
+          ]
+        },
+        {
+          "subtitle": "Menyusun manajemen perizinan KKPRL dengan sumber baru",
+          "deskripsi": "Telah disusun manajemen perizinan KKPRL dengan request baru dan atribut sumber data.",
+          "utama": [
+            "Request dan service manajemen perizinan KKPRL.",
+            "Atribut source pada perizinan."
+          ],
+          "manfaat": [
+            "Asal data perizinan dapat dibedakan."
+          ],
+          "prs": [
+            4755,
+            4757
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Penyusunan Webservice Modul Master Data - MOMI",
+      "intro": "Pada kegiatan ini Tenaga Teknis Implementasi Logika Sistem menyusun webservice perizinan MOMI pada Modul Master Data, sebagai berikut:",
+      "activities": [
+        {
+          "subtitle": "Menyusun unggah GeoJSON MOMI dan permission",
+          "deskripsi": "Telah disusun unggah GeoJSON MOMI, rollback laporan, dan pembaruan permission.",
+          "utama": [
+            "Refactor unggah GeoJSON MOMI.",
+            "Rollback laporan dan catatan.",
+            "Pembaruan permission dan route sinkronisasi."
+          ],
+          "manfaat": [
+            "Data spasial MOMI dapat diunggah dengan aman."
+          ],
+          "prs": [
+            4647,
+            4649
+          ]
+        },
+        {
+          "subtitle": "Menyusun detail, kelengkapan, dan hapus perizinan MOMI",
+          "deskripsi": "Telah disusun detail perizinan MOMI, pelengkapan data, hapus perizinan, serta tampilan relasi data MOMI.",
+          "utama": [
+            "Detail dan kelengkapan data perizinan MOMI.",
+            "Hapus perizinan MOMI.",
+            "Relasi data MOMI pada detail dan daftar."
+          ],
+          "manfaat": [
+            "Data perizinan MOMI dapat dikelola dari satu menu."
+          ],
+          "prs": [
+            4652,
+            4671,
+            4696,
+            4698
+          ]
+        },
+        {
+          "subtitle": "Sinkronisasi GeoJSON dan resource perizinan MOMI",
+          "deskripsi": "Telah diimplementasikan sinkronisasi GeoJSON perizinan MOMI, service pengelolaan perizinan, dan resource perizinan MOMI.",
+          "utama": [
+            "Sinkronisasi GeoJSON perizinan MOMI.",
+            "Service perizinan MOMI dan PerizinanMomiResource.",
+            "Perubahan key file_shp menjadi file_geojson."
+          ],
+          "manfaat": [
+            "Format data spasial MOMI seragam dengan data lain."
+          ],
+          "prs": [
+            4742,
+            4754,
+            4756
+          ]
+        },
+        {
+          "subtitle": "Menyusun konfirmasi kelengkapan MOMI bertahap",
+          "deskripsi": "Telah disusun alur pengelolaan perizinan MOMI secara bertahap (multi-step) hingga konfirmasi kelengkapan pada langkah ketiga.",
+          "utama": [
+            "AddMomiRequest untuk alur multi-step.",
+            "Konfirmasi kelengkapan MOMI pada step 3.",
+            "Pencarian izin usaha OSS v2 pada alur MOMI."
+          ],
+          "manfaat": [
+            "Input perizinan MOMI lebih terarah dan minim kesalahan."
+          ],
+          "prs": [
+            4758,
+            4759
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pembaharuan Webservice Korespondensi dan Penanganan Pelanggaran",
+      "intro": "Pada kegiatan ini Tenaga Teknis Implementasi Logika Sistem memperbaharui webservice korespondensi dan penanganan pelanggaran, sebagai berikut:",
+      "activities": [
+        {
+          "subtitle": "Menyusun sinkronisasi korespondensi custom",
+          "deskripsi": "Telah disusun service sinkronisasi Portal secara manual, perbaikan SKP, dan filter pencarian dokumen korespondensi.",
+          "utama": [
+            "Service sinkron Portal manual.",
+            "Perbaikan SKP dan filter pencarian dokumen."
+          ],
+          "manfaat": [
+            "Korespondensi dapat disinkronkan sesuai kebutuhan."
+          ],
+          "prs": [
+            4635,
+            4636
+          ]
+        },
+        {
+          "subtitle": "Refactor sinkronisasi korespondensi manual dan terjadwal",
+          "deskripsi": "Telah dilakukan refactor sinkronisasi korespondensi manual dengan state management serta sinkronisasi terjadwal.",
+          "utama": [
+            "Sinkron manual dengan state management.",
+            "Refactor sinkron terjadwal."
+          ],
+          "manfaat": [
+            "Status proses sinkronisasi dapat dipantau."
+          ],
+          "prs": [
+            4719
+          ]
+        },
+        {
+          "subtitle": "Memperbaharui penandaan kategori korespondensi",
+          "deskripsi": "Telah diperbaiki penandaan kategori korespondensi, termasuk penandaan berulang dan validasi penetapan flag type.",
+          "utama": [
+            "Penandaan kategori dan perbaikan CategoryService.",
+            "Perbaikan penandaan yang tidak berubah setelah lebih dari 5 kali.",
+            "Validasi request penetapan flag type."
+          ],
+          "manfaat": [
+            "Kategori surat tersimpan sesuai pilihan pengguna."
+          ],
+          "prs": [
+            4711,
+            4729,
+            4730,
+            4733,
+            4739,
+            4741
+          ]
+        },
+        {
+          "subtitle": "Filter dan sorting korespondensi berdasarkan kategori",
+          "deskripsi": "Telah diperbaiki filter dan sorting korespondensi berdasarkan kategori serta penambahan field kategori wilayah.",
+          "utama": [
+            "Sorting dan filter korespondensi berdasarkan kategori.",
+            "Field kategori_wilayah."
+          ],
+          "manfaat": [
+            "Surat mudah ditemukan berdasarkan kategorinya."
+          ],
+          "prs": [
+            4736
+          ]
+        },
+        {
+          "subtitle": "Menyusun awal webservice penanganan pelanggaran",
+          "deskripsi": "Telah disusun tahap awal webservice penanganan pelanggaran beserta overview dan penandaan kategori.",
+          "utama": [
+            "Struktur awal penanganan pelanggaran dan overview.",
+            "Penandaan kategori pada penanganan pelanggaran."
+          ],
+          "manfaat": [
+            "Menjadi dasar pengembangan modul penanganan pelanggaran."
+          ],
+          "prs": [
+            4701,
+            4712
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pembaharuan Webservice Modul Asta Data",
+      "intro": "Pada kegiatan ini Tenaga Teknis Implementasi Logika Sistem memperbaharui webservice Modul Asta Data (Pemantauan Tidak Langsung), sebagai berikut:",
+      "activities": [
+        {
+          "subtitle": "Memperbaharui resource laporan berkala dan provinsi",
+          "deskripsi": "Telah diperbarui resource laporan berkala (diambil 5 tahun terakhir), resource provinsi, serta penanda pemeriksaan Polsus pada pemantauan.",
+          "utama": [
+            "Resource laporan berkala 5 tahun terakhir.",
+            "Resource provinsi dan informasi tambahan KKPRL.",
+            "Flag has_check polsus pada resource pemantauan."
+          ],
+          "manfaat": [
+            "Riwayat pelaporan pelaku usaha tampil ringkas."
+          ],
+          "prs": [
+            4659,
+            4660,
+            4661,
+            4662,
+            4663,
+            4664,
+            4665
+          ]
+        },
+        {
+          "subtitle": "Memperbaharui detail pemantauan tidak langsung",
+          "deskripsi": "Telah dilengkapi detail pemantauan tidak langsung dengan lokasi kerja, penanggung jawab, operator, MOMI, file KKPRL, unit inspeksi, aplikasi SEA, dan riwayat inspeksi.",
+          "utama": [
+            "Lokasi kerja dan detail pemantauan.",
+            "Resource penanggung jawab, operator, dan MOMI.",
+            "File KKPRL dan unit inspeksi pada detail.",
+            "Resource app_sea, riwayat inspeksi, dan PemantauanService."
+          ],
+          "manfaat": [
+            "Seluruh informasi objek pemantauan tampil dalam satu halaman."
+          ],
+          "prs": [
+            4666,
+            4667,
+            4674,
+            4675,
+            4677,
+            4702,
+            4707,
+            4743
+          ]
+        },
+        {
+          "subtitle": "Perbaikan data detail pemantauan",
+          "deskripsi": "Telah diperbaiki logika status NIB, URL file, data OSS kosong, serta laporan yang tidak muncul pada pemantauan.",
+          "utama": [
+            "Perbaikan logika status NIB.",
+            "Perbaikan URL file dan data OSS null.",
+            "Perbaikan laporan yang tidak muncul."
+          ],
+          "manfaat": [
+            "Data pemantauan tampil tanpa error."
+          ],
+          "prs": [
+            4673,
+            4704,
+            4705,
+            4761,
+            4762
+          ]
+        },
+        {
+          "subtitle": "Filter pemantauan berdasarkan periode, lokasi, dan unit kerja",
+          "deskripsi": "Telah ditambahkan filter periode, lokasi kerja, dan unit kerja pada pemantauan tidak langsung.",
+          "utama": [
+            "Filter periode.",
+            "Filter lokasi kerja.",
+            "Filter unit kerja."
+          ],
+          "manfaat": [
+            "Pengguna dapat menyaring objek sesuai wilayah kerjanya."
+          ],
+          "prs": [
+            4699,
+            4700,
+            4703,
+            4709,
+            4710
+          ]
+        },
+        {
+          "subtitle": "Filter status laporan dan perbaikan overview",
+          "deskripsi": "Telah ditambahkan filter status laporan serta diperbaiki jumlah overview, sorting default, dan relasi OSS.",
+          "utama": [
+            "Filter status laporan.",
+            "Perbaikan jumlah overview dan tabel data.",
+            "Sorting default berdasarkan tanggal penerbitan dan relasi OSS berdasarkan nomor penerbitan."
+          ],
+          "manfaat": [
+            "Angka overview sesuai dengan data tabel."
+          ],
+          "prs": [
+            4706,
+            4737,
+            4738,
+            4745
+          ]
+        },
+        {
+          "subtitle": "Menyusun fitur unduh file KKPRL",
+          "deskripsi": "Telah disusun fitur unduh file dokumen KKPRL pada pemantauan tidak langsung.",
+          "utama": [
+            "Endpoint unduh file KKPRL beserta perbaikannya."
+          ],
+          "manfaat": [
+            "Dokumen KKPRL dapat diunduh langsung dari aplikasi."
+          ],
+          "prs": [
+            4708,
+            4721
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Memperbaharui Webservice Integrasi OSS",
+      "intro": "Pada kegiatan ini Tenaga Teknis Implementasi Logika Sistem memperbaharui webservice integrasi OSS, sebagai berikut:",
+      "activities": [
+        {
+          "subtitle": "Refactor service OSS dan penyusunan OSS v2",
+          "deskripsi": "Telah dilakukan refactor service OSS dan penyusunan pencarian OSS versi 2.",
+          "utama": [
+            "Refactor service OSS.",
+            "Pencarian OSS v2."
+          ],
+          "manfaat": [
+            "Integrasi OSS lebih terstruktur."
+          ],
+          "prs": [
+            4670
+          ]
+        },
+        {
+          "subtitle": "Pencarian OSS langsung ke database",
+          "deskripsi": "Telah disusun pencarian data OSS langsung ke database, relasi KKPRL ke pelaku usaha, serta pencarian berdasarkan nama perseroan.",
+          "utama": [
+            "Pencarian OSS direct database.",
+            "Relasi KKPRL ke pelaku usaha.",
+            "Pencarian OSS berdasarkan nama perseroan."
+          ],
+          "manfaat": [
+            "Pencarian lebih cepat tanpa bergantung pada API eksternal."
+          ],
+          "prs": [
+            4734,
+            4753
+          ]
+        },
+        {
+          "subtitle": "Perbaikan sinkronisasi proyek OSS dan pencarian NIB",
+          "deskripsi": "Telah diperbaiki sinkronisasi proyek OSS, validasi format NIB 13 digit, serta pencarian NIB secara langsung.",
+          "utama": [
+            "Sinkronisasi proyek OSS.",
+            "Validasi NIB 13 digit.",
+            "PencarianPerizinanBerusahaService dan parameter pencarian NIB langsung."
+          ],
+          "manfaat": [
+            "Data proyek dan NIB tersinkron dengan format yang benar."
+          ],
+          "prs": [
+            4764,
+            4765
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pemeliharaan Sistem dan Perbaikan Bug",
+      "intro": "Pada kegiatan ini Tenaga Teknis Implementasi Logika Sistem melakukan pemeliharaan sistem dan perbaikan bug, sebagai berikut:",
+      "activities": [
+        {
+          "subtitle": "Perbaikan middleware Gateway dan status SIMKADA",
+          "deskripsi": "Telah ditambahkan middleware yang belum terpasang pada route Gateway serta diperbaiki kolom status SIMKADA.",
+          "utama": [
+            "Middleware pada route Gateway.",
+            "Perbaikan kolom status SIMKADA."
+          ],
+          "manfaat": [
+            "Endpoint Gateway terlindungi."
+          ],
+          "prs": [
+            4645,
+            4668,
+            4669
+          ]
+        },
+        {
+          "subtitle": "Penyamaran data kontak",
+          "deskripsi": "Telah diterapkan penyamaran (asterisk) pada data kontak yang ditampilkan.",
+          "utama": [
+            "Penyamaran data kontak dengan tanda bintang."
+          ],
+          "manfaat": [
+            "Data pribadi tidak tampil utuh."
+          ],
+          "prs": [
+            4722,
+            4723
+          ]
+        },
+        {
+          "subtitle": "Persiapan upgrade framework ke Laravel 11",
+          "deskripsi": "Telah dimulai persiapan upgrade framework aplikasi ke Laravel 11, meliputi pembaruan paket, middleware, schedule, dan exception handler.",
+          "utama": [
+            "Pembaruan framework dan paket composer.",
+            "Migrasi middleware, schedule, dan exception handler ke struktur baru.",
+            "Perbaikan strict typing Carbon pada NotificationOtpService dan penanganan error WAF Cloudflare."
+          ],
+          "manfaat": [
+            "Menjadi dasar proses upgrade aplikasi ke versi framework yang didukung."
+          ],
+          "prs": [
+            "WIP-4907"
+          ]
+        }
+      ]
+    }
+  ]
+}

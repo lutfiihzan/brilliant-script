@@ -1,0 +1,839 @@
+[
+  {
+    "number": 4630,
+    "title": "fix: perbaiki logic sync seamap",
+    "state": "MERGED",
+    "sha": "69bf9907c872dc0e6df5a36d240f885e3c2801ae",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-05"
+  },
+  {
+    "number": 4631,
+    "title": "fix: handle sse when no data",
+    "state": "MERGED",
+    "sha": "4e9391ec45bc1ff24f7fe4fa7e7004f6e456ca94",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-05"
+  },
+  {
+    "number": 4632,
+    "title": "improve: add reset old cache when start sync",
+    "state": "MERGED",
+    "sha": "2b5bf53378f4c9a601bfae5425890fd9bf970b4d",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-05"
+  },
+  {
+    "number": 4633,
+    "title": "fix: validasi koordinat salah pada upload excel",
+    "state": "MERGED",
+    "sha": "396af9976160612d517bf38f0db21853922f0c55",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-05"
+  },
+  {
+    "number": 4634,
+    "title": "fix: validation coordinate and template",
+    "state": "MERGED",
+    "sha": "50b0800a5f99ab4629103d012a31735b24b3c6af",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-05"
+  },
+  {
+    "number": 4635,
+    "title": "Sinkron/korespondensi custom",
+    "state": "MERGED",
+    "sha": "6c80f00d8fafc82fb8a6ed9b00f8fb76069d81fa",
+    "branch": "sinkron/korespondensi-custom",
+    "mergedAt": "2026-02-05"
+  },
+  {
+    "number": 4636,
+    "title": "Sinkron/korespondensi custom",
+    "state": "MERGED",
+    "sha": "23fe9a1002dfa55c4411a7182511b20a9f0756e8",
+    "branch": "sinkron/korespondensi-custom",
+    "mergedAt": "2026-02-05"
+  },
+  {
+    "number": 4637,
+    "title": "Refactor Fitur/master data kkprl",
+    "state": "MERGED",
+    "sha": "e2098a974e69a48a4ecf48979ebec8b031a748ea",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-06"
+  },
+  {
+    "number": 4638,
+    "title": "fix: n+1 problem",
+    "state": "MERGED",
+    "sha": "011459171842e7a07c75266ea8336a64811de5bd",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-06"
+  },
+  {
+    "number": 4639,
+    "title": "fix: handle duplicate files",
+    "state": "MERGED",
+    "sha": "fdb33f84be1679fbf84384a59549fd376697d116",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-06"
+  },
+  {
+    "number": 4640,
+    "title": "fix: array of history",
+    "state": "MERGED",
+    "sha": "d34bad59e87a3ccf2b08aab1393999d1c8fa4f1e",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-06"
+  },
+  {
+    "number": 4641,
+    "title": "fix: n+1 problem",
+    "state": "MERGED",
+    "sha": "14ade732370f2882b5a0ef9e20f04f913c9de351",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-06"
+  },
+  {
+    "number": 4642,
+    "title": "Fitur/master data: handle duplicate sinkron kkprl perizinan files",
+    "state": "MERGED",
+    "sha": "fcb00308515f40d12b3d09e5d0b42e9ac2a518eb",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-06"
+  },
+  {
+    "number": 4643,
+    "title": "fix: handle gagal simpan geojson dan update status kelengkapan",
+    "state": "MERGED",
+    "sha": "35522187855e50da44ca17c40cb6f1719c2a6820",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-06"
+  },
+  {
+    "number": 4645,
+    "title": "Issue/simkada column status",
+    "state": "MERGED",
+    "sha": "f8c2d08ed16355a2d535b2afcb7b739b259abed9",
+    "branch": "issue/simkada-column-status",
+    "mergedAt": "2026-02-08"
+  },
+  {
+    "number": 4646,
+    "title": "Issue/simkada column status",
+    "state": "MERGED",
+    "sha": "a35dac2bd4803fd1272b20a12b5832e7ec610d16",
+    "branch": "issue/simkada-column-status",
+    "mergedAt": "2026-02-08"
+  },
+  {
+    "number": 4647,
+    "title": "Unggah geojson, rollback laporan, permission",
+    "state": "MERGED",
+    "sha": "05bed9a42eab8bab21cd4646980e827c0b4fa618",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-10"
+  },
+  {
+    "number": 4648,
+    "title": "fix: konversi",
+    "state": "MERGED",
+    "sha": "1cfa7352550e812e6e77ed5ffc4b7178409c4b48",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-10"
+  },
+  {
+    "number": 4649,
+    "title": "Fitur/master data",
+    "state": "MERGED",
+    "sha": "b024b6f318046c50121ef96a746e54731279c94d",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-10"
+  },
+  {
+    "number": 4650,
+    "title": "fix: unggah multi geometry khusus",
+    "state": "MERGED",
+    "sha": "d12b1403d27852ef83e77c361a951ea018c640f8",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-10"
+  },
+  {
+    "number": 4651,
+    "title": "fix: search polygon by kode_wiup",
+    "state": "MERGED",
+    "sha": "12941769d93d15d7d9fe11785bfa023e58edccd3",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-10"
+  },
+  {
+    "number": 4652,
+    "title": "feat: hapus perizinan momi",
+    "state": "MERGED",
+    "sha": "22da57d608b7fd9cee6426cca2e841c863fe3665",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-10"
+  },
+  {
+    "number": 4654,
+    "title": "fix: data upload file tidak masuk riwayat",
+    "state": "MERGED",
+    "sha": "da2d5c5242be82b154b30c0373f16ac24ce45f63",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-10"
+  },
+  {
+    "number": 4655,
+    "title": "fix: data upload file tidak masuk riwayat",
+    "state": "MERGED",
+    "sha": "84432373274c7bbe58815e45a3a22133c9785562",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-10"
+  },
+  {
+    "number": 4656,
+    "title": "fix: data upload file tidak masuk riwayat",
+    "state": "MERGED",
+    "sha": "034db14b617a8b70deab64191ce8b6d10b75451a",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-10"
+  },
+  {
+    "number": 4657,
+    "title": "fix: data upload file tidak masuk riwayat",
+    "state": "MERGED",
+    "sha": "510f37364d6f7d85563606e87ba2c9069bb37e9f",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-10"
+  },
+  {
+    "number": 4658,
+    "title": "Fitur/master data: fix completenes, improve seamap",
+    "state": "MERGED",
+    "sha": "ecb3640a906aae2da27d71e08a3447d051db6f87",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-10"
+  },
+  {
+    "number": 4659,
+    "title": "Fitur/master data: improve seamap dan pemantauan",
+    "state": "MERGED",
+    "sha": "b97f72e3a321d4c2a0d68b03084c879b3a8e3515",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-11"
+  },
+  {
+    "number": 4660,
+    "title": "improve: resource laporan berkala",
+    "state": "MERGED",
+    "sha": "4dc4a5cadf70c1bc8b6b80003cde7364baaa7dce",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-11"
+  },
+  {
+    "number": 4661,
+    "title": "improve: resource provinsi",
+    "state": "MERGED",
+    "sha": "f35f9eb35d48c076cebb5efb2bc54a54462f449d",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-11"
+  },
+  {
+    "number": 4662,
+    "title": "feat: add has_check polsus on pemantauan resource",
+    "state": "MERGED",
+    "sha": "44b265dbc46630b761510bbd43cfb4f1da25fb38",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-11"
+  },
+  {
+    "number": 4663,
+    "title": "feat: add has_check polsus on pemantauan resource",
+    "state": "MERGED",
+    "sha": "f10a54be44bab25a3c2b4fb5932c4c3d0a6fface",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-11"
+  },
+  {
+    "number": 4664,
+    "title": "feat: add has_check polsus on pemantauan resource",
+    "state": "MERGED",
+    "sha": "2ae194f6b74ca9b7cbc09dc2ee1ad7ad49bd458e",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-11"
+  },
+  {
+    "number": 4665,
+    "title": "improve: laporan diambil 5 tahun terakhir, dan jika tahun laporan mer…",
+    "state": "MERGED",
+    "sha": "e5aaa8433e14dfff03189094c5b440e2e1d1e752",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-11"
+  },
+  {
+    "number": 4666,
+    "title": "Fitur/master data: improve lokasi kerja dan detail pemantauan",
+    "state": "MERGED",
+    "sha": "0c3530d3d8d0664d6cc8b7b0c6220f107af26d28",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-11"
+  },
+  {
+    "number": 4667,
+    "title": "fix: detail pemantuan",
+    "state": "MERGED",
+    "sha": "867d21f78ae112cb05d64fcfbaf455b64bbd3e23",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-11"
+  },
+  {
+    "number": 4668,
+    "title": "Issue/missing middleware",
+    "state": "MERGED",
+    "sha": "5a48b6815c12a1a2a81724070dfddd76f158b1e4",
+    "branch": "issue/missing-middleware",
+    "mergedAt": "2026-02-11"
+  },
+  {
+    "number": 4669,
+    "title": "fix: missing middleware",
+    "state": "MERGED",
+    "sha": "9f8d6a8f0171430207aae193d5b040e9db8de088",
+    "branch": "issue/missing-middleware",
+    "mergedAt": "2026-02-11"
+  },
+  {
+    "number": 4670,
+    "title": "Fitur/master data: refactor oss service",
+    "state": "MERGED",
+    "sha": "18bbd685250aec5ab5d9db31ffb2eb28bad94e07",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-12"
+  },
+  {
+    "number": 4671,
+    "title": "Fitur/master data: unggah dan detail momi",
+    "state": "MERGED",
+    "sha": "5756b1ebfa7abe887a22a3041fe4ace71d15ee54",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-12"
+  },
+  {
+    "number": 4672,
+    "title": "feat: add kegiatan",
+    "state": "MERGED",
+    "sha": "9643efafae8d5415cb631164fa8f078dc4e30cc5",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-12"
+  },
+  {
+    "number": 4673,
+    "title": "fix: perbaikan logic define status nib",
+    "state": "MERGED",
+    "sha": "688f438ab07e693a753f1ebc94aba4bb9328651c",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-12"
+  },
+  {
+    "number": 4674,
+    "title": "feat: tambah resource pj dan operator",
+    "state": "MERGED",
+    "sha": "47fd5b06500fc54c8e4797fa79e7840046974040",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-12"
+  },
+  {
+    "number": 4675,
+    "title": "feat: tambah momi resource",
+    "state": "MERGED",
+    "sha": "9321ab6d00272ec7d32e29478ee9a8e9a299e666",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-12"
+  },
+  {
+    "number": 4676,
+    "title": "feat: add sk_iup",
+    "state": "MERGED",
+    "sha": "fa3e1ff21c6616a6c8d9fd2d7e4339dd483e99b3",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-12"
+  },
+  {
+    "number": 4677,
+    "title": "Fitur/master data: file kkprl on pemantauan detail resource",
+    "state": "MERGED",
+    "sha": "3e3e4d8e1ec6acb487f5f2a75e599902cfe27324",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-12"
+  },
+  {
+    "number": 4692,
+    "title": "improve: sparation action on update perizinan",
+    "state": "MERGED",
+    "sha": "fd45ce41e837caf9b3a8ff1ea513d921f46afbd6",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-13"
+  },
+  {
+    "number": 4696,
+    "title": "fix: menampilkan relasi data momi pada detail dan list",
+    "state": "MERGED",
+    "sha": "22eb579b7cf58a0c136ce4ad92537ebcfdcdc6f8",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-13"
+  },
+  {
+    "number": 4698,
+    "title": "fix: issue kelengkapan data perizinan momi",
+    "state": "MERGED",
+    "sha": "f0758f1c5f763e8160ef6a1539e2be4125efbd93",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-13"
+  },
+  {
+    "number": 4699,
+    "title": "feat: filter by periode pada pengamatan tidak langsung",
+    "state": "MERGED",
+    "sha": "776b1c4b9b1a317a0a7b309b3b81b68cf6100b35",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-13"
+  },
+  {
+    "number": 4700,
+    "title": "Fitur/master data: filter pemantauan by lokasi kerja",
+    "state": "MERGED",
+    "sha": "d8d5b2311c309694aa912828b55927658c2de4cc",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-13"
+  },
+  {
+    "number": 4701,
+    "title": "Fitur/master data",
+    "state": "MERGED",
+    "sha": "e7f924e0f6cb1129fb3f65248ad4910d9caec22f",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-16"
+  },
+  {
+    "number": 4702,
+    "title": "feat: update resource app_sea and riwayat_inspeksi",
+    "state": "MERGED",
+    "sha": "0328b7877fa3d3e053d84c9811ea5d8a2b5caef2",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-16"
+  },
+  {
+    "number": 4703,
+    "title": "fix: perbaikan filter pemantauan",
+    "state": "MERGED",
+    "sha": "29826c0975158d688ef5fb1c4f0279bcd065a822",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-16"
+  },
+  {
+    "number": 4704,
+    "title": "fix: perbaikan url file",
+    "state": "MERGED",
+    "sha": "dbd902afb3f452793f1f1783456806a506cb4324",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-16"
+  },
+  {
+    "number": 4705,
+    "title": "fix: null oss",
+    "state": "MERGED",
+    "sha": "73449f3810b2395ba0c300321a0bab837d073e67",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-16"
+  },
+  {
+    "number": 4706,
+    "title": "feat: filter status report",
+    "state": "MERGED",
+    "sha": "5e76a91ad213f7a4695c4db1f14e1c4193f2dc7b",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-16"
+  },
+  {
+    "number": 4707,
+    "title": "Fitur/master data",
+    "state": "MERGED",
+    "sha": "a999824829e3c9dc6ef94fe7f7611cbfcbe23225",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-16"
+  },
+  {
+    "number": 4708,
+    "title": "feat: download file kkprl",
+    "state": "MERGED",
+    "sha": "cb8df0ac536b3679ad7931782ae639075ef9c03c",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-16"
+  },
+  {
+    "number": 4709,
+    "title": "fix: filter unit kerja",
+    "state": "MERGED",
+    "sha": "a4f1bd595111ca9cb12e17e7a3d039d8434c6357",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-16"
+  },
+  {
+    "number": 4710,
+    "title": "fix: filter unit kerja",
+    "state": "MERGED",
+    "sha": "485d9a3efaaf9179d272c0784ec21820f56997b0",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-16"
+  },
+  {
+    "number": 4711,
+    "title": "fix: tandai kategori on korespondensi",
+    "state": "MERGED",
+    "sha": "2c1ff6c6459ab3717f20aa0ad0da102ce23478a7",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-16"
+  },
+  {
+    "number": 4712,
+    "title": "fix: tandai kategori on penanganan pelanggaran",
+    "state": "MERGED",
+    "sha": "741247d08943ae0668a6a0b6b80a2255927d973a",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-16"
+  },
+  {
+    "number": 4713,
+    "title": "feat: input nib kkprl",
+    "state": "MERGED",
+    "sha": "4a8a84f016562c91edf2ee9a6f8b7e2639b7a6fc",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-16"
+  },
+  {
+    "number": 4719,
+    "title": "Fitur/master data: refactor sinkron korespondensi manual dan terjadwal",
+    "state": "MERGED",
+    "sha": "b3d20dc07a347b761959bd04e75b023c1ec31c79",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-17"
+  },
+  {
+    "number": 4721,
+    "title": "improve: download file kkprl",
+    "state": "MERGED",
+    "sha": "05d29039cca8f1e1a99bdf9091ad73f116832c92",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-17"
+  },
+  {
+    "number": 4722,
+    "title": "improve: make asterik contact",
+    "state": "MERGED",
+    "sha": "865e3b398957c33339e31fa0d124c28d1f2c91e3",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-17"
+  },
+  {
+    "number": 4723,
+    "title": "improve: make asterik contact",
+    "state": "MERGED",
+    "sha": "582f6ad201f2e81413ea9b6166589c51b8aca92c",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-17"
+  },
+  {
+    "number": 4726,
+    "title": "improve: menambahkan flag untuk mengaktifkan tombol input dan ubah",
+    "state": "MERGED",
+    "sha": "8d4f193046dd5f19d896597d99a297b1324130e4",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-18"
+  },
+  {
+    "number": 4729,
+    "title": "improve: menandai korespondensi",
+    "state": "MERGED",
+    "sha": "566580b1d3a40e2e4ba3175bac715655aef7e496",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-18"
+  },
+  {
+    "number": 4730,
+    "title": "improve: menandai korespondensi",
+    "state": "MERGED",
+    "sha": "ec5a09e5df6add020b7a6ddea65fe7688561890f",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-18"
+  },
+  {
+    "number": 4731,
+    "title": "improve: tambah kelengkapan npwp",
+    "state": "MERGED",
+    "sha": "418f4fc50e4a7b351bd63abfef24e329d1114620",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-18"
+  },
+  {
+    "number": 4732,
+    "title": "improve: menampilkan list kkprl dengan nomor kkprl yg sama",
+    "state": "MERGED",
+    "sha": "93b81677b8fd32c1c212c0403e95cf992ebc78ae",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-18"
+  },
+  {
+    "number": 4733,
+    "title": "Update CategoryService.php",
+    "state": "MERGED",
+    "sha": "6da264b0d38f417611f43fc4736d0ff2c127d2ed",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-18"
+  },
+  {
+    "number": 4734,
+    "title": "Fitur/master data: pencarian oss direct db, relasi kkprl dengan oss, update perizan kkprl resource",
+    "state": "MERGED",
+    "sha": "93273a34710b6e37668cea57020386ebfa49789c",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-19"
+  },
+  {
+    "number": 4735,
+    "title": "Fitur/master data",
+    "state": "MERGED",
+    "sha": "2c9b1a5a54f57e41aa04d5e80e750c50ff7a0e39",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-19"
+  },
+  {
+    "number": 4736,
+    "title": "Fitur/master data: perbaikan filter dan sorting by category_type",
+    "state": "MERGED",
+    "sha": "6ecb1658feb1ff8bdcf3e77efa6275c0248777a0",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-20"
+  },
+  {
+    "number": 4737,
+    "title": "fix: jumlah overview dan data table pengamatan tidak langsung tidak s…",
+    "state": "MERGED",
+    "sha": "152c86d2122d033d44815bf5f27e3a49f5201c75",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-20"
+  },
+  {
+    "number": 4738,
+    "title": "fix: sorting default by tgl_penerbitan",
+    "state": "MERGED",
+    "sha": "3dcf2c846be4881daa692ce86cfd501a14daabc4",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-20"
+  },
+  {
+    "number": 4739,
+    "title": "fix: tandai korespondensi > 5x gk berubah",
+    "state": "MERGED",
+    "sha": "db0df24be88585a2268e4efae849caa03adf6ffd",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-20"
+  },
+  {
+    "number": 4741,
+    "title": "feat: Introduce request validation for assigning flag types to corres…",
+    "state": "MERGED",
+    "sha": "1ac34830afb1c551d6181e975e170ec9b76daaf9",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-23"
+  },
+  {
+    "number": 4742,
+    "title": "feat: Implement GeoJSON synchronization for MOMI permits, adding a ne…",
+    "state": "MERGED",
+    "sha": "5e83c42875e318072fb8a787833b36d4488bff87",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-23"
+  },
+  {
+    "number": 4743,
+    "title": "feat: add PemantauanService for building monitoring data queries with…",
+    "state": "MERGED",
+    "sha": "81015d2c18e163a075787f8a3640fa4f2b84f27b",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-23"
+  },
+  {
+    "number": 4744,
+    "title": "feat: Add KKPRLService for integrating with the KKPRL API, handling t…",
+    "state": "MERGED",
+    "sha": "d21ca55f84978014206f52467bc2724eecbbc144",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-24"
+  },
+  {
+    "number": 4745,
+    "title": "fix: relasi oss by nomor_penerbit",
+    "state": "MERGED",
+    "sha": "27a68d983cb0d943a39c08b8ca61d1155617665c",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-24"
+  },
+  {
+    "number": 4747,
+    "title": "fix: status kelengkapan KKPRL hanya lengkap dan tidak lengkap",
+    "state": "MERGED",
+    "sha": "d7a8c2283e168a2181435830ce585070cf8272e1",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-24"
+  },
+  {
+    "number": 4751,
+    "title": "Fitur/master data: input kelengkapan nib, fix relasi kkprl sibling (pengamatan tidak langsung)",
+    "state": "MERGED",
+    "sha": "d4ef85c36f01d55dbc2db3dcf1c73a6de916ea5a",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-25"
+  },
+  {
+    "number": 4752,
+    "title": "fix: relasi siblings kkprl",
+    "state": "MERGED",
+    "sha": "91ec104b5af0f0096a535bebabe805cacf5632c0",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-25"
+  },
+  {
+    "number": 4753,
+    "title": "fix: pencarian oss by nama_perseroan",
+    "state": "MERGED",
+    "sha": "6eaeffe46790912549fa7438473a9239b8d642a1",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-25"
+  },
+  {
+    "number": 4754,
+    "title": "feat: Implement Momi Perizinan service for license management, OSS sy…",
+    "state": "MERGED",
+    "sha": "0d0fc5cd02c965ab56106edaa346faf02316aa38",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-25"
+  },
+  {
+    "number": 4755,
+    "title": "feat: implement KKPRL Perizinan management with new request validatio…",
+    "state": "MERGED",
+    "sha": "96e5f6f63a402a7725cb7af23306107ef5368716",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-25"
+  },
+  {
+    "number": 4756,
+    "title": "Fitur/master data: perubahan key file_shp menjadi file_geojson",
+    "state": "MERGED",
+    "sha": "364a983f5b6af551c48b545c28dd6c3a312d49d8",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-25"
+  },
+  {
+    "number": 4757,
+    "title": "feat: Introduce KKPRL Perizinan management with new `source` and `is_…",
+    "state": "MERGED",
+    "sha": "ce3bf4ae1a50ee36e3590d579ff20e01e5242476",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-25"
+  },
+  {
+    "number": 4758,
+    "title": "Fitur/master data: step 3 konfirmasi kelengkapan momi",
+    "state": "MERGED",
+    "sha": "43ba2da876db185bf09e5009b0a5088f5facb6df",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-26"
+  },
+  {
+    "number": 4759,
+    "title": "feat: Implement MOMI perizinan management with new request, service, …",
+    "state": "MERGED",
+    "sha": "29a78eae52c9a0970385533ba68f9459d26073aa",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-26"
+  },
+  {
+    "number": 4760,
+    "title": "feat: improve status_aksi",
+    "state": "MERGED",
+    "sha": "b05f7d9149c50df691c15e22375f856515f47f33",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-26"
+  },
+  {
+    "number": 4761,
+    "title": "feat: improve",
+    "state": "MERGED",
+    "sha": "d424a411f3e8578fd6666822b343a15422d3f5b6",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-26"
+  },
+  {
+    "number": 4762,
+    "title": "fix: laporan tidak muncul",
+    "state": "MERGED",
+    "sha": "c017bd90a5213922b757a767e0fb2328f34247b6",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-26"
+  },
+  {
+    "number": 4763,
+    "title": "Fitur/master data: sinkron data oss dan improvisasi job kkprl yg lain",
+    "state": "MERGED",
+    "sha": "6d7472c12eb2c92bcd74f23b401ce6460c2b98b0",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-27"
+  },
+  {
+    "number": 4764,
+    "title": "Fitur/master data: improve sinkron oss",
+    "state": "MERGED",
+    "sha": "9e1b83220d3b20ec2cca1d05b33974bf8171b06f",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-27"
+  },
+  {
+    "number": 4765,
+    "title": "Fitur/master data: improve pencarian oss dan input nib manual",
+    "state": "MERGED",
+    "sha": "f90e4153689864baf8e57c5b254ea87798fb7b36",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-27"
+  },
+  {
+    "number": 4766,
+    "title": "feat: remove key related_oss on detailResource",
+    "state": "MERGED",
+    "sha": "fce458b8b8776702e2e3006388b380e0efdd6613",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-27"
+  },
+  {
+    "number": 4767,
+    "title": "Fitur/master data: activate input manual spasial",
+    "state": "MERGED",
+    "sha": "ef7b6dc49e17da226f5424034fb96224c9c824bb",
+    "branch": "fitur/master_data",
+    "mergedAt": "2026-02-28"
+  },
+  {
+    "number": "WIP-4907",
+    "state": "WIP",
+    "commits": [
+      "1ef92b1b489a92583bd4b16e3ca8c7e5ae55d7e2",
+      "cd25609a5ae9e74abb5e1cf832557452f859e9e1",
+      "210d215ff43943347d1e330f35c26d80b813192f",
+      "6613ebb9b1c0d258e77f22318b48a166fad89df9"
+    ],
+    "mergedAt": "2026-02-02",
+    "branch": "upgrade/api-sip-11",
+    "title": "Upgrade/api sip 11 (dikerjakan, di-merge #4907 2026-03-17)"
+  }
+]

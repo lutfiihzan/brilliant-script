@@ -1,0 +1,628 @@
+{
+  "exclude": [],
+  "modules": [
+    {
+      "title": "Penyusunan Webservice Modul Penanganan Pelanggaran",
+      "intro": "Pada kegiatan ini Tenaga Teknis Implementasi Logika Sistem menyusun webservice Modul Penanganan Pelanggaran, sebagai berikut:",
+      "activities": [
+        {
+          "subtitle": "Menyusun webservice penetapan sanksi administrasi",
+          "deskripsi": "Telah disusun webservice penetapan sanksi administrasi pada Modul Penanganan Pelanggaran, termasuk pencarian data pelanggaran, kelompok pelanggar, dan pencarian data Portal KKPRL.",
+          "utama": [
+            "Endpoint penetapan sanksi administrasi.",
+            "Pencarian pelanggaran dan peningkatan kelompok pelanggar.",
+            "Pencarian data Portal untuk KKPRL."
+          ],
+          "manfaat": [
+            "Penetapan sanksi administrasi dapat dicatat di dalam sistem."
+          ],
+          "prs": [
+            4772
+          ]
+        },
+        {
+          "subtitle": "Memperbaharui penandaan penetapan sanksi dan subjek hukum",
+          "deskripsi": "Telah diperbarui penandaan (tandai) penetapan sanksi serta pemilihan subjek hukum lebih dari satu.",
+          "utama": [
+            "Penandaan penetapan sanksi dan pembaruan data penandaan.",
+            "Pemilihan lebih dari satu subjek hukum dan PenetapanSanksiResource.",
+            "Filter tambahan dan perbaikan typo subjek hukum."
+          ],
+          "manfaat": [
+            "Satu penetapan sanksi dapat mencakup beberapa subjek hukum."
+          ],
+          "prs": [
+            4795,
+            4840
+          ]
+        },
+        {
+          "subtitle": "Filter dan response daftar penetapan sanksi",
+          "deskripsi": "Telah diperbaiki filter daftar penetapan sanksi, pencarian berdasarkan tipe kategori, dan penyesuaian response jenis pelanggaran.",
+          "utama": [
+            "Perbaikan filter penetapan sanksi.",
+            "Pencarian berdasarkan kategori dan tipe kategori.",
+            "Penyesuaian response jenis pelanggaran pada daftar."
+          ],
+          "manfaat": [
+            "Daftar penetapan sanksi mudah disaring."
+          ],
+          "prs": [
+            4825,
+            4827,
+            4833
+          ]
+        },
+        {
+          "subtitle": "Penanganan error dan perbaikan data penetapan sanksi",
+          "deskripsi": "Telah ditambahkan penanganan error dan URL dokumen pada penetapan sanksi serta perbaikan typo dan singkatan.",
+          "utama": [
+            "Penanganan error penetapan sanksi.",
+            "Penambahan URL dokumen.",
+            "Perbaikan typo dan singkatan."
+          ],
+          "manfaat": [
+            "Proses penetapan sanksi tidak terhenti karena error data."
+          ],
+          "prs": [
+            4780,
+            4791,
+            4798,
+            4804,
+            4824,
+            4834,
+            4835
+          ]
+        },
+        {
+          "subtitle": "Menyusun pengelolaan denda",
+          "deskripsi": "Telah ditambahkan pengelolaan nilai denda pada penetapan sanksi administrasi beserta validasinya.",
+          "utama": [
+            "Flag denda pada penetapan sanksi.",
+            "Validasi nilai denda dan penyesuaian field nilai_denda.",
+            "Perbaikan validasi request."
+          ],
+          "manfaat": [
+            "Nilai denda tersimpan dengan format yang benar."
+          ],
+          "prs": [
+            4820,
+            4826,
+            4828,
+            4838,
+            4839
+          ]
+        },
+        {
+          "subtitle": "Memperbaharui pencarian pelanggaran dan jenis pelanggaran",
+          "deskripsi": "Telah diperbarui pencarian data pelanggaran berdasarkan kategori dan jenis pelanggaran.",
+          "utama": [
+            "Filter kategori pelanggaran dan pencarian berdasarkan jenis pelanggaran.",
+            "Parameter usage pada jenis pelanggaran.",
+            "Perbaikan validasi request, ID pelanggaran, dan validasi string tipe kategori."
+          ],
+          "manfaat": [
+            "Data pelanggaran mudah ditemukan saat penetapan sanksi."
+          ],
+          "prs": [
+            4800,
+            4805,
+            4806,
+            4814,
+            4821,
+            4836
+          ]
+        },
+        {
+          "subtitle": "Menyusun relasi pengamatan dengan penetapan sanksi",
+          "deskripsi": "Telah disusun relasi data pengamatan tidak langsung dan pengamatan langsung dengan penetapan sanksi berdasarkan nomor penerbitan.",
+          "utama": [
+            "Relasi pengamatan tidak langsung ke penetapan sanksi.",
+            "Relasi pengamatan langsung berdasarkan nomor penerbitan.",
+            "Perbaikan format jenis izin pada relasi."
+          ],
+          "manfaat": [
+            "Riwayat sanksi dapat dilihat dari data pengamatan."
+          ],
+          "prs": [
+            4782,
+            4796,
+            4813,
+            4853
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pembaharuan Webservice Modul Master Data",
+      "intro": "Pada kegiatan ini Tenaga Teknis Implementasi Logika Sistem memperbaharui webservice Modul Master Data, sebagai berikut:",
+      "activities": [
+        {
+          "subtitle": "Perbaikan master data berdasarkan dokumen perbaikan pengguna",
+          "deskripsi": "Telah dilakukan perbaikan master data berdasarkan dokumen perbaikan dari pengguna, meliputi pengelolaan master data MOMI, filter tahun laporan, kategori wilayah, dan status izin.",
+          "utama": [
+            "Pengelolaan master data MOMI.",
+            "Filter tahun laporan dan kolom tambahan.",
+            "Kategori wilayah dan status izin."
+          ],
+          "manfaat": [
+            "Master data sesuai dengan masukan pengguna."
+          ],
+          "prs": [
+            4769
+          ]
+        },
+        {
+          "subtitle": "Memperbaharui relasi, GeoJSON, dan middleware MOMI",
+          "deskripsi": "Telah diperbaiki relasi MOMI pada pengamatan tidak langsung, tampilan GeoJSON MOMI, dan penambahan middleware.",
+          "utama": [
+            "Perbaikan relasi MOMI di pengamatan tidak langsung.",
+            "Tampilan GeoJSON MOMI.",
+            "Middleware pada MOMI."
+          ],
+          "manfaat": [
+            "Data MOMI tampil benar dan aksesnya terlindungi."
+          ],
+          "prs": [
+            4774,
+            4785,
+            4786
+          ]
+        },
+        {
+          "subtitle": "Filter dan validasi MOMI",
+          "deskripsi": "Telah ditambahkan filter MOMI serta perbaikan validasi dan resource MOMI.",
+          "utama": [
+            "Filter MOMI dan perbaikan URL dokumen.",
+            "Pembaruan resource MOMI.",
+            "Perbaikan validasi MOMI."
+          ],
+          "manfaat": [
+            "Input MOMI tervalidasi sebelum tersimpan."
+          ],
+          "prs": [
+            4797,
+            4799,
+            4810,
+            4811
+          ]
+        },
+        {
+          "subtitle": "Filter jenis keterangan dan kelengkapan KKPRL",
+          "deskripsi": "Telah ditambahkan filter jenis keterangan dan filter data tidak lengkap untuk seluruh perizinan KKPRL.",
+          "utama": [
+            "Filter keterangan true/false dan dropdown.",
+            "Filter in_complete termasuk nilai null.",
+            "Filter in_complete untuk seluruh perizinan KKPRL."
+          ],
+          "manfaat": [
+            "Data KKPRL yang belum lengkap mudah diidentifikasi."
+          ],
+          "prs": [
+            4773,
+            4778,
+            4788
+          ]
+        },
+        {
+          "subtitle": "Menyusun PerizinanService dan pencarian KKPRL",
+          "deskripsi": "Telah diimplementasikan PerizinanService untuk pengelolaan data perizinan KKPRL serta perbaikan pencarian dan tampilan NIB.",
+          "utama": [
+            "PerizinanService untuk data perizinan KKPRL.",
+            "Perbaikan pencarian KKPRL.",
+            "Perbaikan tampilan NIB pada detail."
+          ],
+          "manfaat": [
+            "Logika perizinan KKPRL terpusat di satu service."
+          ],
+          "prs": [
+            4790,
+            4792,
+            4793,
+            4794
+          ]
+        },
+        {
+          "subtitle": "Perbaikan unit inspeksi, GeoJSON WIUP, dan middleware KKPRL",
+          "deskripsi": "Telah diperbaiki penentuan unit inspeksi, tampilan GeoJSON berdasarkan kode WIUP, penanganan file kosong, serta middleware KKPRL dan penanganan pelanggaran.",
+          "utama": [
+            "Perbaikan unit inspeksi.",
+            "Kode WIUP untuk menampilkan GeoJSON.",
+            "Penanganan error getRealPath() on null.",
+            "Middleware KKPRL dan penanganan pelanggaran."
+          ],
+          "manfaat": [
+            "Endpoint KKPRL stabil dan terlindungi."
+          ],
+          "prs": [
+            4781,
+            4783,
+            4784,
+            4787
+          ]
+        },
+        {
+          "subtitle": "Memperbaharui penyimpanan NIB, NPWP, dan sinkronisasi OSS",
+          "deskripsi": "Telah diperbaiki penyimpanan NIB dan NPWP serta sinkronisasi OSS ketika NIB belum tersedia di database.",
+          "utama": [
+            "Perbaikan penyimpanan NIB dan NPWP.",
+            "Sinkronisasi OSS ketika NIB belum ada di database."
+          ],
+          "manfaat": [
+            "Data pelaku usaha mengikuti data terbaru OSS."
+          ],
+          "prs": [
+            4809,
+            4812,
+            4818
+          ]
+        },
+        {
+          "subtitle": "Menyusun export korespondensi dan master data",
+          "deskripsi": "Telah disusun export korespondensi serta refactor export MOMI, KKPRL, dan laporan tahunan beserta sorting.",
+          "utama": [
+            "Export korespondensi.",
+            "Refactor export MOMI, korespondensi, KKPRL, dan laporan tahunan.",
+            "Perbaikan RBAC resource."
+          ],
+          "manfaat": [
+            "Data master dapat diunduh untuk pelaporan."
+          ],
+          "prs": [
+            4770,
+            4801,
+            4802
+          ]
+        },
+        {
+          "subtitle": "Perbaikan penandaan dan tampilan file korespondensi",
+          "deskripsi": "Telah diperbaiki penandaan korespondensi dan tampilan file surat serta refactor sinkron korespondensi.",
+          "utama": [
+            "Perbaikan tandai korespondensi.",
+            "Perbaikan error tampilan file korespondensi.",
+            "Refactor sinkron korespondensi."
+          ],
+          "manfaat": [
+            "File surat dapat dibuka tanpa error."
+          ],
+          "prs": [
+            4771,
+            4803
+          ]
+        },
+        {
+          "subtitle": "Memperbaharui permission Master Data, Asta Data, dan Penanganan Pelanggaran",
+          "deskripsi": "Telah disusun permission untuk menu Master Data, Asta Data, dan Penanganan Pelanggaran beserta export penetapan sanksi.",
+          "utama": [
+            "Permission master data dan penanganan pelanggaran.",
+            "Export penetapan sanksi."
+          ],
+          "manfaat": [
+            "Akses menu baru sesuai peran pengguna."
+          ],
+          "prs": [
+            4776
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Memperbaharui Webservice Integrasi OSS dan Portal Data",
+      "intro": "Pada kegiatan ini Tenaga Teknis Implementasi Logika Sistem memperbaharui webservice integrasi OSS dan Portal Data pada modul Gateway, sebagai berikut:",
+      "activities": [
+        {
+          "subtitle": "Penambahan jenis izin dan NIK pada pencarian OSS dan Portal Data",
+          "deskripsi": "Telah ditambahkan jenis izin dan NIK pada hasil pencarian OSS dan Portal Data.",
+          "utama": [
+            "Jenis izin pada Portal Data dan resource identitas.",
+            "NIK pada response pencarian OSS dan Portal Data."
+          ],
+          "manfaat": [
+            "Hasil pencarian lebih informatif."
+          ],
+          "prs": [
+            4777,
+            4855
+          ]
+        },
+        {
+          "subtitle": "Perbaikan pencarian perizinan berusaha",
+          "deskripsi": "Telah diperbaiki service pencarian perizinan berusaha dan refactor bagian OSS yang terlewat.",
+          "utama": [
+            "Perbaikan pencarian perizinan berusaha service.",
+            "Refactor OSS yang terlewat."
+          ],
+          "manfaat": [
+            "Pencarian perizinan berusaha mengembalikan data yang benar."
+          ],
+          "prs": [
+            4832,
+            4871
+          ]
+        },
+        {
+          "subtitle": "Optimasi pencarian OSS dengan ProyekResource",
+          "deskripsi": "Telah dioptimalkan pencarian OSS dengan resource proyek dan kapal perikanan serta perbaikan casting tanggal dan macro whereLike.",
+          "utama": [
+            "ProyekResource dan resource kapal perikanan.",
+            "Perbaikan casting tanggal.",
+            "Perbaikan macro whereLike."
+          ],
+          "manfaat": [
+            "Pencarian OSS lebih cepat."
+          ],
+          "prs": [
+            4867,
+            4868,
+            4869,
+            4870,
+            4877
+          ]
+        },
+        {
+          "subtitle": "Refactor penggunaan data OSS pada layanan WasRisk",
+          "deskripsi": "Telah dilakukan refactor penyimpanan proyek OSS dan service WasRisk yang menggunakan data OSS.",
+          "utama": [
+            "Refactor simpan proyek, PelaporanService, dan AuthLkuService.",
+            "Refactor service objek pengawasan, inspeksi lapangan, BAP, self declare, dan import objek pengawasan."
+          ],
+          "manfaat": [
+            "Penggunaan data OSS seragam di seluruh layanan."
+          ],
+          "prs": [
+            4874,
+            4875
+          ]
+        },
+        {
+          "subtitle": "Menyusun sinkronisasi pegawai dari Portal Data",
+          "deskripsi": "Telah disusun sinkronisasi data pegawai dari Portal Data.",
+          "utama": [
+            "Job dan service sinkronisasi pegawai dari Portal Data."
+          ],
+          "manfaat": [
+            "Data pegawai mengikuti sumber resmi."
+          ],
+          "prs": [
+            4878,
+            4879
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Memperbaharui Webservice Modul WasRisk",
+      "intro": "Pada kegiatan ini Tenaga Teknis Implementasi Logika Sistem memperbaharui webservice Modul WasRisk, sebagai berikut:",
+      "activities": [
+        {
+          "subtitle": "Perbaikan akses operator UPT yang juga pengawas perikanan",
+          "deskripsi": "Telah diperbaiki akses operator UPT yang memiliki role Pengawas Perikanan serta validasi PPBBR.",
+          "utama": [
+            "Operator UPT dengan role pengawas dapat mengakses data sesuai perannya.",
+            "Perapian namespace dan perbaikan validasi PPBBR."
+          ],
+          "manfaat": [
+            "Pengguna dengan dua peran dapat bekerja tanpa bentrok."
+          ],
+          "prs": [
+            4897
+          ]
+        },
+        {
+          "subtitle": "Perbaikan filter role penjadwalan, inspeksi, dan hasil inspeksi",
+          "deskripsi": "Telah diperbaiki filter role pada penjadwalan, inspeksi lapangan, dan hasil inspeksi untuk operator UPT dan pengawas.",
+          "utama": [
+            "Filter penjadwalan, inspeksi, dan hasil inspeksi berdasarkan role.",
+            "Filter operator UPT dan pengawas."
+          ],
+          "manfaat": [
+            "Data yang tampil sesuai peran aktif pengguna."
+          ],
+          "prs": [
+            4900,
+            4903,
+            4904,
+            4905,
+            4906,
+            4911,
+            4912,
+            4918
+          ]
+        },
+        {
+          "subtitle": "Memperbaharui template BAP dan notifikasi kirim objek pengawasan",
+          "deskripsi": "Telah diperbarui format unit kerja pada template BAP serta notifikasi kirim objek pengawasan dengan jeda 5 menit.",
+          "utama": [
+            "Format unit kerja pada BAP.",
+            "Notifikasi kirim objek pengawasan dengan jeda 5 menit."
+          ],
+          "manfaat": [
+            "Dokumen BAP tercetak dengan data unit kerja yang benar."
+          ],
+          "prs": [
+            4808,
+            4816,
+            4841
+          ]
+        },
+        {
+          "subtitle": "Migrasi laporan hasil pengawasan dan perbaikan detail objek",
+          "deskripsi": "Telah disusun migrasi tabel laporan hasil pengawasan serta perbaikan data wilayah yang kosong pada detail objek.",
+          "utama": [
+            "Migrasi tabel laporan hasil pengawasan.",
+            "Perbaikan provinsi, kabupaten, kecamatan, dan kelurahan yang kosong."
+          ],
+          "manfaat": [
+            "Struktur data laporan siap digunakan."
+          ],
+          "prs": [
+            4843
+          ]
+        },
+        {
+          "subtitle": "Menyusun laporan dan verifikasi hasil inspeksi",
+          "deskripsi": "Telah disusun webservice unggah laporan hasil inspeksi, permintaan revisi, dan verifikasi laporan beserta notifikasi WhatsApp.",
+          "utama": [
+            "Unggah laporan, permintaan revisi, dan verifikasi laporan hasil inspeksi.",
+            "Status laporan dan resource verifikasi laporan.",
+            "Job pengiriman notifikasi WhatsApp laporan inspeksi."
+          ],
+          "manfaat": [
+            "Laporan hasil inspeksi dapat diverifikasi secara berjenjang di dalam sistem."
+          ],
+          "prs": [
+            "WIP-4921"
+          ]
+        },
+        {
+          "subtitle": "Penambahan kolom STKL pada export hasil inspeksi",
+          "deskripsi": "Telah ditambahkan kolom STKL pada export hasil inspeksi.",
+          "utama": [
+            "Kolom STKL pada export hasil inspeksi."
+          ],
+          "manfaat": [
+            "Data STKL ikut terunduh pada export."
+          ],
+          "prs": [
+            4895,
+            4896
+          ]
+        },
+        {
+          "subtitle": "Refactor notifikasi dengan notifiable dan delay",
+          "deskripsi": "Telah dilakukan refactor notifikasi PPBBR dan Laporan Kegiatan Usaha menggunakan notifiable dan delay.",
+          "utama": [
+            "Refactor notifikasi dengan notifiable dan delay."
+          ],
+          "manfaat": [
+            "Pengiriman notifikasi lebih teratur."
+          ],
+          "prs": [
+            4908
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pemeliharaan Sistem dan Perbaikan Bug",
+      "intro": "Pada kegiatan ini Tenaga Teknis Implementasi Logika Sistem melakukan pemeliharaan sistem dan perbaikan bug aplikasi, sebagai berikut:",
+      "activities": [
+        {
+          "subtitle": "Perbaikan QueryException pada PerizinanService",
+          "deskripsi": "Telah diperbaiki QueryException pada PerizinanService dengan menonaktifkan relasi proyek dan pelaku usaha yang bermasalah.",
+          "utama": [
+            "Penyesuaian relasi proyek dan pelaku usaha."
+          ],
+          "manfaat": [
+            "Daftar perizinan tidak error."
+          ],
+          "prs": [
+            4884,
+            4885
+          ]
+        },
+        {
+          "subtitle": "Refactor rekapitulasi ESLO harian",
+          "deskripsi": "Telah dilakukan refactor generate rekapitulasi ESLO harian dan trip kapal yang sebelumnya menimbulkan exception.",
+          "utama": [
+            "Refactor rekap ESLO dan trip kapal."
+          ],
+          "manfaat": [
+            "Rekap harian ESLO tergenerate tanpa error."
+          ],
+          "prs": [
+            4886,
+            4887
+          ]
+        },
+        {
+          "subtitle": "Perbaikan import KoordinatController",
+          "deskripsi": "Telah diperbaiki import controller koordinat yang hilang dan typo pada request hapus izin akses.",
+          "utama": [
+            "Penggantian KonversiController menjadi KoordinatController.",
+            "Perbaikan typo pada DeleteIjinAksesRequest."
+          ],
+          "manfaat": [
+            "Endpoint koordinat dapat diakses kembali."
+          ],
+          "prs": [
+            4888,
+            4889
+          ]
+        },
+        {
+          "subtitle": "Perbaikan WhatsappService",
+          "deskripsi": "Telah diperbaiki error explode pada WhatsappService.",
+          "utama": [
+            "Penanganan TypeError pada explode."
+          ],
+          "manfaat": [
+            "Notifikasi WhatsApp tidak gagal terkirim."
+          ],
+          "prs": [
+            4898,
+            4899
+          ]
+        },
+        {
+          "subtitle": "Perbaikan issue rate limit",
+          "deskripsi": "Telah diperbaiki konfigurasi rate limit yang membatasi akses pengguna.",
+          "utama": [
+            "Penyesuaian rate limit."
+          ],
+          "manfaat": [
+            "Pengguna tidak terblokir saat penggunaan normal."
+          ],
+          "prs": [
+            4893,
+            4894
+          ]
+        },
+        {
+          "subtitle": "Persiapan upgrade Laravel 11 dan dokumentasi API",
+          "deskripsi": "Telah dilakukan persiapan upgrade aplikasi ke Laravel 11 berupa perbaikan autoload PSR-4 dan pembaruan dokumentasi API.",
+          "utama": [
+            "Perbaikan PSR-4.",
+            "Pembaruan dokumentasi API."
+          ],
+          "manfaat": [
+            "Aplikasi siap untuk upgrade framework."
+          ],
+          "prs": [
+            4907,
+            4909,
+            4910
+          ]
+        },
+        {
+          "subtitle": "Upgrade aplikasi ke Laravel 11 dan pembaruan dokumentasi",
+          "deskripsi": "Telah dilakukan upgrade aplikasi ke Laravel 11 secara bersih dari perubahan branch internal, perbaikan kompatibilitas, serta pembaruan dokumentasi README dan CHANGELOG.",
+          "utama": [
+            "Upgrade ke Laravel 11 dan pemulihan file konfigurasi infrastruktur.",
+            "Perbaikan Guzzle, autoload PSR-4, dan deprecation warning tipe nullable implisit.",
+            "Penyusunan CHANGELOG standar Keep a Changelog dan pembaruan README beserta tautan dokumentasi API."
+          ],
+          "manfaat": [
+            "Aplikasi kompatibel dengan Laravel 11 dan riwayat perubahan terdokumentasi."
+          ],
+          "prs": [
+            "WIP-4961"
+          ]
+        },
+        {
+          "subtitle": "Penonaktifan notifikasi Halo PSDKP",
+          "deskripsi": "Telah dinonaktifkan sementara notifikasi Halo PSDKP.",
+          "utama": [
+            "Penonaktifan notifikasi Halo PSDKP."
+          ],
+          "manfaat": [
+            "Mencegah notifikasi yang tidak diperlukan."
+          ],
+          "prs": [
+            4914
+          ]
+        }
+      ]
+    }
+  ]
+}

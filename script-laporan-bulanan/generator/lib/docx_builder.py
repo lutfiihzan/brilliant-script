@@ -254,6 +254,10 @@ def add_image_if_exists(doc, media_dir, name, width=Inches(6.0)):
         return True
     return False
 
+def add_images(doc, media_dir, names, width=Inches(6.0)):
+    added = [add_image_if_exists(doc, media_dir, n, width) for n in names]
+    return any(added)
+
 def build_manajemen_kode(doc, config, prs, media_dir):
     add_module_heading(doc, "Manajemen Kode Sumber")
     bulan = config.get("bulan", "")
@@ -262,14 +266,18 @@ def build_manajemen_kode(doc, config, prs, media_dir):
     author = config["github"]["author"]
     
     add_activity_name(doc, f"Sinkronisasi Kode Sumber pada Repositori Github {bulan} {tahun}")
-    add_body(doc, f"Pada bulan {bulan} {tahun} dilakukan {len(prs)} pull request (author: {author}) di https://github.com/{repo}")
+    n_pr = sum(1 for p in prs if isinstance(p["number"], int))
+    n_wip = sum(len(p.get("commits", [])) for p in prs)
+    wip_text = f" serta {n_wip} commit pekerjaan dalam proses" if n_wip else ""
+    add_body(doc, f"Pada bulan {bulan} {tahun} dilakukan {n_pr} pull request{wip_text} (author: {author}) di https://github.com/{repo}")
     
-    if not add_image_if_exists(doc, media_dir, "image3.jpeg", width=Inches(6.0)):
+    media = config.get("media", {})
+    if not add_images(doc, media_dir, media.get("github_screenshots", ["image3.jpeg"])):
         add_body(doc, "[Screenshot GitHub terlampir]")
-    
+
     add_activity_name(doc, f"Sinkronisasi Kode Sumber pada Server Development {bulan} {tahun}")
     add_body(doc, "Sinkronisasi kode sumber API ke server development setelah perubahan di-merge.")
-    if not add_image_if_exists(doc, media_dir, "image4.jpeg", width=Inches(6.0)):
+    if not add_images(doc, media_dir, media.get("server_screenshots", ["image4.jpeg"])):
         add_body(doc, "[Screenshot server terlampir]")
 
 def build_diff_document(config, prs, diffs):
@@ -284,12 +292,14 @@ def build_diff_document(config, prs, diffs):
     add_body(doc, f"Repositori\t\t\t: {config['tech']['repo_url']}")
     
     author_str = config['github'].get('author_display', config['github']['author'])
-    add_body(doc, f"Daftar Pull Request Bulan {bulan} {tahun} (Author: {author_str}) — Total: {len(prs)} PR")
+    n_pr = sum(1 for p in prs if isinstance(p["number"], int))
+    add_body(doc, f"Daftar Pull Request Bulan {bulan} {tahun} (Author: {author_str}) — Total: {n_pr} PR")
     
     for pr in prs:
         # PR Title
         title_p = doc.add_paragraph()
-        title_r = title_p.add_run(f"PR #{pr['number']}: {pr['title']}")
+        label = f"PR #{pr['number']}" if isinstance(pr["number"], int) else f"Commit ({len(pr.get('commits', []))})"
+        title_r = title_p.add_run(f"{label}: {pr['title']}")
         title_r.bold = True
         title_p.paragraph_format.space_before = Pt(12)
         title_p.paragraph_format.space_after = Pt(6)
@@ -349,6 +359,33 @@ def splice_elements(marker_p, builder_funcs, args_list):
         curr = new_el
     marker_p._element.getparent().remove(marker_p._element)
 
+def fill_kesimpulan(doc, items):
+    """Ganti {{ BAB3_KESIMPULAN }} dengan satu paragraf list per item, lalu hapus
+    item list statis bawaan template yang mengikutinya."""
+    marker = next((p for p in doc.paragraphs if '{{ BAB3_KESIMPULAN }}' in p.text), None)
+    if marker is None:
+        return
+    el = marker._element
+    nxt = el.getnext()
+    while nxt is not None and nxt.tag == qn('w:p'):
+        style = nxt.find(qn('w:pPr') + '/' + qn('w:pStyle'))
+        if style is None or style.get(qn('w:val')) != 'ListParagraph':
+            break
+        following = nxt.getnext()
+        nxt.getparent().remove(nxt)
+        nxt = following
+    template_el = copy.deepcopy(el)
+    prev = None
+    for item in items:
+        target = el if prev is None else copy.deepcopy(template_el)
+        if prev is not None:
+            prev.addnext(target)
+        t_nodes = list(target.iter(qn('w:t')))
+        t_nodes[0].text = item
+        for t in t_nodes[1:]:
+            t.text = ''
+        prev = target
+
 def build_report(config, prs, diffs=None):
     if diffs is None:
         diffs = {}
@@ -376,9 +413,9 @@ def build_report(config, prs, diffs=None):
         '{{ BAB1_PENCAPAIAN }}': config.get('bab1', {}).get('pencapaian', ''),
         '{{ BAB1_TANTANGAN }}': config.get('bab1', {}).get('tantangan', ''),
     }
-    # BAB 3 Kesimpulan is a list, join them with newlines
-    kesimpulan = "\n".join(config.get('bab3', {}).get('kesimpulan_items', []))
-    replacements['{{ BAB3_KESIMPULAN }}'] = kesimpulan
+    # BAB 3 Kesimpulan: satu list item per poin; default = judul modul BAB II
+    kesimpulan_items = config.get('bab3', {}).get('kesimpulan_items') or [m['title'] for m in modules]
+    fill_kesimpulan(doc, kesimpulan_items)
     
     for p in doc.paragraphs:
         # 1. Apply Heading 1 to BAB headings so they enter TOC
