@@ -4,59 +4,239 @@
   "modules": [
     {
       "id": "wasrisk",
-      "title": "Memperbaharui Webservice Modul WasRisk",
+      "title": "Memperbaharui Webservice Modul WasRisk (PPBBR)",
       "verb": "memperbaharui",
       "modul": "WasRisk",
-      "keywords": ["wasrisk", "inspeksi", "bap", "berita acara", "penjadwalan", "objek pengawasan", "pengesahan dokumen", "pertanyaan inspeksi", "pengawasan perizinan"]
+      "keywords": [
+        "wasrisk",
+        "ppbbr",
+        "inspeksi",
+        "bap",
+        "berita acara",
+        "penjadwalan",
+        "objek pengawasan",
+        "pengesahan dokumen",
+        "pertanyaan inspeksi",
+        "pengawasan perizinan",
+        "lhp",
+        "laporan hasil pengawasan",
+        "surat tugas",
+        "tanggal surat",
+        "penerbit",
+        "pilih surat",
+        "riwayat pelaku usaha",
+        "monitoring inspeksi",
+        "self declare",
+        "terlewat",
+        "penugasan",
+        "kepatuhan teknis",
+        "pengawas"
+      ]
+    },
+    {
+      "id": "kewenangan",
+      "title": "Memperbaharui Modul Kewenangan Pegawai",
+      "verb": "memperbaharui",
+      "modul": "Kewenangan Pegawai",
+      "keywords": [
+        "kewenangan",
+        "pgp-",
+        "jenis instansi",
+        "dokumen kepegawaian",
+        "audit fitur kewenangan"
+      ]
+    },
+    {
+      "id": "gateway",
+      "title": "Memperbaharui Webservice Gateway dan Sinkronisasi Data",
+      "verb": "memperbaharui",
+      "modul": "Gateway",
+      "keywords": [
+        "gateway",
+        "sinkronisasi",
+        "sinkron",
+        "silat",
+        "simkada",
+        "dephub",
+        "tpkp",
+        "kejaksaan",
+        "ceknibrba",
+        "ceknibbkpm",
+        "endpoint pusat",
+        "simpandataproyek",
+        "simpan data proyek"
+      ]
+    },
+    {
+      "id": "master",
+      "title": "Memperbaharui Modul Master Data, OSS, dan KKPRL",
+      "verb": "memperbaharui",
+      "modul": "Master Data",
+      "keywords": [
+        "master data",
+        "oss",
+        "kkprl",
+        "nib",
+        "pelaku usaha",
+        "perizinan",
+        "laporan tahunan",
+        "unit kerja",
+        "satwas",
+        "wilker",
+        "wilayah",
+        "sipalka",
+        "cc vessel",
+        "seamap",
+        "provinsi",
+        "kabupaten"
+      ]
     },
     {
       "id": "user",
       "title": "Memperbaharui Webservice Modul User Management",
       "verb": "memperbaharui",
       "modul": "User Management",
-      "keywords": ["update user", "user management", "permission", "deadlock", "pegawai", "role"]
-    },
-    {
-      "id": "korespondensi",
-      "title": "Memperbaharui Webservice Modul Korespondensi",
-      "verb": "memperbaharui",
-      "modul": "Korespondensi",
-      "keywords": ["korespondensi", "surat", "km korespondensi", "penerima surat", "portal sender"]
+      "keywords": [
+        "user management",
+        "permission",
+        "pegawai",
+        "role",
+        "peran",
+        "pengguna",
+        "akun",
+        "login",
+        "kata sandi",
+        "jwt",
+        "otp",
+        "autentikasi",
+        "portal pegawai",
+        "simpeg",
+        "deadlock",
+        "token"
+      ]
     },
     {
       "id": "psdkp",
       "title": "Penyusunan dan Pembaharuan Modul PSDKP Angka (Dashboard Pimpinan)",
       "verb": "menyusun dan memperbaharui",
       "modul": "PSDKP Angka",
-      "keywords": ["profil organisasi", "pnbp", "pokmaswas", "keragaan", "kapal pengawas", "operasi armada", "pengawasan sdkp", "dashboard pimpinan", "sinkron pegawai", "jenis kelamin", "pjlp", "sanksi pnbp"]
+      "keywords": [
+        "profil organisasi",
+        "pnbp",
+        "pokmaswas",
+        "keragaan",
+        "kapal",
+        "speedboat",
+        "operasi armada",
+        "armada",
+        "pengawasan sdkp",
+        "dashboard pimpinan",
+        "jenis kelamin",
+        "pjlp",
+        "sanksi pnbp",
+        "poa",
+        "realisasi",
+        "wppnri",
+        "layer peta",
+        "psdkp angka"
+      ]
+    },
+    {
+      "id": "siloker",
+      "title": "Penyusunan Modul SILOKER",
+      "verb": "menyusun",
+      "modul": "SILOKER",
+      "keywords": [
+        "siloker",
+        "kuota",
+        "ska"
+      ]
+    },
+    {
+      "id": "infrastruktur",
+      "title": "Peningkatan Kinerja dan Keamanan Infrastruktur Aplikasi",
+      "verb": "memperbaharui",
+      "modul": "Infrastruktur Aplikasi",
+      "keywords": [
+        "octane",
+        "horizon",
+        "redis",
+        "cache",
+        "indeks",
+        "slow log",
+        "query lambat",
+        "antrean",
+        "memori",
+        "ekspor",
+        "cors",
+        "pencatatan",
+        "catatan aktivitas",
+        "activity",
+        "batas waktu",
+        "preflight",
+        "retensi",
+        "geocoding",
+        "codeplus",
+        "nginx",
+        "pekerjaan gagal",
+        "csv"
+      ]
+    },
+    {
+      "id": "korespondensi",
+      "title": "Memperbaharui Webservice Modul Korespondensi",
+      "verb": "memperbaharui",
+      "modul": "Korespondensi",
+      "keywords": [
+        "korespondensi",
+        "penerima surat",
+        "portal sender"
+      ]
     },
     {
       "id": "pelanggaran",
       "title": "Memperbaharui Modul Penanganan Pelanggaran",
       "verb": "memperbaharui",
       "modul": "Penanganan Pelanggaran",
-      "keywords": ["penetapan sa", "penetapan sanksi", "spsup", "spsuk", "pelanggaran", "sanksi administrasi"]
-    },
-    {
-      "id": "master",
-      "title": "Modul Master Data / OSS / KKPRL",
-      "verb": "memperbaharui",
-      "modul": "Master Data",
-      "keywords": ["oss", "kkprl", "master data", "nib", "pelaku usaha", "sinkron nib", "laporan tahunan", "seamap", "cors"]
+      "keywords": [
+        "penetapan sa",
+        "penetapan sanksi",
+        "spsup",
+        "spsuk",
+        "pelanggaran",
+        "sanksi administrasi"
+      ]
     },
     {
       "id": "rbac",
       "title": "Refactor RBAC",
       "verb": "melakukan refactor",
       "modul": "RBAC",
-      "keywords": ["rbac", "permission seeder", "hasrbacseeder", "role based"]
+      "keywords": [
+        "rbac",
+        "permission seeder",
+        "hasrbacseeder",
+        "role based"
+      ]
     },
     {
       "id": "sentry",
       "title": "Sentry Hotfixes",
       "verb": "menyiapkan hotfix",
       "modul": "Monitoring Sentry",
-      "keywords": ["sentry", "hotfix performa", "n+1", "query optimization"]
+      "keywords": [
+        "sentry",
+        "hotfix performa",
+        "n+1",
+        "query optimization"
+      ]
+    },
+    {
+      "id": "lainnya",
+      "title": "Kegiatan Pendukung dan Pemeliharaan Sistem",
+      "verb": "melaksanakan",
+      "modul": "Sistem Informasi Pengawasan SDKP",
+      "keywords": []
     }
   ]
 }

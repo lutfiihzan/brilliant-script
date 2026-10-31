@@ -1,0 +1,37 @@
+{
+  "_petunjuk": "Contoh isi kegiatan_tambahan.json. Salin bagian 'kegiatan' ke input/YYYYMM/kegiatan_tambahan.json. Gambar & tabel_file opsional (path relatif ke input/YYYYMM/) dan otomatis masuk Lampiran 3. Acuan nyata: input/202610/kegiatan_tambahan.json.",
+  "kegiatan": [
+    {
+      "judul": "Judul Kegiatan (mis. Pemutakhiran Data Pengguna)",
+      "pembuka": "Kegiatan dilaksanakan pada tanggal ... di ..., berdasarkan Surat Tugas Nomor .... Berikut hasil pelaksanaan dan pembahasannya:",
+      "bagian": [
+        {
+          "judul": "Tujuan kegiatan, yaitu:",
+          "poin": ["Poin pertama.", "Poin kedua."]
+        },
+        {
+          "judul": "Hasil kegiatan, antara lain:",
+          "poin": ["Hasil pertama.", "Hasil kedua."]
+        },
+        {
+          "judul": "Tindak lanjut kegiatan, yaitu:",
+          "poin": ["Tindak lanjut pertama."]
+        }
+      ],
+      "gambar": [
+        {"file": "kegiatan_tambahan/surat_tugas_hal1.png", "keterangan": "Surat Tugas Nomor ... (halaman 1)"}
+      ],
+      "tabel_file": "kegiatan_tambahan/rekap.json"
+    }
+  ],
+  "_format_tabel_file": {
+    "tabel": [
+      {
+        "judul": "Rekapitulasi ...",
+        "kolom": ["No", "Uraian", "Jumlah"],
+        "baris": [["1", "Contoh", "10"]],
+        "catatan": "Sumber: ..."
+      }
+    ]
+  }
+}

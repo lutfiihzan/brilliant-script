@@ -40,6 +40,42 @@ def pr_title(detail):
     return (detail or {}).get("title", "")
 
 
+DIFF_FILE_RE = re.compile(r"^diff --git a/(\S+) b/(\S+)", re.M)
+
+
+def local_pr_detail(number, prs_by_num, diffs):
+    """Detail PR dari prs.json + prs_diff.json lokal (tanpa memanggil gh)."""
+    diff = diffs.get(str(number))
+    pr = prs_by_num.get(number)
+    if not diff and not pr:
+        return None
+    files, adds, dels = [], 0, 0
+    if diff:
+        files = list(dict.fromkeys(m.group(2) for m in DIFF_FILE_RE.finditer(diff)))
+        for line in diff.splitlines():
+            if line.startswith("+") and not line.startswith("+++"):
+                adds += 1
+            elif line.startswith("-") and not line.startswith("---"):
+                dels += 1
+    return {
+        "number": number,
+        "title": (pr or {}).get("title", ""),
+        "files": [{"path": f} for f in files],
+        "additions": adds,
+        "deletions": dels,
+    }
+
+
+def build_utama_from_details(details):
+    items = []
+    for detail in details:
+        title = detail.get("title", "")
+        if len(title) > 75:
+            title = title[:72].rstrip() + "…"
+        items.append(f"PR #{detail['number']}: {title} (+{detail['additions']}/-{detail['deletions']} baris).")
+    return items
+
+
 def build_utama_from_prs(repo, pr_numbers):
     items = []
     for num in pr_numbers:

@@ -2,12 +2,16 @@
 import zipfile
 from docx import Document
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.image.image import Image as DocxImage
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
-from docx.shared import Inches, Pt, Emu
+from docx.shared import Cm, Inches, Pt, Emu
 import copy
+import json
+import re
 from .config import input_dir, output_dir, template_dir, weekly_report_path
 from .parser import load_kegiatan_tambahan, parse_detail_github, parse_weekly_report
+from .pr_details import local_pr_detail
 
 FONT = "Arial"
 SIZE_BODY    = None   # inherit from Normal style
@@ -15,6 +19,12 @@ SIZE_HEADING = Pt(14)
 SIZE_LAMPIRAN     = Pt(58)
 SIZE_TABLE_CELL   = Pt(10)
 LINE_SPACING      = 1.5   # 1.5 lines
+
+# Indentasi format skripsi
+INDENT_H2   = Cm(1.0)    # teks judul "2.1." mulai di sini
+INDENT_H3   = Cm(1.75)   # teks judul "a." dan isi sub-kegiatan mulai di sini
+INDENT_LIST = Cm(0.65)   # jarak penanda butir ke teks
+FIRST_LINE  = Cm(1.0)    # indentasi baris pertama paragraf
 
 def _set_line_spacing(pf, spacing=LINE_SPACING):
     pf.line_spacing = spacing
@@ -67,6 +77,27 @@ def add_page_numbers(doc):
         r._r.append(fld_end)
 
 
+def ensure_toc_styles(doc):
+    """Style Daftar Isi ala skripsi: nomor menggantung, sub-judul menjorok di bawah teks induknya."""
+    from docx.enum.style import WD_STYLE_TYPE
+    from docx.enum.text import WD_TAB_ALIGNMENT, WD_TAB_LEADER
+    sec = doc.sections[0]
+    text_width = sec.page_width - sec.left_margin - sec.right_margin
+    for name, style_id, left, hang in (("toc 2", "TOC2", INDENT_H2, INDENT_H2),
+                                       ("toc 3", "TOC3", INDENT_H3, INDENT_H3 - INDENT_H2)):
+        try:
+            style = doc.styles[name]
+        except KeyError:
+            style = doc.styles.add_style(name, WD_STYLE_TYPE.PARAGRAPH)
+            style.style_id = style_id
+            style.base_style = doc.styles["Normal"]
+            # Harus dikenali Word sebagai style bawaan, bukan kustom (agar tidak diganti nama "TOC 21")
+            style.element.attrib.pop(qn("w:customStyle"), None)
+        pf = style.paragraph_format
+        pf.space_after = Pt(2)
+        _hanging(pf, left, hang)
+        pf.tab_stops.add_tab_stop(text_width, WD_TAB_ALIGNMENT.RIGHT, WD_TAB_LEADER.DOTS)
+
 def add_toc(doc):
     """Inject a Word TOC field that auto-populates when opened in Word."""
     p = doc.add_paragraph()
@@ -91,18 +122,41 @@ def add_toc(doc):
     fld_end.set(qn("w:fldCharType"), "end")
     r._r.append(fld_end)
 
-def add_body(doc, text, align=WD_ALIGN_PARAGRAPH.JUSTIFY):
+def _hanging(pf, left, hang):
+    """Indentasi gantung ala skripsi: nomor di kiri, teks (termasuk baris lanjutan) sejajar di `left`."""
+    pf.left_indent = left
+    pf.first_line_indent = -hang
+    pf.tab_stops.add_tab_stop(left)
+
+def add_body(doc, text, align=WD_ALIGN_PARAGRAPH.JUSTIFY, indent=None, first_line=None):
     p = doc.add_paragraph()
     p.style = doc.styles["Normal"]
     p.alignment = align
     _set_line_spacing(p.paragraph_format)
+    if indent is not None:
+        p.paragraph_format.left_indent = indent
+    if first_line is not None:
+        p.paragraph_format.first_line_indent = first_line
     _run(p, text)
     return p
 
-def add_module_heading(doc, text):
+def add_list_item(doc, marker, text, indent):
+    """Butir daftar bernomor/berbutir dengan teks sejajar setelah penanda."""
+    p = doc.add_paragraph()
+    p.style = doc.styles["Normal"]
+    p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+    _set_line_spacing(p.paragraph_format)
+    _hanging(p.paragraph_format, indent + INDENT_LIST, INDENT_LIST)
+    _run(p, f"{marker}\t{text}")
+    return p
+
+def add_module_heading(doc, text, number=None):
     """Module/BAB heading — uses Heading 2 style so TOC picks it up."""
     p = doc.add_paragraph(style="Heading 2")
     _set_line_spacing(p.paragraph_format)
+    if number:
+        text = f"{number}\t{text}"
+        _hanging(p.paragraph_format, INDENT_H2, INDENT_H2)
     # Clear existing runs from style and add our own
     for run in p.runs:
         run.text = ""
@@ -112,11 +166,15 @@ def add_module_heading(doc, text):
     r.font.size = SIZE_HEADING
     return p
 
-def add_activity_name(doc, text):
+def add_activity_name(doc, text, letter=None):
     """Sub-activity name — uses Heading 3 style so TOC picks it up."""
     p = doc.add_paragraph(style="Heading 3")
     _set_line_spacing(p.paragraph_format)
-    p.paragraph_format.left_indent = Pt(14)
+    if letter:
+        text = f"{letter}.\t{text}"
+        _hanging(p.paragraph_format, INDENT_H3, INDENT_H3 - INDENT_H2)
+    else:
+        p.paragraph_format.left_indent = INDENT_H2
     for run in p.runs:
         run.text = ""
     r = p.add_run(text)
@@ -149,14 +207,35 @@ def _cell_run(cell, text, bold=False):
     r.bold = bold
     return r
 
-def _add_cell_para(cell, text, bold=False):
+def _add_cell_para(cell, text, bold=False, bullet=False):
     p = cell.add_paragraph()
     _set_line_spacing(p.paragraph_format)
+    if bullet:
+        _hanging(p.paragraph_format, Cm(0.45), Cm(0.45))
+        text = f"•\t{text}"
     r = p.add_run(text)
     r.font.name = FONT
     r.font.size = SIZE_TABLE_CELL
     r.bold = bold
     return p
+
+def _set_table_indent(table, indent):
+    tbl_pr = table._tbl.tblPr
+    tbl_ind = tbl_pr.find(qn("w:tblInd"))
+    if tbl_ind is None:
+        # Urutan elemen tblPr wajib sesuai skema: tblStyle, tblW, jc, tblInd, ...
+        tbl_ind = OxmlElement("w:tblInd")
+        anchor = tbl_pr.find(qn("w:jc"))
+        if anchor is None:
+            anchor = tbl_pr.find(qn("w:tblW"))
+        if anchor is None:
+            anchor = tbl_pr.find(qn("w:tblStyle"))
+        if anchor is not None:
+            anchor.addnext(tbl_ind)
+        else:
+            tbl_pr.insert(0, tbl_ind)
+    tbl_ind.set(qn("w:w"), str(int(indent.twips)))
+    tbl_ind.set(qn("w:type"), "dxa")
 
 def add_activity_table(doc, activity):
     COL0_W = Emu(1028700)   # ~0.81 in
@@ -169,6 +248,7 @@ def add_activity_table(doc, activity):
 
     table = doc.add_table(rows=2, cols=2)
     table.style = "Table Grid"
+    _set_table_indent(table, INDENT_H3)
 
     for row in table.rows:
         row.cells[0].width = COL0_W
@@ -184,15 +264,16 @@ def add_activity_table(doc, activity):
         if files:
             _add_cell_para(c1, "File yang Diubah:", bold=True)
             for f in files:
-                _add_cell_para(c1, f)
+                # zero-width space setelah "/" agar path panjang bisa terpotong rapi di dalam sel
+                _add_cell_para(c1, f.replace("/", "/​"), bullet=True)
         if utama:
             _add_cell_para(c1, "Perubahan Utama:", bold=True)
             for u in utama:
-                _add_cell_para(c1, u)
+                _add_cell_para(c1, u, bullet=True)
         if manfaat:
             _add_cell_para(c1, "Manfaat:", bold=True)
             for m in manfaat:
-                _add_cell_para(c1, m)
+                _add_cell_para(c1, m, bullet=True)
 
     _cell_run(table.rows[1].cells[0], "Dokumentasi", bold=True)
     docs = activity.get("docs", [])
@@ -220,23 +301,36 @@ def get_letter(num):
 
 def build_bab2(doc, modules):
     for i, mod in enumerate(modules, 1):
-        add_module_heading(doc, f"2.{i}.\t{mod['title']}")
+        add_module_heading(doc, mod["title"], number=f"2.{i}.")
         if mod["intro"]:
-            add_body(doc, mod["intro"])
+            add_body(doc, mod["intro"], indent=INDENT_H2, first_line=FIRST_LINE)
         for j, act in enumerate(mod["activities"]):
-            letter = get_letter(j)
-            add_activity_name(doc, f"{letter}.\t{act['subtitle']}")
+            add_activity_name(doc, act["subtitle"], letter=get_letter(j))
             if act["prolog"]:
-                add_body(doc, act["prolog"])
+                add_body(doc, act["prolog"], indent=INDENT_H3, first_line=FIRST_LINE)
             add_activity_table(doc, act)
 
-def build_kegiatan_tambahan(doc, kegiatan):
+def build_kegiatan_tambahan(doc, kegiatan, number=None, lampiran_label=None):
     if not kegiatan:
         return
-    add_module_heading(doc, "Kegiatan Tambahan")
-    for act in kegiatan:
-        add_activity_name(doc, act["judul"])
-        add_activity_table(doc, act)
+    add_module_heading(doc, "Kegiatan Tambahan", number=number)
+    for j, act in enumerate(kegiatan):
+        add_activity_name(doc, act["judul"], letter=get_letter(j))
+        if act.get("pembuka"):
+            add_body(doc, act["pembuka"], indent=INDENT_H3, first_line=FIRST_LINE)
+        for k, bagian in enumerate(act.get("bagian", []), 1):
+            # Sub-bagian bernomor 1), 2), ... dengan butir a., b., ... di bawahnya
+            add_list_item(doc, f"{k})", bagian["judul"], INDENT_H3)
+            for m, poin in enumerate(bagian.get("poin", [])):
+                add_list_item(doc, f"{get_letter(m)}.", poin, INDENT_H3 + INDENT_LIST)
+        if act.get("deskripsi") or act.get("docs"):
+            add_activity_table(doc, act)
+        if lampiran_label and (act.get("gambar") or act.get("tabel_file")):
+            add_body(
+                doc,
+                f"Data pendukung dan dokumentasi kegiatan ini disajikan pada {lampiran_label}.",
+                indent=INDENT_H3, first_line=FIRST_LINE,
+            )
 
 def ensure_media(media_dir, template_path):
     if media_dir.exists() and any(media_dir.iterdir()):
@@ -254,55 +348,194 @@ def add_image_if_exists(doc, media_dir, name, width=Inches(6.0)):
         return True
     return False
 
-def build_manajemen_kode(doc, config, prs, media_dir):
-    add_module_heading(doc, "Manajemen Kode Sumber")
+def build_manajemen_kode(doc, config, prs, media_dir, number=None):
+    add_module_heading(doc, "Manajemen Kode Sumber", number=number)
     bulan = config.get("bulan", "")
     tahun = config.get("tahun", "")
     repo = config["github"]["repo"]
     author = config["github"]["author"]
-    
-    add_activity_name(doc, f"Sinkronisasi Kode Sumber pada Repositori Github {bulan} {tahun}")
-    add_body(doc, f"Pada bulan {bulan} {tahun} dilakukan {len(prs)} pull request (author: {author}) di https://github.com/{repo}")
-    
+
+    add_activity_name(doc, f"Sinkronisasi Kode Sumber pada Repositori Github {bulan} {tahun}", letter="a")
+    add_body(doc, f"Pada bulan {bulan} {tahun} dilakukan {len(prs)} pull request (author: {author}) di https://github.com/{repo}.",
+             indent=INDENT_H3, first_line=FIRST_LINE)
+
     if not add_image_if_exists(doc, media_dir, "image3.jpeg", width=Inches(6.0)):
-        add_body(doc, "[Screenshot GitHub terlampir]")
-    
-    add_activity_name(doc, f"Sinkronisasi Kode Sumber pada Server Development {bulan} {tahun}")
-    add_body(doc, "Sinkronisasi kode sumber API ke server development setelah perubahan di-merge.")
+        add_body(doc, "[Screenshot GitHub terlampir]", indent=INDENT_H3)
+
+    add_activity_name(doc, f"Sinkronisasi Kode Sumber pada Server Development {bulan} {tahun}", letter="b")
+    add_body(doc, "Sinkronisasi kode sumber API ke server development setelah perubahan di-merge.",
+             indent=INDENT_H3, first_line=FIRST_LINE)
     if not add_image_if_exists(doc, media_dir, "image4.jpeg", width=Inches(6.0)):
-        add_body(doc, "[Screenshot server terlampir]")
+        add_body(doc, "[Screenshot server terlampir]", indent=INDENT_H3)
+
+# -------------------------------------------------------------------
+# Lampiran
+# -------------------------------------------------------------------
+
+def _simple_table(doc, kolom, baris, widths=None, size=Pt(9)):
+    """Tabel rekap sederhana: baris judul tebal, angka rata kanan."""
+    table = doc.add_table(rows=1, cols=len(kolom))
+    table.style = "Table Grid"
+    table.alignment = 1  # center
+    for idx, judul in enumerate(kolom):
+        p = table.rows[0].cells[idx].paragraphs[0]
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        r = p.add_run(str(judul))
+        r.bold = True
+        r.font.name = FONT
+        r.font.size = size
+    for row_vals in baris:
+        cells = table.add_row().cells
+        for idx, val in enumerate(row_vals[:len(kolom)]):
+            val = str(val)
+            p = cells[idx].paragraphs[0]
+            if re.fullmatch(r"[+\-#]?[\d.,%/ +\-]+", val.strip() or "x"):
+                p.alignment = WD_ALIGN_PARAGRAPH.RIGHT if idx else WD_ALIGN_PARAGRAPH.CENTER
+            r = p.add_run(val)
+            r.font.name = FONT
+            r.font.size = size
+    if widths:
+        for row in table.rows:
+            for idx, w in enumerate(widths):
+                row.cells[idx].width = w
+    return table
+
+def _caption(doc, text):
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p.paragraph_format.space_after = Pt(12)
+    _run(p, text, italic=True, size=Pt(10))
+    return p
+
+def _set_a4(doc):
+    """Lampiran tegak memakai A4 seperti badan laporan."""
+    s = doc.sections[0]
+    s.page_width, s.page_height = Cm(21.0), Cm(29.7)
+    s.left_margin = s.right_margin = Cm(2.0)
+    s.top_margin = s.bottom_margin = Cm(2.0)
+
+def build_lampiran_kegiatan(config, kegiatan, number):
+    """Lampiran dokumentasi kegiatan tambahan: tabel rekap dan gambar."""
+    inp = input_dir(config["period"])
+    items = [k for k in kegiatan if k.get("gambar") or k.get("tabel_file")]
+    if not items:
+        return None
+    doc = Document()
+    _set_a4(doc)
+    add_module_heading(doc, f"Lampiran {number} – Dokumentasi Kegiatan Tambahan")
+    no_tabel = no_gambar = 0
+    for j, act in enumerate(items):
+        add_activity_name(doc, act["judul"], letter=get_letter(j))
+        # Gambar (mis. Surat Tugas) ditampilkan lebih dulu, lalu tabel rekap
+        for g in act.get("gambar", []):
+            path = inp / g["file"]
+            if not path.exists():
+                print("WARNING: gambar lampiran tidak ditemukan:", path)
+                continue
+            no_gambar += 1
+            img = DocxImage.from_file(str(path))
+            if img.px_height > img.px_width:
+                doc.add_picture(str(path), height=Cm(19))  # halaman dokumen tegak (surat)
+            else:
+                doc.add_picture(str(path), width=Cm(16))
+            pic_p = doc.paragraphs[-1]
+            pic_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            pic_p.paragraph_format.space_before = Pt(12)
+            pic_p.paragraph_format.keep_with_next = True
+            _caption(doc, f"Gambar {number}.{no_gambar}. {g['keterangan']}")
+        tabel_path = inp / act["tabel_file"] if act.get("tabel_file") else None
+        if tabel_path and tabel_path.exists():
+            for tbl in json.loads(tabel_path.read_text(encoding="utf-8")).get("tabel", []):
+                no_tabel += 1
+                cap = doc.add_paragraph()
+                cap.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                cap.paragraph_format.space_before = Pt(12)
+                cap.paragraph_format.keep_with_next = True
+                _run(cap, f"Tabel {number}.{no_tabel}. {tbl['judul']}", bold=True, size=Pt(10))
+                _simple_table(doc, tbl["kolom"], tbl["baris"])
+                if tbl.get("catatan"):
+                    note = doc.add_paragraph()
+                    _run(note, tbl["catatan"], italic=True, size=Pt(8))
+        elif tabel_path:
+            print("WARNING: tabel lampiran tidak ditemukan:", tabel_path)
+
+    base_name = config["output_filename"].replace(".docx", "")
+    output_path = output_dir(config["period"]) / f"{base_name} - Lampiran Kegiatan.docx"
+    doc.save(str(output_path))
+    return output_path
+
+KODE_EXT = (".php", ".py", ".js", ".ts", ".sql", ".sh", ".yml", ".yaml", ".conf")
+SKIP_PATH = ("docs/", "public/", "storage/", "tests/", "Tests/", "lang/", "composer.lock", "package-lock")
+CUPLIKAN_MAKS = 12
+PANJANG_MAKS = 110
+
+def _cuplikan_kode(diff_text):
+    """Ambil cuplikan singkat (baris tambahan) dari file kode pertama yang relevan pada diff."""
+    blocks = re.split(r"(?m)^diff --git ", diff_text or "")
+    for block in blocks[1:]:
+        m = re.match(r"a/(\S+) b/(\S+)", block)
+        if not m:
+            continue
+        path = m.group(2)
+        if not path.endswith(KODE_EXT) or any(s in path for s in SKIP_PATH):
+            continue
+        lines = []
+        for line in block.splitlines():
+            if line.startswith("+") and not line.startswith("+++") and line[1:].strip():
+                line = line[1:].rstrip()
+                if len(line) > PANJANG_MAKS:
+                    line = line[:PANJANG_MAKS] + " …"
+                lines.append(line)
+            if len(lines) >= CUPLIKAN_MAKS:
+                break
+        if lines:
+            return path, lines
+    return None, []
 
 def build_diff_document(config, prs, diffs):
-    from docx import Document
     doc = Document()
+    _set_a4(doc)
     bulan = config.get("bulan", "")
     tahun = config.get("tahun", "")
-    
+    prs_by_num = {pr["number"]: pr for pr in prs}
+
     add_module_heading(doc, "Lampiran 2 – Kode Sumber & PR List")
     add_body(doc, f"Bahasa Pemrograman\t: {config['tech']['language']}")
     add_body(doc, f"Framework\t\t\t: {config['tech']['framework']}")
     add_body(doc, f"Repositori\t\t\t: {config['tech']['repo_url']}")
-    
+
     author_str = config['github'].get('author_display', config['github']['author'])
     add_body(doc, f"Daftar Pull Request Bulan {bulan} {tahun} (Author: {author_str}) — Total: {len(prs)} PR")
-    
+
+    # 1. Tabel ringkas seluruh PR
+    baris = []
+    for i, pr in enumerate(prs, 1):
+        det = local_pr_detail(pr["number"], prs_by_num, diffs) or {}
+        baris.append([
+            str(i), f"#{pr['number']}", pr["title"],
+            str(len(det.get("files", []))),
+            f"+{det.get('additions', 0)}/-{det.get('deletions', 0)}",
+        ])
+    _simple_table(doc, ["No", "PR", "Judul", "File", "Baris"], baris,
+                  widths=[Cm(1.0), Cm(1.4), Cm(10.6), Cm(1.2), Cm(2.2)], size=Pt(8))
+
+    # 2. Cuplikan kode singkat per PR (hanya file kode, maks. CUPLIKAN_MAKS baris)
+    add_body(doc, "")
+    add_body(doc, f"Cuplikan Kode Sumber (maksimal {CUPLIKAN_MAKS} baris tambahan per PR, diambil dari file kode utama)")
     for pr in prs:
-        # PR Title
+        path, lines = _cuplikan_kode(diffs.get(str(pr["number"]), ""))
+        if not lines:
+            continue
         title_p = doc.add_paragraph()
-        title_r = title_p.add_run(f"PR #{pr['number']}: {pr['title']}")
-        title_r.bold = True
-        title_p.paragraph_format.space_before = Pt(12)
-        title_p.paragraph_format.space_after = Pt(6)
-        
-        # PR Diff
-        diff_text = diffs.get(str(pr['number']), "Diff tidak tersedia.")
-        diff_lines = diff_text.splitlines()
-        
-        limit = 100
-        max_line_length = 150
-        for line in diff_lines[:limit]:
-            if len(line) > max_line_length:
-                line = line[:max_line_length] + " ... [line truncated]"
+        title_p.paragraph_format.space_before = Pt(10)
+        title_p.paragraph_format.space_after = Pt(2)
+        title_p.paragraph_format.keep_with_next = True
+        _run(title_p, f"PR #{pr['number']}: {pr['title']}", bold=True, size=Pt(9))
+        file_p = doc.add_paragraph()
+        file_p.paragraph_format.space_after = Pt(2)
+        file_p.paragraph_format.keep_with_next = True
+        _run(file_p, path, italic=True, size=Pt(8))
+        for line in lines:
             diff_p = doc.add_paragraph()
             diff_p.paragraph_format.space_after = Pt(0)
             diff_p.paragraph_format.line_spacing = 1.0
@@ -310,22 +543,7 @@ def build_diff_document(config, prs, diffs):
             diff_r = diff_p.add_run(line)
             diff_r.font.name = "Courier New"
             diff_r.font.size = Pt(8)
-            
-        if len(diff_lines) > limit:
-            diff_p = doc.add_paragraph()
-            diff_p.paragraph_format.space_after = Pt(0)
-            diff_p.paragraph_format.left_indent = Pt(10)
-            diff_r = diff_p.add_run("... [diff truncated]")
-            diff_r.font.name = "Courier New"
-            diff_r.font.size = Pt(8)
-            diff_r.font.italic = True
-        
-        # Add spacing after each PR block
-        doc.add_paragraph()
 
-    # The screenshot usually needs the media_dir, we can just skip it here or pass it if needed.
-    doc.add_paragraph("[Screenshot GitHub PR terlampir]")
-    
     # Save the document
     output_dir_path = output_dir(config["period"])
     base_name = config["output_filename"].replace(".docx", "")
@@ -369,6 +587,7 @@ def build_report(config, prs, diffs=None):
 
     doc = Document(str(template_path))
     enable_update_fields(doc)
+    ensure_toc_styles(doc)
 
     # Simple placeholder replacement on the original doc template
     bulan_up = config.get('bulan_up', config['bulan'].upper())
@@ -400,7 +619,12 @@ def build_report(config, prs, diffs=None):
                     r.text = r.text.replace('Mei', config['bulan'])
                 if 'MEI' in r.text:
                     r.text = r.text.replace('MEI', bulan_up)
-    
+            # Template memisahkan "Mei" dan "2026" pada run berbeda tanpa spasi
+            runs = p.runs
+            for r, nxt in zip(runs, runs[1:]):
+                if r.text.endswith(config['bulan']) and nxt.text[:1].isdigit():
+                    r.text += " "
+
     toc_p = None
     bab2_p = None
     lampiran_p = None
@@ -446,7 +670,13 @@ def build_report(config, prs, diffs=None):
 
 
     if bab2_p:
-        splice_elements(bab2_p, [build_bab2, build_kegiatan_tambahan, build_manajemen_kode], [(modules,), (kegiatan,), (config, prs, media_dir)])
+        n = len(modules)
+        lampiran_label = "Lampiran 3" if any(k.get("gambar") or k.get("tabel_file") for k in kegiatan) else None
+        splice_elements(
+            bab2_p,
+            [build_bab2, build_manajemen_kode, build_kegiatan_tambahan],
+            [(modules,), (config, prs, media_dir, f"2.{n + 1}."), (kegiatan, f"2.{n + 2}.", lampiran_label)],
+        )
 
     if lampiran_p:
         # Delete the {{ LAMPIRAN }} marker, as we will append the lampiran using docxcompose

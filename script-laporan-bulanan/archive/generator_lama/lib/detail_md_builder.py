@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
+import json
 import re
 from collections import defaultdict
 
 from .module_mapper import build_module_intro, build_prolog, load_modules_config, match_module
-from .pr_details import build_utama_from_prs, extract_pr_numbers, fetch_pr_detail, pr_files, pr_title
+from .pr_details import build_utama_from_details, extract_pr_numbers, local_pr_detail, pr_files
 
 
 def parse_weekly_activities(path, user_filter="Lutfi"):
@@ -35,45 +36,68 @@ def parse_weekly_activities(path, user_filter="Lutfi"):
 
 def group_activities_by_module(activities, modules_cfg):
     grouped = defaultdict(list)
+    fallback = next((m for m in modules_cfg["modules"] if m["id"] == "lainnya"), None)
+    if fallback is None:
+        fallback = {
+            "id": "lainnya",
+            "title": "Kegiatan Pendukung dan Pemeliharaan Sistem",
+            "verb": "melaksanakan",
+            "modul": "Sistem Informasi Pengawasan SDKP",
+            "keywords": [],
+        }
     for act in activities:
-        mod = match_module(act["activity"], act["output"], modules_cfg)
+        mod = match_module(act["activity"], act["output"], modules_cfg) or fallback
         grouped[mod["id"]].append((mod, act))
     return grouped
 
 
-def _deskripsi_from_activity(act, repo):
-    output = act["output"]
-    if output and len(output) > 30:
-        text = output[0].upper() + output[1:] if output else output
-        if not text.startswith("Telah"):
-            text = f"Telah dilakukan implementasi terkait {act['activity'].lower()}. {text}"
-        return text
-    pr_nums = act["pr_numbers"]
-    if pr_nums:
-        detail = fetch_pr_detail(repo, pr_nums[0])
-        title = pr_title(detail)
-        if title:
-            return f"Telah dilakukan pekerjaan terkait {act['activity'].lower()}, dengan perubahan utama pada PR #{pr_nums[0]} ({title})."
-    return f"Telah dilakukan pekerjaan terkait {act['activity'].lower()} pada sistem pengawasan SDKP."
+def _bersihkan_output(output):
+    """Ubah output berbutir menjadi kalimat mengalir."""
+    baris = [re.sub(r"^\s*[-*\u2022]\s*", "", b).strip() for b in output.splitlines()]
+    baris = [b for b in baris if b]
+    teks = re.sub(r"\s+", " ", " ".join(baris)).strip()
+    if teks and not teks.endswith("."):
+        teks += "."
+    return teks
 
 
-def _collect_files(repo, pr_numbers):
-    files = []
-    seen = set()
-    for num in pr_numbers:
-        detail = fetch_pr_detail(repo, num)
-        for f in pr_files(detail):
-            if f not in seen:
-                seen.add(f)
-                files.append(f)
-    return files
+def _frasa_kegiatan(activity):
+    """Ubah bentuk 'Menambahkan ...' menjadi 'menambahkan ...'."""
+    if not activity:
+        return activity
+    return activity[0].lower() + activity[1:]
 
 
-def render_activity_md(act, mod, modules_cfg, repo, sub_idx):
-    prolog = build_prolog(act["activity"], mod, act["output"], modules_cfg)
-    deskripsi = _deskripsi_from_activity(act, repo)
-    files = _collect_files(repo, act["pr_numbers"])
-    utama = build_utama_from_prs(repo, act["pr_numbers"])
+MANFAAT_DEFAULT = (
+    "Sistem menjadi lebih stabil, akurat, dan dapat memberikan pengalaman pengguna "
+    "yang lebih baik untuk mendukung operasional PSDKP."
+)
+
+
+def load_local_pr_data(inp_dir):
+    """Muat prs.json & prs_diff.json dari folder input periode (jika ada)."""
+    prs_by_num, diffs = {}, {}
+    prs_path = inp_dir / "prs.json"
+    diff_path = inp_dir / "prs_diff.json"
+    if prs_path.exists():
+        prs_by_num = {pr["number"]: pr for pr in json.loads(prs_path.read_text(encoding="utf-8"))}
+    if diff_path.exists():
+        diffs = json.loads(diff_path.read_text(encoding="utf-8"))
+    return prs_by_num, diffs
+
+
+def render_activity_md(act, mod, modules_cfg, repo, sub_idx, pr_data=({}, {})):
+    output = _bersihkan_output(act["output"])
+    kegiatan = _frasa_kegiatan(act["activity"])
+    prolog = build_prolog(act["activity"], mod, output, modules_cfg)
+    # Format sesuai Agustus 2026: "Telah dilakukan implementasi terkait [kegiatan]. [output]"
+    deskripsi = re.sub(r"\s{2,}", " ", f"Telah dilakukan implementasi terkait {kegiatan}. {output}").strip()
+
+    details = [d for d in (local_pr_detail(n, *pr_data) for n in act["pr_numbers"]) if d]
+    files = list(dict.fromkeys(f for d in details for f in pr_files(d)))
+    utama = build_utama_from_details(details)
+    manfaat = mod.get("manfaat") or modules_cfg.get("manfaat_default", MANFAAT_DEFAULT)
+
     docs = []
     for num in act["pr_numbers"]:
         docs.append(f"https://github.com/{repo}/pull/{num}")
@@ -100,22 +124,11 @@ def render_activity_md(act, mod, modules_cfg, repo, sub_idx):
         lines += ["**File yang Diubah:**"] + [f"- `{f}`" for f in files] + [""]
     if utama:
         lines += ["**Perubahan Utama:**"] + [f"- {u}" for u in utama] + [""]
-    else:
-        lines += [
-            "**Perubahan Utama:**",
-            "- <!-- ENRICH: jelaskan perubahan teknis dari diff PR -->",
-            "",
-        ]
-    lines += [
-        "**Manfaat:**",
-        "- <!-- ENRICH: jelaskan manfaat bisnis/teknis -->",
-        "",
-        "**Dokumentasi**",
-    ]
+    lines += ["**Manfaat:**", f"- {manfaat}", "", "**Dokumentasi**", ""]
     if docs:
         lines += [f"- {d}" for d in docs]
     else:
-        lines += ["- <!-- tambahkan link PR/commit -->"]
+        lines.append("- Tidak ada tautan dokumentasi.")
     lines += ["", "---", ""]
     return "\n".join(lines)
 
@@ -125,6 +138,7 @@ def build_from_weekly(weekly_path, config, user_filter="Lutfi"):
     repo = config["github"]["repo"]
     activities = parse_weekly_activities(weekly_path, user_filter)
     grouped = group_activities_by_module(activities, modules_cfg)
+    pr_data = load_local_pr_data(weekly_path.parent)
 
     bulan = config.get("bulan", "")
     tahun = config.get("tahun", "")
@@ -132,14 +146,17 @@ def build_from_weekly(weekly_path, config, user_filter="Lutfi"):
     nama = config.get("nama", "LUTFI IHSAN").upper()
 
     lines = [
-        f"# DETAIL LAPORAN KEGIATAN GITHUB — {nama}",
-        f"## Bulan {bulan} {tahun} (Periode Weekly Report)",
+        f"# DETAIL LAPORAN KEGIATAN — {nama}",
+        f"## Bulan {bulan} {tahun}",
         "",
-        f"Sumber data: `input/{period}/weekly_report.md`",
-        "Format acuan: `template/contoh_format.docx`",
+        (
+            "Dokumen ini memuat rincian kegiatan Tenaga Teknis Implementasi Logika Sistem "
+            f"pada bulan {bulan} {tahun} berdasarkan data pekerjaan yang tercatat pada "
+            f"repositori GitHub {repo}."
+        ),
         "",
-        "> **Catatan:** Bagian `<!-- ENRICH -->` perlu dilengkapi via Cursor AI.",
-        "> Jalankan: `python generator/generate_detail_md.py {period} --prompt`",
+        f"- Jumlah sub-kegiatan: **{len(activities)}**",
+        f"- Sumber data: `input/{period}/weekly_report.md`",
         "",
         "---",
         "",
@@ -148,6 +165,7 @@ def build_from_weekly(weekly_path, config, user_filter="Lutfi"):
     mod_order = [m["id"] for m in modules_cfg["modules"]]
     mod_by_id = {m["id"]: m for m in modules_cfg["modules"]}
     module_num = 0
+    rekap = []
 
     for mod_id in mod_order:
         items = grouped.get(mod_id, [])
@@ -155,6 +173,7 @@ def build_from_weekly(weekly_path, config, user_filter="Lutfi"):
             continue
         module_num += 1
         mod = mod_by_id[mod_id]
+        rekap.append((mod["title"], len(items)))
         lines += [
             f"## {module_num}. {mod['title']}",
             "",
@@ -162,14 +181,18 @@ def build_from_weekly(weekly_path, config, user_filter="Lutfi"):
             "",
         ]
         for sub_idx, (_, act) in enumerate(items, 1):
-            lines.append(render_activity_md(act, mod, modules_cfg, repo, f"{module_num}.{sub_idx}"))
+            lines.append(render_activity_md(act, mod, modules_cfg, repo, f"{module_num}.{sub_idx}", pr_data))
 
     lines += [
         "## RINGKASAN KEGIATAN",
         "",
-        f"Total sub-kegiatan dari weekly report: **{len(activities)}**",
+        f"Total sub-kegiatan bulan {bulan} {tahun}: **{len(activities)}**",
         "",
     ]
+    for idx, (title, jumlah) in enumerate(rekap, 1):
+        lines.append(f"{idx}. {title}: {jumlah} sub-kegiatan")
+    lines.append("")
+
     return "\n".join(lines)
 
 

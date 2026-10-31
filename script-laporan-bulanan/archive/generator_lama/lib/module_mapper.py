@@ -11,15 +11,18 @@ def load_modules_config():
 
 
 def match_module(activity, output, modules_cfg):
-    text = f"{activity} {output}".lower()
+    """Pilih modul berdasarkan kata kunci; kata kunci pada activity lebih berbobot."""
+    activity_text = (activity or "").lower()
+    output_text = (output or "").lower()
     best = None
     best_score = 0
     for mod in modules_cfg["modules"]:
-        score = sum(1 for kw in mod["keywords"] if kw.lower() in text)
+        score = 2 * sum(1 for kw in mod["keywords"] if kw.lower() in activity_text)
+        score += sum(1 for kw in mod["keywords"] if kw.lower() in output_text)
         if score > best_score:
             best_score = score
             best = mod
-    return best or modules_cfg["modules"][0]
+    return best
 
 
 def build_module_intro(mod, modules_cfg):
@@ -40,7 +43,10 @@ def build_prolog(activity, mod, output, modules_cfg):
     tpl = modules_cfg.get("prolog_template", "")
     konteks = ""
     if output and len(output) > 20:
-        short = output[:200].strip()
+        # Ambil kalimat pertama; jika masih panjang, potong di batas kata
+        short = output.strip().split(". ")[0].strip()
+        if len(short) > 200:
+            short = short[:200].rsplit(" ", 1)[0].rstrip(",;:")
         if not short.endswith("."):
             short += "."
         konteks = f" Kegiatan ini berkaitan dengan: {short}"

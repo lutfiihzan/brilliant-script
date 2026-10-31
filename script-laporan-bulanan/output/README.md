@@ -7,5 +7,5 @@ Contoh:
 
 Generate:
 ```powershell
-python generator/generate.py 202605
+python laporan.py report 202605
 ```

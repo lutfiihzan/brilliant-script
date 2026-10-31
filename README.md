@@ -18,7 +18,7 @@ Repo: [github.com/BrillianLabs/BrillianScript](https://github.com/BrillianLabs/B
 ```powershell
 cd script-laporan-bulanan
 pip install -r generator/requirements.txt
-python generator/generate.py 202605
+python laporan.py report 202610   # alur lengkap: script-laporan-bulanan/README.md
 ```
 
 ### SPMB bot

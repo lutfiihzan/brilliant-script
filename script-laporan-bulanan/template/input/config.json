@@ -1,0 +1,23 @@
+{
+  "nama": "Lutfi Ihsan",
+  "jabatan": "Tenaga Teknis Implementasi Logika Sistem",
+  "weekly_user_filter": "Lutfi",
+  "github": {
+    "repo": "psdkplabs/sipservice",
+    "author": "lutfiihsan, lutfiihzan",
+    "fetch_if_missing": true,
+    "fetch_always": false
+  },
+  "tech": {
+    "language": "PHP v8.2",
+    "framework": "Laravel 11",
+    "repo_url": "https://github.com/psdkplabs/sipservice"
+  },
+  "bab1": {
+    "pencapaian": "",
+    "tantangan": ""
+  },
+  "bab3": {
+    "kesimpulan_items": []
+  }
+}
