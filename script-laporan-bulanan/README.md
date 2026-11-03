@@ -64,7 +64,10 @@ python laporan.py weekly 202611                   # (setelah edit manual md) cek
 python laporan.py detail 202611                   # detail_github.md + .txt dari weekly_report.md
 python laporan.py detail 202611 --prompt          # (opsional) prompt AI untuk memperkaya deskripsi
 
-# 5. Laporan final
+# 5. Gambar Manajemen Kode Sumber (daftar PR closed bergaya GitHub + riwayat merge production bergaya terminal)
+python laporan.py screenshot 202611               # butuh github.local_repo_path di config.json + Edge/Chrome
+
+# 6. Laporan final
 python laporan.py report 202611                   # -> output/202611/Laporan Bulanan_Lutfi Ihsan - November 2026.docx
 ```
 
@@ -80,7 +83,8 @@ Buka hasil di Word → klik kanan **Daftar Isi** → **Update Field**.
 | `config.json` → `bab3.kesimpulan_items` | Butir kesimpulan BAB III. Kosong = daftar modul bulan itu |
 | `kegiatan_tambahan.json` | Kegiatan non-GitHub (rapat, UAT, audit). Contoh: `template/input/contoh_kegiatan_tambahan.json`, acuan nyata: `input/202610/` |
 | `kegiatan_tambahan/` | Gambar (mis. Surat Tugas) & tabel rekap untuk Lampiran 3 |
-| `manajemen_kode/github.png`, `server.png` | Screenshot untuk 2.x Manajemen Kode Sumber |
+| `manajemen_kode/` | Dibuat `laporan.py screenshot`: `github_NN.png` (daftar PR closed, 25/halaman, data asli dari GitHub), `server.png` (hasil `git log --first-parent` branch production — atau master bila belum ada rilis — di clone lokal), `keterangan.json` (teks keterangan gambar). Boleh diganti screenshot asli dengan nama yang sama |
+| `config.json` → `github.local_repo_path` | Clone lokal repositori untuk riwayat merge (Jan–Apr: `PSDKP/api-sip-rep`, Oktober: `PSDKP/api-sip`) |
 | `202611_Program dan Data Weekly Report.docx` | (opsional) export manual weekly; jika ada dipakai sebagai Lampiran 1 |
 | `config.json` → `lampiran.cuplikan_maks` | Baris cuplikan kode per PR di Lampiran 2 (bawaan 12; 0 = hanya tabel PR). Pakai untuk menyesuaikan tebal laporan |
 

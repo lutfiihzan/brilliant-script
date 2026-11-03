@@ -200,13 +200,15 @@ def build_manajemen_kode(doc, config, prs, number):
         kit.heading3(doc, judul, kit.letter(j))
         kit.body(doc, teks, indent=kit.INDENT_H3, first_line=kit.FIRST_LINE)
         files = _gambar(folder, prefix)
+        ket_path = folder / "keterangan.json"
+        ket = json.loads(ket_path.read_text(encoding="utf-8")) if ket_path.exists() else {}
         if not files:
             print(f"INFO: screenshot '{prefix}*' belum ada di {folder} (opsional)")
             kit.body(doc, f"[Tempel screenshot di sini atau simpan sebagai {folder.name}/{prefix}.png]",
                      indent=kit.INDENT_H3)
         for path in files:
             kit.picture(doc, path, max_width=Cm(15))
-            kit.caption(doc, keterangan)
+            kit.caption(doc, ket.get(path.name, keterangan))
 
 
 def build_kegiatan_tambahan(doc, kegiatan, number, lampiran_label):
@@ -436,9 +438,24 @@ def _save(composer, path):
         return alt
 
 
+def _terkunci(path):
+    """True bila file sedang dibuka (dikunci) aplikasi lain, mis. Word."""
+    if not path.exists():
+        return False
+    try:
+        with open(path, "r+b"):
+            return False
+    except PermissionError:
+        return True
+
+
 def build(config, force_fetch=False):
     period = config["period"]
     inp = input_dir(period)
+    target = output_dir(period) / config["output_filename"]
+    if _terkunci(target):
+        config["output_filename"] = target.stem + " _v2" + target.suffix
+        print(f"File sedang dibuka di Word, hasil disimpan sebagai: {config['output_filename']}")
     prs = load_prs(config, force=force_fetch)
     diffs = load_diffs(config, prs, force=force_fetch)
     modules = parse_detail_github(inp / "detail_github.md")

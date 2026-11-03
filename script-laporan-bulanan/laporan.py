@@ -8,6 +8,7 @@
   python laporan.py weekly   202611                   cek kualitas weekly_report.md + buat weekly_report.docx
   python laporan.py detail   202611                   detail_github.md dari weekly_report.md
           (opsi: --add-prolog | --refresh-prolog | --to-txt | --prompt)
+  python laporan.py screenshot 202611               gambar Manajemen Kode Sumber (daftar PR + riwayat merge production)
   python laporan.py report   202611 [--fetch-prs]     laporan Word final -> output/202611/
   python laporan.py all      202611                   weekly (docx) + detail + report
   python laporan.py template                          bangun ulang template/*.docx dari archive/template_lama/
@@ -17,7 +18,7 @@ import json
 import shutil
 import sys
 
-from generator import detail, github, report, template_builder, weekly
+from generator import detail, github, report, screenshot, template_builder, weekly
 from generator.config import ROOT, TEMPLATE_DIR, input_dir, load_config, output_dir, period_defaults
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -109,6 +110,14 @@ def cmd_detail(args):
     print("TXT:", txt)
 
 
+def cmd_screenshot(args):
+    config = load_config(args.period)
+    folder, ket = screenshot.build(config, github.load_raw_prs(config))
+    for name, text in ket.items():
+        print(f"{name}: {text}")
+    print("Folder:", folder)
+
+
 def cmd_report(args):
     report.build(load_config(args.period), force_fetch=args.fetch_prs)
 
@@ -155,6 +164,10 @@ def main():
     for flag in ("--add-prolog", "--refresh-prolog", "--to-txt", "--prompt"):
         p.add_argument(flag, action="store_true")
     p.set_defaults(func=cmd_detail)
+
+    p = sub.add_parser("screenshot", help="gambar Manajemen Kode Sumber (daftar PR & riwayat merge)")
+    p.add_argument("period")
+    p.set_defaults(func=cmd_screenshot)
 
     p = sub.add_parser("report", help="laporan Word final")
     p.add_argument("period")
