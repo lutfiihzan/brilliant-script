@@ -41,7 +41,8 @@ def build_module_intro(mod, modules_cfg):
 def _activity_phrase(activity):
     if not activity:
         return activity
-    if activity.lower().startswith(("men", "mem", "me", "per", "pen", "meny", "meng")):
+    # Kata kerja aktif berawalan me- (menambahkan, memperbaiki); pe-/per- adalah kata benda (penyesuaian)
+    if activity.lower().startswith("me"):
         return activity[0].lower() + activity[1:]
     return f"melakukan {activity[0].lower() + activity[1:]}"
 
@@ -212,8 +213,40 @@ def build_from_weekly(config):
     return "\n".join(lines) + "\n"
 
 
+def _modul_dari_judul(title):
+    """'Pembaharuan Webservice Modul Master Data - Sinkronisasi KKPRL' -> 'Master Data - Sinkronisasi KKPRL'."""
+    nama = re.sub(r"^(Pembaharuan|Pembaruan|Penyusunan|Memperbaharui|Memperbarui|Menyusun)\s+", "", title, flags=re.I)
+    return re.sub(r"^(Webservice\s+)?(Modul\s+)?", "", nama, flags=re.I).strip()
+
+
+def _konteks_deskripsi(lines, start):
+    """Kalimat pertama Deskripsi Pekerjaan yang bukan kalimat pembuka 'Telah ...' (sama seperti prolog dari weekly)."""
+    i = start
+    while i < len(lines) and not lines[i].startswith("### ") and lines[i].strip() != "**Deskripsi Pekerjaan**":
+        i += 1
+    teks = []
+    for line in lines[i + 1:]:
+        s = line.strip()
+        if s.startswith("**") or s == "---" or line.startswith("#"):
+            break
+        if s:
+            teks.append(s)
+    kalimat = [k for k in re.split(r"(?<=\.)\s+", " ".join(teks)) if k]
+    lanjutan = [k for k in kalimat if not k.startswith("Telah")]
+    if lanjutan:
+        return lanjutan[0]
+    if not kalimat:
+        return ""
+    # Hanya satu kalimat "Telah diimplementasikan X ..." -> pakai "X ..." sebagai konteks
+    inti = re.sub(r"^Telah\s+(dilakukan\s+implementasi\s+terkait\s+|dilakukan\s+)?\w+\s+", "", kalimat[0])
+    return inti[:1].upper() + inti[1:] if inti != kalimat[0] else ""
+
+
 def inject_prologs(md_content, refresh=False):
-    """Tambahkan (atau perbarui) **Prolog** pada sub-kegiatan yang belum punya."""
+    """Tambahkan (atau perbarui) **Prolog** pada sub-kegiatan yang belum punya.
+
+    Modul diambil dari modules.json bila judul `##` cocok; jika tidak, nama modul diturunkan dari judulnya.
+    """
     modules_cfg = load_modules_config()
     lines = md_content.splitlines()
     out, i = [], 0
@@ -232,15 +265,17 @@ def inject_prologs(md_content, refresh=False):
                 while i < len(lines) and lines[i].strip() != "**Deskripsi Pekerjaan**":
                     i += 1
             if refresh or not has_prolog:
-                out.extend(["", "**Prolog**", "", build_prolog(subtitle, current_mod, "", modules_cfg), ""])
+                konteks = _konteks_deskripsi(lines, i)
+                out.extend(["", "**Prolog**", "", build_prolog(subtitle, current_mod, konteks, modules_cfg), ""])
             continue
         out.append(line)
         if re.match(r"## \d+\.", line):
             title = re.sub(r"^KEGIATAN TAMBAHAN —\s*", "", re.sub(r"^\d+\.\s*", "", line[3:].strip()))
-            for mod in modules_cfg["modules"]:
-                if mod["title"].lower() in title.lower() or title.lower() in mod["title"].lower():
-                    current_mod = mod
-                    break
+            current_mod = next(
+                (m for m in modules_cfg["modules"]
+                 if m["title"].lower() in title.lower() or title.lower() in m["title"].lower()),
+                {"modul": _modul_dari_judul(title)},
+            )
         i += 1
     return "\n".join(out)
 

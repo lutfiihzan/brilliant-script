@@ -63,7 +63,7 @@ def build_md(period, raw_prs, user="Lutfi"):
     curated_path = inp / "curated.json"
     curated = {}
     if curated_path.exists():
-        curated = {int(n): (a.strip(), o.strip())
+        curated = {(int(n) if str(n).isdigit() else n): (a.strip(), o.strip())
                    for n, a, o in json.loads(curated_path.read_text(encoding="utf-8"))}
         missing = [p["number"] for p in raw_prs if p["number"] not in curated]
         if missing:
@@ -220,7 +220,8 @@ def to_docx(period, config):
             if j in (0, 1, 2, 5):
                 _set_cell(cells[j], val, align=WD_ALIGN_PARAGRAPH.CENTER)
             elif j == 6 and val.startswith("http"):
-                _set_cell_link(cells[j], val, f"PR #{val.rstrip('/').rsplit('/', 1)[-1]}")
+                ujung = val.rstrip("/").rsplit("/", 1)[-1]
+                _set_cell_link(cells[j], val, f"Commit {ujung[:7]}" if "/commit/" in val else f"PR #{ujung}")
             elif j == 4:
                 _set_cell(cells[j], val, hanging=val.startswith("- "))
             else:

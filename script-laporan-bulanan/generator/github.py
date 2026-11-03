@@ -49,6 +49,12 @@ def _search(repo, query, fields, env, limit=150):
     return json.loads(result.stdout or "[]")
 
 
+def nomor_key(pr):
+    """Urutkan PR bernomor dulu, lalu entri non-angka (mis. 'WIP-4646' = commit branch yang belum jadi PR)."""
+    n = pr["number"]
+    return (0, n, "") if isinstance(n, int) else (1, 0, str(n))
+
+
 def _unique(prs):
     seen, out = set(), []
     for pr in prs:
@@ -66,7 +72,7 @@ def fetch_prs(config):
     for dr in gh["date_ranges"]:
         for author in _authors(gh):
             prs += _search(gh["repo"], f"author:{author} created:{dr}", "number,title,state", env, limit=100)
-    return sorted(_unique(prs), key=lambda p: p["number"])
+    return sorted(_unique(prs), key=nomor_key)
 
 
 def fetch_raw_prs(config):
@@ -112,7 +118,7 @@ def load_prs(config, force=False):
     if not path.exists() and not force and not gh.get("fetch_if_missing", True):
         return []
     prs = _cached(path, lambda: fetch_prs(config), force)
-    return sorted(prs, key=lambda p: p["number"])
+    return sorted(prs, key=nomor_key)
 
 
 def load_diffs(config, prs, force=False):
@@ -120,5 +126,20 @@ def load_diffs(config, prs, force=False):
     return _cached(input_dir(config["period"]) / "prs_diff.json", lambda: fetch_diffs(config, prs), force)
 
 
+def _raw_from_prs_detail(config):
+    """Bentuk raw_prs.json dari prs_detail.json (format generator lama, Jan–Apr 2026) tanpa memanggil gh."""
+    path = input_dir(config["period"]) / "prs_detail.json"
+    repo = config["github"]["repo"]
+    prs = []
+    for p in json.loads(path.read_text(encoding="utf-8")):
+        url = (f"https://github.com/{repo}/pull/{p['number']}" if isinstance(p["number"], int)
+               else f"https://github.com/{repo}/commit/{p['sha']}")  # WIP: belum jadi PR, tautkan commit
+        prs.append({"number": p["number"], "title": p["title"], "mergedAt": p["mergedAt"],
+                    "url": url, "body": p.get("body") or ""})
+    return sorted(prs, key=lambda p: p["mergedAt"])
+
+
 def load_raw_prs(config, force=False):
-    return _cached(input_dir(config["period"]) / "raw_prs.json", lambda: fetch_raw_prs(config), force)
+    has_detail = (input_dir(config["period"]) / "prs_detail.json").exists()
+    fetch = (lambda: _raw_from_prs_detail(config)) if has_detail and not force else (lambda: fetch_raw_prs(config))
+    return _cached(input_dir(config["period"]) / "raw_prs.json", fetch, force)

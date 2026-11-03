@@ -120,6 +120,27 @@ tanpa menghapus marker berikut:
 | `{{ LAMPIRAN }}` | Posisi lampiran (lampiran digabung di akhir) |
 | `{{ PERIODE }}` (weekly) | "1–30 November 2026" |
 
+## Data Lama (Januari–April 2026)
+
+Bulan-bulan ini dibuat dengan generator lama (repo `psdkplabs/api-sip`) dan memakai format data berbeda:
+
+- `prs_detail.json` — judul, body, tanggal merge, file per PR. `weekly --build` otomatis membentuk
+  `raw_prs.json` dari file ini (tanpa fetch GitHub).
+- Entri `WIP-…` di `prs.json` = pekerjaan berupa commit di branch yang baru di-merge bulan berikutnya;
+  di weekly ditautkan ke commit-nya.
+- `detail_groups.json` — kurasi BAB II lama; `curated.json` bulan ini adalah draf yang diturunkan darinya
+  (satu teks per sub-kegiatan, jadi PR dalam satu grup bertuliskan sama). Poles per PR bila perlu, lalu
+  `weekly --build`.
+- Laporan sebelum diseragamkan disimpan di `archive/output_lama/YYYYMM/`.
+
+Generate ulang manual (contoh Januari):
+
+```powershell
+python laporan.py weekly 202601 --build
+python laporan.py detail 202601 --add-prolog      # detail_github.md lama + Prolog (jangan pakai `detail` tanpa opsi)
+python laporan.py report 202601
+```
+
 ## Troubleshooting
 
 | Gejala | Penyebab / solusi |
