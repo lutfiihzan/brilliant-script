@@ -295,7 +295,7 @@ def build_main(config, prs, modules, kegiatan, lampiran_label):
 KODE_EXT = (".php", ".py", ".js", ".ts", ".sql", ".sh", ".yml", ".yaml", ".conf")
 SKIP_PATH = ("docs/", "public/", "storage/", "tests/", "Tests/", "lang/", "composer.lock", "package-lock")
 CUPLIKAN_MAKS = 12
-PANJANG_MAKS = 110
+PANJANG_MAKS = 95
 
 
 def _a4(doc):
@@ -305,8 +305,9 @@ def _a4(doc):
     return doc
 
 
-def _cuplikan_kode(diff_text):
-    """Baris tambahan (maks. CUPLIKAN_MAKS) dari file kode pertama yang relevan pada diff."""
+def _cuplikan_kode(diff_text, maks=CUPLIKAN_MAKS):
+    """Baris tambahan (maks. `maks`) dari file kode yang relevan pada diff, berurutan per file."""
+    hasil, total = [], 0
     for block in re.split(r"(?m)^diff --git ", diff_text or "")[1:]:
         m = re.match(r"a/(\S+) b/(\S+)", block)
         if not m:
@@ -319,12 +320,14 @@ def _cuplikan_kode(diff_text):
             if line.startswith("+") and not line.startswith("+++") and line[1:].strip():
                 line = line[1:].rstrip()
                 lines.append(line[:PANJANG_MAKS] + " …" if len(line) > PANJANG_MAKS else line)
-            if len(lines) >= CUPLIKAN_MAKS:
+            if total + len(lines) >= maks:
                 break
         if lines:
-            return path, lines
-    return None, []
-
+            hasil.append((path, lines))
+            total += len(lines)
+        if total >= maks:
+            break
+    return hasil
 
 def build_lampiran_kode(config, prs, diffs):
     doc = _a4(Document())
@@ -344,28 +347,32 @@ def build_lampiran_kode(config, prs, diffs):
     kit.simple_table(doc, ["No", "PR", "Judul", "File", "Baris"], baris,
                      widths=[Cm(1.0), Cm(1.4), Cm(10.6), Cm(1.2), Cm(2.2)], size=Pt(8))
 
+    maks = config.get("lampiran", {}).get("cuplikan_maks", CUPLIKAN_MAKS)
+    if maks <= 0:  # cuplikan dimatikan untuk bulan ini (hanya tabel PR)
+        return doc
     kit.body(doc, "")
-    kit.body(doc, f"Cuplikan Kode Sumber (maksimal {CUPLIKAN_MAKS} baris tambahan per PR, diambil dari file kode utama)")
+    kit.body(doc, f"Cuplikan Kode Sumber (maksimal {maks} baris tambahan per PR, diambil dari file kode yang diubah)")
     for pr in prs:
-        path, lines = _cuplikan_kode(diffs.get(str(pr["number"]), ""))
-        if not lines:
+        cuplikan = _cuplikan_kode(diffs.get(str(pr["number"]), ""), maks)
+        if not cuplikan:
             continue
         p = doc.add_paragraph()
         p.paragraph_format.space_before, p.paragraph_format.space_after = Pt(10), Pt(2)
         p.paragraph_format.keep_with_next = True
         kit.run(p, f"PR #{pr['number']}: {pr['title']}", bold=True, size=Pt(9))
-        p = doc.add_paragraph()
-        p.paragraph_format.space_after = Pt(2)
-        p.paragraph_format.keep_with_next = True
-        kit.run(p, path, italic=True, size=Pt(8))
-        for line in lines:
+        for path, lines in cuplikan:
             p = doc.add_paragraph()
-            p.paragraph_format.space_after = Pt(0)
-            p.paragraph_format.line_spacing = 1.0
-            p.paragraph_format.left_indent = Pt(10)
-            r = p.add_run(line)
-            r.font.name = "Courier New"
-            r.font.size = Pt(8)
+            p.paragraph_format.space_before, p.paragraph_format.space_after = Pt(4), Pt(2)
+            p.paragraph_format.keep_with_next = True
+            kit.run(p, path, italic=True, size=Pt(8))
+            for line in lines:
+                p = doc.add_paragraph()
+                p.paragraph_format.space_after = Pt(0)
+                p.paragraph_format.line_spacing = 1.0
+                p.paragraph_format.left_indent = Pt(10)
+                r = p.add_run(line)
+                r.font.name = "Courier New"
+                r.font.size = Pt(8)
     return doc
 
 

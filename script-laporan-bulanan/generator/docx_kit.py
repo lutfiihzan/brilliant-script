@@ -13,6 +13,7 @@ FONT = "Arial"
 SIZE_HEADING = Pt(14)
 SIZE_TABLE_CELL = Pt(10)
 LINE_SPACING = 1.5
+TABLE_LINE_SPACING = 1.15  # isi tabel berspasi rapat (gaya skripsi)
 
 # Indentasi format skripsi
 INDENT_H2 = Cm(1.0)    # teks judul "2.1." mulai di sini
@@ -145,14 +146,14 @@ def table_indent(table, indent):
 
 def _cell_text(cell, text, bold=False):
     p = cell.paragraphs[0]
-    p.paragraph_format.line_spacing = LINE_SPACING
+    p.paragraph_format.line_spacing = TABLE_LINE_SPACING
     r = run(p, text, bold=bold, size=SIZE_TABLE_CELL)
     return r
 
 
 def _cell_para(cell, text, bold=False, bullet=False):
     p = cell.add_paragraph()
-    p.paragraph_format.line_spacing = LINE_SPACING
+    p.paragraph_format.line_spacing = TABLE_LINE_SPACING
     if bullet:
         hanging(p.paragraph_format, Cm(0.45), Cm(0.45))
         text = f"•\t{text}"

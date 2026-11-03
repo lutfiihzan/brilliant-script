@@ -82,6 +82,7 @@ Buka hasil di Word → klik kanan **Daftar Isi** → **Update Field**.
 | `kegiatan_tambahan/` | Gambar (mis. Surat Tugas) & tabel rekap untuk Lampiran 3 |
 | `manajemen_kode/github.png`, `server.png` | Screenshot untuk 2.x Manajemen Kode Sumber |
 | `202611_Program dan Data Weekly Report.docx` | (opsional) export manual weekly; jika ada dipakai sebagai Lampiran 1 |
+| `config.json` → `lampiran.cuplikan_maks` | Baris cuplikan kode per PR di Lampiran 2 (bawaan 12; 0 = hanya tabel PR). Pakai untuk menyesuaikan tebal laporan |
 
 ---
 
@@ -132,6 +133,9 @@ Bulan-bulan ini dibuat dengan generator lama (repo `psdkplabs/api-sip`) dan mema
   (satu teks per sub-kegiatan, jadi PR dalam satu grup bertuliskan sama). Poles per PR bila perlu, lalu
   `weekly --build`.
 - Laporan sebelum diseragamkan disimpan di `archive/output_lama/YYYYMM/`.
+- November 2026: BAB II Jan–Apr ditulis ulang satu sub-kegiatan per PR dari diff kode
+  (`detail_per_pr.json`, dirakit dengan `archive/scripts_lama/rakit_detail_per_pr.py`); PR berdiff identik
+  digabung. Tebal laporan: Jan 84, Feb 94, Mar 96, Apr 91 halaman.
 
 Generate ulang manual (contoh Januari):
 
